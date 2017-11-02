@@ -7,11 +7,11 @@ session_start();
 
 require_once 'vendor/autoload.php';
 
-DB::$dbName = 'slimshop';
-DB::$user = 'slimshop';
+DB::$dbName = 'cp4809_clinic';
+DB::$user = 'cp4809_clinic';
 DB::$encoding = 'utf8';
-//DB::$password = 'odlKfx1M1VkQnkTQ';
-DB::$password = 'zc4nMXHHVGfTrBI0';
+
+DB::$password = 'nW4!To4($3Cv';
 // Slim creation and setup
 $app = new \Slim\Slim(array(
     'view' => new \Slim\Views\Twig()
@@ -34,6 +34,8 @@ if (!isset($_SESSION['user'])) {
     $_SESSION['user'] = array();
 }
 // url/event handler go here
-
+$app->('/', function() use ($app){
+    echo "This is clinic project";
+});
 
 $app->run();
