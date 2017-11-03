@@ -37,5 +37,9 @@ if (!isset($_SESSION['user'])) {
 $app->get('/', function() use ($app) {
     echo "This is clinic project";
 });
+$app->get('/register', function() use($app){
+    
+    $app->render('register.html.twig');
+});
 
 $app->run();
