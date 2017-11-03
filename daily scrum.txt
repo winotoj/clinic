@@ -1,0 +1,13 @@
+date and name
+1. what have i done / not done sincce last scrum?
+2. what will i do from now until next scrum?
+3. where do i need help from my teammate, teacher, or internet?
+
+2017-11-03 --Winoto
+1. what have i done / not done sincce last scrum?
+	- create proposal -- done
+	- create DB -- done
+	- create trello missing checklist
+2. what will i do from now until next scrum?
+	- create register, login (UI and code behind), master using bootstrap
+	- populate db with data
