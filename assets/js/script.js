@@ -57,6 +57,7 @@ $(document).ready(function() {
                 validators: {
                         stringLength: {
                         min: 2,
+                        max: 50,
                     },
                         notEmpty: {
                         message: 'Please enter your First Name'
@@ -67,6 +68,7 @@ $(document).ready(function() {
                 validators: {
                      stringLength: {
                         min: 2,
+                        max: 50,
                     },
                     notEmpty: {
                         message: 'Please enter your Last Name'
@@ -83,27 +85,7 @@ $(document).ready(function() {
                     }
                 }
             },
-			 user_password: {
-                validators: {
-                     stringLength: {
-                        min: 8,
-                    },
-                    notEmpty: {
-                        message: 'Please enter your Password'
-                    }
-                }
-            },
-			confirm_password: {
-                validators: {
-                     stringLength: {
-                        min: 8,
-                    },
-                    notEmpty: {
-                        message: 'Please confirm your Password'
-                    }
-                }
-            },
-            email: {
+                         email: {
                 validators: {
                     notEmpty: {
                         message: 'Please enter your Email Address'
@@ -113,6 +95,65 @@ $(document).ready(function() {
                     }
                 }
             },
+                        street: {
+                validators: {
+                     stringLength: {
+                        min: 4,
+                        max: 50,
+                    },
+                    notEmpty: {
+                        message: 'Please enter your Street'
+                    }
+                }
+            },
+                        postal: {
+                validators: {
+                     stringLength: {
+                        min: 6,
+                        max:7,
+                    },
+                    notEmpty: {
+                        message: 'Please enter your Postal Code'
+                    }
+                }
+            },
+            	sin: {
+                validators: {
+                     stringLength: {
+                        min: 9,
+                        max: 11,
+                    },
+                    notEmpty: {
+                        message: 'Please enter your SIN number'
+                    }
+                }
+            },
+			 user_password: {
+                validators: {
+                     stringLength: {
+                        min: 6,
+                        max: 50,
+                    },
+                    notEmpty: {
+                        message: 'Please enter your Password'
+                    },
+                    identical:{
+                        field: 'confirm_password',
+                        message: 'Password do not match'
+                    }
+                }
+            },
+            confirm_password: {
+                validators: {
+                   
+                    identical: {
+                        field: 'user_password',
+                        message: 'Password do not match'
+                    }
+                }
+            },
+            
+            
             contact_no: {
                 validators: {
                   stringLength: {

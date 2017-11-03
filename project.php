@@ -29,17 +29,13 @@ $log = new Logger('main');
 $log->pushHandler(new StreamHandler('logs/everything.log', Logger::DEBUG));
 $log->pushHandler(new StreamHandler('logs/errors.log', Logger::ERROR));
 
-
+require_once 'connect.php';
 if (!isset($_SESSION['user'])) {
     $_SESSION['user'] = array();
 }
 // url/event handler go here
 $app->get('/', function() use ($app) {
     echo "This is clinic project";
-});
-$app->get('/register', function() use($app){
-    
-    $app->render('register.html.twig');
 });
 
 $app->run();

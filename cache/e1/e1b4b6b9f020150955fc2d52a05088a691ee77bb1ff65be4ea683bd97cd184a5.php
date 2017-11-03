@@ -98,40 +98,85 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
   </div>
 </div>
 
-  <div class=\"form-group\"> 
-  <label class=\"col-md-4 control-label\">Department / Office</label>
-    <div class=\"col-md-4 selectContainer\">
-    <div class=\"input-group\">
-        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list\"></i></span>
-    <select name=\"department\" class=\"form-control selectpicker\">
-      <option value=\"\">Select your Department/Office</option>
-      <option>Department of Engineering</option>
-      <option>Department of Agriculture</option>
-      <option >Accounting Office</option>
-      <option >Tresurer's Office</option>
-      <option >MPDC</option>
-      <option >MCTC</option>
-      <option >MCR</option>
-      <option >Mayor's Office</option>
-      <option >Tourism Office</option>
-    </select>
-  </div>
-</div>
-</div>
-  
 <!-- Text input-->
-
-<div class=\"form-group\">
-  <label class=\"col-md-4 control-label\">Username</label>  
-  <div class=\"col-md-4 inputGroupContainer\">
-  <div class=\"input-group\">
-  <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></span>
-  <input  name=\"user_name\" placeholder=\"Username\" class=\"form-control\"  type=\"text\">
+       <div class=\"form-group\">
+  <label class=\"col-md-4 control-label\">E-Mail</label>  
+    <div class=\"col-md-4 inputGroupContainer\">
+    <div class=\"input-group\">
+        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-envelope\"></i></span>
+  <input name=\"email\" placeholder=\"E-Mail Address\" class=\"form-control\"  type=\"text\">
     </div>
   </div>
 </div>
 
 <!-- Text input-->
+       <div class=\"form-group\">
+  <label class=\"col-md-4 control-label\">Address</label>  
+    <div class=\"col-md-4 inputGroupContainer\">
+    <div class=\"input-group\">
+        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-envelope\"></i></span>
+  <input name=\"street\" placeholder=\"Civic No street Apt No\" class=\"form-control\"  type=\"text\">
+    </div>
+  </div>
+</div>
+<div class=\"form-group\">
+  <label class=\"col-md-4 control-label\">City</label>  
+    <div class=\"col-md-4 inputGroupContainer\">
+    <div class=\"input-group\">
+        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-envelope\"></i></span>
+  <input name=\"city\" placeholder=\"City\" class=\"form-control\"  type=\"text\">
+    </div>
+  </div>
+</div>
+
+<div class=\"form-group\">
+  <label class=\"col-md-4 control-label\">Province</label>  
+    <div class=\"col-md-4 inputGroupContainer\">
+    <div class=\"input-group\">
+        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-home\"></i></span>
+  <select class=\"form-control\" name=\"Province\">
+                <option value=\"\"></option>
+                <option value=\"AB\">Alberta (AB)</option>
+                <option value=\"BC\">British Columbia (BC)</option>
+                <option value=\"MB\">Manitoba (MB)</option>
+                <option value=\"NB\">New Brunswick (MB)</option>
+                <option value=\"NL\">Newfoundland Labrador (NL)</option>
+                <option value=\"NS\">Nova Scotia (NS)</option>
+                <option value=\"NT\">Northwest Territories (NT)</option>
+                <option value=\"NU\">Nunavut (NU)</option>
+                <option value=\"ON\">Ontario (ON)</option>
+                <option value=\"PE\">Prince Edward Island (PE)</option>
+                <option value=\"QC\">Quebec (QC)</option>
+                <option value=\"SK\">Saskatchewan (SK)</option>
+                <option value=\"YT\">Yukon (YT)</option>
+            </select>
+
+    </div>
+  </div>
+   </div>
+<!-- Text input-->
+  <div class=\"form-group\">
+  <label class=\"col-md-4 control-label\">Postal</label>  
+    <div class=\"col-md-4 inputGroupContainer\">
+    <div class=\"input-group\">
+        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-home\"></i></span>
+   <input name=\"postal\" placeholder=\"Postal\" class=\"form-control\"  type=\"text\">
+
+    </div>
+  </div>
+</div>
+<!-- Text input-->
+<!-- Text input-->
+  <div class=\"form-group\">
+  <label class=\"col-md-4 control-label\">SIN</label>  
+    <div class=\"col-md-4 inputGroupContainer\">
+    <div class=\"input-group\">
+        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-home\"></i></span>
+   <input name=\"sin\" placeholder=\"999999999\" class=\"form-control\"  type=\"text\">
+
+    </div>
+  </div>
+</div>
 
 <div class=\"form-group\">
   <label class=\"col-md-4 control-label\" >Password</label> 
@@ -156,25 +201,13 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
 </div>
 
 <!-- Text input-->
-       <div class=\"form-group\">
-  <label class=\"col-md-4 control-label\">E-Mail</label>  
-    <div class=\"col-md-4 inputGroupContainer\">
-    <div class=\"input-group\">
-        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-envelope\"></i></span>
-  <input name=\"email\" placeholder=\"E-Mail Address\" class=\"form-control\"  type=\"text\">
-    </div>
-  </div>
-</div>
-
-
-<!-- Text input-->
        
 <div class=\"form-group\">
   <label class=\"col-md-4 control-label\">Contact No.</label>  
     <div class=\"col-md-4 inputGroupContainer\">
     <div class=\"input-group\">
         <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-earphone\"></i></span>
-  <input name=\"contact_no\" placeholder=\"(639)\" class=\"form-control\" type=\"text\">
+  <input name=\"contact_no\" placeholder=\"(123) 123-1234\" class=\"form-control\" type=\"text\">
     </div>
   </div>
 </div>
@@ -281,40 +314,85 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
   </div>
 </div>
 
-  <div class=\"form-group\"> 
-  <label class=\"col-md-4 control-label\">Department / Office</label>
-    <div class=\"col-md-4 selectContainer\">
-    <div class=\"input-group\">
-        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-list\"></i></span>
-    <select name=\"department\" class=\"form-control selectpicker\">
-      <option value=\"\">Select your Department/Office</option>
-      <option>Department of Engineering</option>
-      <option>Department of Agriculture</option>
-      <option >Accounting Office</option>
-      <option >Tresurer's Office</option>
-      <option >MPDC</option>
-      <option >MCTC</option>
-      <option >MCR</option>
-      <option >Mayor's Office</option>
-      <option >Tourism Office</option>
-    </select>
-  </div>
-</div>
-</div>
-  
 <!-- Text input-->
-
-<div class=\"form-group\">
-  <label class=\"col-md-4 control-label\">Username</label>  
-  <div class=\"col-md-4 inputGroupContainer\">
-  <div class=\"input-group\">
-  <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></span>
-  <input  name=\"user_name\" placeholder=\"Username\" class=\"form-control\"  type=\"text\">
+       <div class=\"form-group\">
+  <label class=\"col-md-4 control-label\">E-Mail</label>  
+    <div class=\"col-md-4 inputGroupContainer\">
+    <div class=\"input-group\">
+        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-envelope\"></i></span>
+  <input name=\"email\" placeholder=\"E-Mail Address\" class=\"form-control\"  type=\"text\">
     </div>
   </div>
 </div>
 
 <!-- Text input-->
+       <div class=\"form-group\">
+  <label class=\"col-md-4 control-label\">Address</label>  
+    <div class=\"col-md-4 inputGroupContainer\">
+    <div class=\"input-group\">
+        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-envelope\"></i></span>
+  <input name=\"street\" placeholder=\"Civic No street Apt No\" class=\"form-control\"  type=\"text\">
+    </div>
+  </div>
+</div>
+<div class=\"form-group\">
+  <label class=\"col-md-4 control-label\">City</label>  
+    <div class=\"col-md-4 inputGroupContainer\">
+    <div class=\"input-group\">
+        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-envelope\"></i></span>
+  <input name=\"city\" placeholder=\"City\" class=\"form-control\"  type=\"text\">
+    </div>
+  </div>
+</div>
+
+<div class=\"form-group\">
+  <label class=\"col-md-4 control-label\">Province</label>  
+    <div class=\"col-md-4 inputGroupContainer\">
+    <div class=\"input-group\">
+        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-home\"></i></span>
+  <select class=\"form-control\" name=\"Province\">
+                <option value=\"\"></option>
+                <option value=\"AB\">Alberta (AB)</option>
+                <option value=\"BC\">British Columbia (BC)</option>
+                <option value=\"MB\">Manitoba (MB)</option>
+                <option value=\"NB\">New Brunswick (MB)</option>
+                <option value=\"NL\">Newfoundland Labrador (NL)</option>
+                <option value=\"NS\">Nova Scotia (NS)</option>
+                <option value=\"NT\">Northwest Territories (NT)</option>
+                <option value=\"NU\">Nunavut (NU)</option>
+                <option value=\"ON\">Ontario (ON)</option>
+                <option value=\"PE\">Prince Edward Island (PE)</option>
+                <option value=\"QC\">Quebec (QC)</option>
+                <option value=\"SK\">Saskatchewan (SK)</option>
+                <option value=\"YT\">Yukon (YT)</option>
+            </select>
+
+    </div>
+  </div>
+   </div>
+<!-- Text input-->
+  <div class=\"form-group\">
+  <label class=\"col-md-4 control-label\">Postal</label>  
+    <div class=\"col-md-4 inputGroupContainer\">
+    <div class=\"input-group\">
+        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-home\"></i></span>
+   <input name=\"postal\" placeholder=\"Postal\" class=\"form-control\"  type=\"text\">
+
+    </div>
+  </div>
+</div>
+<!-- Text input-->
+<!-- Text input-->
+  <div class=\"form-group\">
+  <label class=\"col-md-4 control-label\">SIN</label>  
+    <div class=\"col-md-4 inputGroupContainer\">
+    <div class=\"input-group\">
+        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-home\"></i></span>
+   <input name=\"sin\" placeholder=\"999999999\" class=\"form-control\"  type=\"text\">
+
+    </div>
+  </div>
+</div>
 
 <div class=\"form-group\">
   <label class=\"col-md-4 control-label\" >Password</label> 
@@ -339,25 +417,13 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
 </div>
 
 <!-- Text input-->
-       <div class=\"form-group\">
-  <label class=\"col-md-4 control-label\">E-Mail</label>  
-    <div class=\"col-md-4 inputGroupContainer\">
-    <div class=\"input-group\">
-        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-envelope\"></i></span>
-  <input name=\"email\" placeholder=\"E-Mail Address\" class=\"form-control\"  type=\"text\">
-    </div>
-  </div>
-</div>
-
-
-<!-- Text input-->
        
 <div class=\"form-group\">
   <label class=\"col-md-4 control-label\">Contact No.</label>  
     <div class=\"col-md-4 inputGroupContainer\">
     <div class=\"input-group\">
         <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-earphone\"></i></span>
-  <input name=\"contact_no\" placeholder=\"(639)\" class=\"form-control\" type=\"text\">
+  <input name=\"contact_no\" placeholder=\"(123) 123-1234\" class=\"form-control\" type=\"text\">
     </div>
   </div>
 </div>
