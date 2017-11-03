@@ -34,7 +34,7 @@ if (!isset($_SESSION['user'])) {
     $_SESSION['user'] = array();
 }
 // url/event handler go here
-$app->('/', function() use ($app){
+$app->get('/', function() use ($app) {
     echo "This is clinic project";
 });
 
