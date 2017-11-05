@@ -11,3 +11,16 @@ date and name
 2. what will i do from now until next scrum?
 	- create register, login (UI and code behind), master using bootstrap
 	- populate db with data
+
+2017-11-05 --Winoto
+1. what have i done / not done sincce last scrum?
+	- Register done
+	- Login done
+	- Edit trello missing checklist not done
+	- populate DB (doctors) not done
+2. what will i do from now until next scrum?
+	- 2017-11-03 --Winoto
+	- create trello missing checklist
+	- fix DB structure in hosting, wrong field in some tables
+	- populate db with data
+	
