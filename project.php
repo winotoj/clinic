@@ -30,6 +30,7 @@ $log->pushHandler(new StreamHandler('logs/everything.log', Logger::DEBUG));
 $log->pushHandler(new StreamHandler('logs/errors.log', Logger::ERROR));
 
 require_once 'connect.php';
+require_once 'staff.php';
 if (!isset($_SESSION['user'])) {
     $_SESSION['user'] = array();
 }
