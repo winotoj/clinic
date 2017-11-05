@@ -52,12 +52,6 @@ class __TwigTemplate_3fcd2ffa7ce8d183f52ff72e39155077eb20417b958de82a602bdbe789c
     <p>You've successfully managed to log into a nonexistant account in order to test a login dialog box.<br> If you like it, you are welcomed to use it wherever you want, no strings attached.<br><br><a href=\"#\" class=\"link dialog-reset\">Rerun the whole thing.</a></p>
   </div>
 </div>
-<div id=\"successful_registration\" class=\"fix-middle\">
-  <div class=\"container text-center\">
-    <h1>Welcome to the internet!</h1>
-    <p>You've successfully managed to register for a nonexistant account in order to test a registration dialog box.<br> If you like it, you are welcomed to use it wherever you want, no strings attached.<br><br><a href=\"#\" class=\"link dialog-reset\">Rerun the whole thing.</a></p>
-  </div>
-</div>
 
 <div id=\"dialog\" class=\"dialog dialog-effect-in\">
   <div class=\"dialog-front\">
@@ -66,12 +60,12 @@ class __TwigTemplate_3fcd2ffa7ce8d183f52ff72e39155077eb20417b958de82a602bdbe789c
         <fieldset>
           <legend>Log in</legend>
           <div class=\"form-group\">
-            <label for=\"user_username\" class=\"control-label\">Username:</label>
-            <input type=\"text\" id=\"user_username\" class=\"form-control\" name=\"user_username\" autofocus/>
+            <label for=\"email\" class=\"control-label\">Email:</label>
+            <input type=\"text\" id=\"user_username\" class=\"form-control\" name=\"email\" autofocus/>
           </div>
           <div class=\"form-group\">
             <label for=\"user_password\" class=\"control-label\">Password:</label>
-            <input type=\"password\" id=\"user_password\" class=\"form-control\" name=\"user_password\"/>
+            <input type=\"password\" id=\"user_password\" class=\"form-control\" name=\"password\"/>
           </div>
           <div class=\"text-center pad-top-20\">
             <p>Have you forgotten your<br><a href=\"#\" class=\"link\"><strong>username</strong></a> or <a href=\"#\" class=\"link\"><strong>password</strong></a>?</p>
@@ -86,41 +80,7 @@ class __TwigTemplate_3fcd2ffa7ce8d183f52ff72e39155077eb20417b958de82a602bdbe789c
       </form>
     </div>
   </div>
-  <div class=\"dialog-back\">
-    <div class=\"dialog-content\">
-      <form id=\"register_form\" class=\"dialog-form\" action=\"\" method=\"POST\">
-        <fieldset>
-          <legend>Register</legend>
-          <div class=\"form-group\">
-            <label for=\"user_username\" class=\"control-label\">Username:</label>
-            <input type=\"text\" id=\"user_username\" class=\"form-control\" name=\"user_username\"/> 
-          </div>
-          <div class=\"form-group\">
-            <label for=\"user_password\" class=\"control-label\">Password:</label>
-            <input type=\"password\" id=\"user_password\" class=\"form-control\" name=\"user_password\"/>
-          </div>
-          <div class=\"form-group\">
-            <label for=\"user_cnf_password\" class=\"control-label\">Confirm password:</label>
-            <input type=\"password\" id=\"user_cnf_password\" class=\"form-control\" name=\"user_cnf_password\"/>
-          </div>
-          <div class=\"form-group pad-top-20 form-group-checkbox\">
-            <div class=\"checkbox\">
-              <label>
-                <input type=\"checkbox\" id=\"user_terms\" name=\"user_terms\">
-                I have read and I agree with the Terms and Conditions
-              </label>
-            </div>
-          </div>
-          <div class=\"pad-btm-20\">
-            <input type=\"submit\" class=\"btn btn-default btn-block btn-lg\" value=\"Continue\"/>
-          </div>
-          <div class=\"text-center\">
-            <p>Return to <a href=\"#\" class=\"link user-actions\"><strong>log in page</strong></a>?</p>
-          </div>
-        </fieldset>
-      </form>
-    </div>
-  </div>
+ 
 </div>
 
 
@@ -168,12 +128,6 @@ class __TwigTemplate_3fcd2ffa7ce8d183f52ff72e39155077eb20417b958de82a602bdbe789c
     <p>You've successfully managed to log into a nonexistant account in order to test a login dialog box.<br> If you like it, you are welcomed to use it wherever you want, no strings attached.<br><br><a href=\"#\" class=\"link dialog-reset\">Rerun the whole thing.</a></p>
   </div>
 </div>
-<div id=\"successful_registration\" class=\"fix-middle\">
-  <div class=\"container text-center\">
-    <h1>Welcome to the internet!</h1>
-    <p>You've successfully managed to register for a nonexistant account in order to test a registration dialog box.<br> If you like it, you are welcomed to use it wherever you want, no strings attached.<br><br><a href=\"#\" class=\"link dialog-reset\">Rerun the whole thing.</a></p>
-  </div>
-</div>
 
 <div id=\"dialog\" class=\"dialog dialog-effect-in\">
   <div class=\"dialog-front\">
@@ -182,12 +136,12 @@ class __TwigTemplate_3fcd2ffa7ce8d183f52ff72e39155077eb20417b958de82a602bdbe789c
         <fieldset>
           <legend>Log in</legend>
           <div class=\"form-group\">
-            <label for=\"user_username\" class=\"control-label\">Username:</label>
-            <input type=\"text\" id=\"user_username\" class=\"form-control\" name=\"user_username\" autofocus/>
+            <label for=\"email\" class=\"control-label\">Email:</label>
+            <input type=\"text\" id=\"user_username\" class=\"form-control\" name=\"email\" autofocus/>
           </div>
           <div class=\"form-group\">
             <label for=\"user_password\" class=\"control-label\">Password:</label>
-            <input type=\"password\" id=\"user_password\" class=\"form-control\" name=\"user_password\"/>
+            <input type=\"password\" id=\"user_password\" class=\"form-control\" name=\"password\"/>
           </div>
           <div class=\"text-center pad-top-20\">
             <p>Have you forgotten your<br><a href=\"#\" class=\"link\"><strong>username</strong></a> or <a href=\"#\" class=\"link\"><strong>password</strong></a>?</p>
@@ -202,41 +156,7 @@ class __TwigTemplate_3fcd2ffa7ce8d183f52ff72e39155077eb20417b958de82a602bdbe789c
       </form>
     </div>
   </div>
-  <div class=\"dialog-back\">
-    <div class=\"dialog-content\">
-      <form id=\"register_form\" class=\"dialog-form\" action=\"\" method=\"POST\">
-        <fieldset>
-          <legend>Register</legend>
-          <div class=\"form-group\">
-            <label for=\"user_username\" class=\"control-label\">Username:</label>
-            <input type=\"text\" id=\"user_username\" class=\"form-control\" name=\"user_username\"/> 
-          </div>
-          <div class=\"form-group\">
-            <label for=\"user_password\" class=\"control-label\">Password:</label>
-            <input type=\"password\" id=\"user_password\" class=\"form-control\" name=\"user_password\"/>
-          </div>
-          <div class=\"form-group\">
-            <label for=\"user_cnf_password\" class=\"control-label\">Confirm password:</label>
-            <input type=\"password\" id=\"user_cnf_password\" class=\"form-control\" name=\"user_cnf_password\"/>
-          </div>
-          <div class=\"form-group pad-top-20 form-group-checkbox\">
-            <div class=\"checkbox\">
-              <label>
-                <input type=\"checkbox\" id=\"user_terms\" name=\"user_terms\">
-                I have read and I agree with the Terms and Conditions
-              </label>
-            </div>
-          </div>
-          <div class=\"pad-btm-20\">
-            <input type=\"submit\" class=\"btn btn-default btn-block btn-lg\" value=\"Continue\"/>
-          </div>
-          <div class=\"text-center\">
-            <p>Return to <a href=\"#\" class=\"link user-actions\"><strong>log in page</strong></a>?</p>
-          </div>
-        </fieldset>
-      </form>
-    </div>
-  </div>
+ 
 </div>
 
 

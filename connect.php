@@ -133,3 +133,24 @@ $app->get('/login', function() use ($app){
     $app->render('login.html.twig');
 });
 
+//--------------------------------------------------POST LOGIN---------------------
+$app->post('/login', function() use($app){
+    $email = $app->request()->post('email');
+$pass = $app->request()->post('password');
+$row = DB::queryFirstRow("SELECT * FROM patients WHERE email=%s", $email);
+$error = true;
+if ($row) {
+if(password_verify($pass, $row['password'])){
+//if ($pass == $row['password']) {
+$error = false;
+}
+}
+if ($error) {
+$app->render('login.html.twig', array('error' => true));
+} else {
+unset($row['password']);
+$_SESSION['user'] = $row;
+$app->render('login_success.html.twig', array('userSession' => $_SESSION['user']));
+}
+});
+

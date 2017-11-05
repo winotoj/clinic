@@ -62,8 +62,10 @@ class __TwigTemplate_87a86df006dd2202e643b264156f3e573238b8b43873d89825885252259
         if ((isset($context["userSession"]) ? $context["userSession"] : null)) {
             // line 30
             echo "            <p class=\"navbar-text navbar-right actions\">You're logged in as ";
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["userSession"]) ? $context["userSession"] : null), "name", array()), "html", null, true);
-            echo ".
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["userSession"]) ? $context["userSession"] : null), "firstName", array()), "html", null, true);
+            echo " ";
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["userSession"]) ? $context["userSession"] : null), "lastName", array()), "html", null, true);
+            echo "
                 You may <a href=\"/logout\">Logout</a></p>
         ";
         } else {
@@ -124,7 +126,7 @@ class __TwigTemplate_87a86df006dd2202e643b264156f3e573238b8b43873d89825885252259
 
     public function getDebugInfo()
     {
-        return array (  111 => 41,  106 => 12,  101 => 9,  95 => 7,  85 => 42,  83 => 41,  76 => 36,  71 => 33,  64 => 30,  62 => 29,  44 => 13,  42 => 12,  38 => 10,  36 => 9,  31 => 7,  23 => 1,);
+        return array (  113 => 41,  108 => 12,  103 => 9,  97 => 7,  87 => 42,  85 => 41,  78 => 36,  73 => 33,  64 => 30,  62 => 29,  44 => 13,  42 => 12,  38 => 10,  36 => 9,  31 => 7,  23 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -166,7 +168,7 @@ class __TwigTemplate_87a86df006dd2202e643b264156f3e573238b8b43873d89825885252259
                         </ul>
                         
                         {% if userSession %}
-            <p class=\"navbar-text navbar-right actions\">You're logged in as {{ userSession.name }}.
+            <p class=\"navbar-text navbar-right actions\">You're logged in as {{ userSession.firstName }} {{userSession.lastName }}
                 You may <a href=\"/logout\">Logout</a></p>
         {% else %}
         <p class=\"navbar-text navbar-right actions\">You're not logged in. You may <a href=\"/register\">Register</a>

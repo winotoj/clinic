@@ -190,6 +190,20 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
   </div>
 </div>
 <!-- Text input-->
+  <div class=\"form-group\">
+  <label class=\"col-md-4 control-label\">Country</label>  
+    <div class=\"col-md-4 inputGroupContainer\">
+    <div class=\"input-group\">
+        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-home\"></i></span>
+   <input name=\"country\" placeholder=\"Country\" class=\"form-control\"  type=\"text\">
+   <p>";
+        // line 138
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["e"]) ? $context["e"] : null), "countryError", array()), "html", null, true);
+        echo "</p>
+
+    </div>
+  </div>
+</div>
 <!-- Text input-->
   <div class=\"form-group\">
   <label class=\"col-md-4 control-label\">SIN</label>  
@@ -198,7 +212,7 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
         <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-home\"></i></span>
    <input name=\"sin\" placeholder=\"999999999\" class=\"form-control\"  type=\"text\">
    <p>";
-        // line 139
+        // line 150
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["e"]) ? $context["e"] : null), "sinError", array()), "html", null, true);
         echo "</p>
 
@@ -213,7 +227,7 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
   <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></span>
   <input name=\"user_password\" placeholder=\"Password\" class=\"form-control\"  type=\"password\">
   <p>";
-        // line 151
+        // line 162
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["e"]) ? $context["e"] : null), "pass1Error", array()), "html", null, true);
         echo "</p>
     </div>
@@ -229,7 +243,7 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
   <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></span>
   <input name=\"confirm_password\" placeholder=\"Confirm Password\" class=\"form-control\"  type=\"password\">
   <p>";
-        // line 164
+        // line 175
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["e"]) ? $context["e"] : null), "pass2Error", array()), "html", null, true);
         echo "</p>
     </div>
@@ -245,7 +259,7 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
         <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-earphone\"></i></span>
   <input name=\"contact_no\" placeholder=\"(123) 123-1234\" class=\"form-control\" type=\"text\">
   <p>";
-        // line 177
+        // line 188
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["e"]) ? $context["e"] : null), "phoneError", array()), "html", null, true);
         echo "</p>
     </div>
@@ -284,7 +298,7 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
 
     public function getDebugInfo()
     {
-        return array (  249 => 177,  233 => 164,  217 => 151,  202 => 139,  186 => 126,  146 => 89,  133 => 79,  118 => 67,  103 => 55,  87 => 42,  69 => 26,  66 => 25,  57 => 19,  40 => 5,  37 => 4,  31 => 3,  11 => 1,);
+        return array (  263 => 188,  247 => 175,  231 => 162,  216 => 150,  201 => 138,  186 => 126,  146 => 89,  133 => 79,  118 => 67,  103 => 55,  87 => 42,  69 => 26,  66 => 25,  57 => 19,  40 => 5,  37 => 4,  31 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -428,6 +442,17 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
   </div>
 </div>
 <!-- Text input-->
+  <div class=\"form-group\">
+  <label class=\"col-md-4 control-label\">Country</label>  
+    <div class=\"col-md-4 inputGroupContainer\">
+    <div class=\"input-group\">
+        <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-home\"></i></span>
+   <input name=\"country\" placeholder=\"Country\" class=\"form-control\"  type=\"text\">
+   <p>{{ e.countryError }}</p>
+
+    </div>
+  </div>
+</div>
 <!-- Text input-->
   <div class=\"form-group\">
   <label class=\"col-md-4 control-label\">SIN</label>  
