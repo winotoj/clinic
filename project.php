@@ -31,6 +31,8 @@ $log->pushHandler(new StreamHandler('logs/errors.log', Logger::ERROR));
 
 require_once 'connect.php';
 require_once 'staff.php';
+require_once 'patient.php';
+
 if (!isset($_SESSION['user'])) {
     $_SESSION['user'] = array();
 }
