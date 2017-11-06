@@ -9,8 +9,14 @@ if (false) {
 
 
 $app->get('/myaccount', function() use ($app){
-    $app->render('myaccount.html.twig');
+    $app->render('patient/myaccount.html.twig');
 });
+
+
+$app->get('/bookappointment', function() use ($app){
+    $app->render('patient/bookappointment.html.twig');
+});
+
 
 
 
