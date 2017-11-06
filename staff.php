@@ -143,12 +143,12 @@ $app->get('/isemailregistered/:email', function($email) use ($app) {
 });
 
 //---------------------------------------------------GET SIGNIN----------------------
-$app->get('/sigin', function() use ($app) {
+$app->get('/signin', function() use ($app) {
     $app->render('admin/signin.html.twig');
 });
 
-//--------------------------------------------------POST LOGIN---------------------
-$app->post('/sigin', function() use($app) {
+//--------------------------------------------------POST SIGNIN---------------------
+$app->post('/signin', function() use($app) {
     $email = $app->request()->post('email');
     $pass = $app->request()->post('password');
     $row = DB::queryFirstRow("SELECT * FROM patients WHERE email=%s", $email);
@@ -167,7 +167,3 @@ $app->post('/sigin', function() use($app) {
 //$app->render('login_success.html.twig', array('userSession' => $_SESSION['user']));
     }
 });
-
-$app->run();
-
-
