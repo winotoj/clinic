@@ -605,3 +605,7 @@ h3,
     padding: 4px;
 }
 #success_message{ display: none;}
+
+html, body {
+    overflow: visible;
+}

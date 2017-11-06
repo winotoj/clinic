@@ -19,8 +19,16 @@ date and name
 	- Edit trello missing checklist not done
 	- populate DB (doctors) not done
 2. what will i do from now until next scrum?
-	- 2017-11-03 --Winoto
 	- create trello missing checklist
 	- fix DB structure in hosting, wrong field in some tables
 	- populate db with data
-	
+
+2017-11-06 --Winoto
+1. what have i done / not done sincce last scrum?
+	-populate DB (doctors) - done
+	-fixed DB structure - done
+2. what will i do from now until next scrum?
+	-search about payment API
+3. where do i need help from?
+	-internet	
+

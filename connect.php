@@ -8,8 +8,8 @@ if (false) {
 // URL/event handlers go here
 
 
-$app->get('/register', function() use($app){
-    
+$app->get('/register', function() use($app) {
+
     $app->render('register.html.twig');
 });
 
@@ -28,15 +28,15 @@ $app->post('/register', function() use($app) {
     $phone = $app->request()->post('contact_no');
 //
     $values = array('first_name' => $firstName,
-                    'last_name' => $lastName,
-                    'email' => $email,
-                    'street' => $street,
-                    'city' => $city,
-                    'province' => $province,
-                    'postal' => $postal,
-                    'sin' => $sin,
-                    'contact_no' => $phone
-                    );
+        'last_name' => $lastName,
+        'email' => $email,
+        'street' => $street,
+        'city' => $city,
+        'province' => $province,
+        'postal' => $postal,
+        'sin' => $sin,
+        'contact_no' => $phone
+    );
     $errorList = array();
     $error = array();
 //
@@ -44,7 +44,6 @@ $app->post('/register', function() use($app) {
         $values['first_name'] = '';
         //array_push($errorList, "First Name must be between 2 and 50 characters long");
         $error['fNameError'] = 'First name must be between 2 and 50 characters long';
-        
     }
     if (strlen($lastName) < 2 || strlen($lastName) > 50) {
         $values['last_name'] = '';
@@ -75,7 +74,7 @@ $app->post('/register', function() use($app) {
     }
     if ($province != 'AB' || $province != 'BC' || $province != 'MB' || $province != 'NB' ||
             $province != 'NL' || $province != 'NS' || $province != 'NU' || $province != 'ON' ||
-            $province != 'PE'  || $province != 'QC' || $province != 'SK' || $province != 'YT') {
+            $province != 'PE' || $province != 'QC' || $province != 'SK' || $province != 'YT') {
         //array_push($errorList, "City must be between 2 and 50 characters long");
         $error['provinceError'] = "Choose province from the list";
     }
@@ -84,13 +83,12 @@ $app->post('/register', function() use($app) {
         //array_push($errorList, "City must be between 2 and 50 characters long");
         $error['postalError'] = "Postal code format H0H 0H0";
     }
-    
+
     if ($pass1 != $pass2) {
         //array_push($errorList, "Passwords don't match");
         $error['pass1Error'] = "Password do not match";
         $error['pass2Error'] = "Password do not match";
     } else { // TODO: do a better check for password quality (lower/upper/numbers/special)
-        
         if (!preg_match('/(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9_!#@\$\^&\(\)\{\}\[\],\.<>;:\'\"`~%\*\-\+]{6,100}/', $pass1)) {
             //array_push($errorList, "Password must include at least one character in each three categories: "
             //        . "uppercase letter, lowercase letter, digit or special character");
@@ -129,28 +127,29 @@ $app->get('/isemailregistered/:email', function($email) use ($app) {
 });
 
 //--------------------------------------------------GET LOGIN----------------------
-$app->get('/login', function() use ($app){
+$app->get('/login', function() use ($app) {
     $app->render('login.html.twig');
 });
 
 //--------------------------------------------------POST LOGIN---------------------
-$app->post('/login', function() use($app){
+$app->post('/login', function() use($app) {
     $email = $app->request()->post('email');
-$pass = $app->request()->post('password');
-$row = DB::queryFirstRow("SELECT * FROM patients WHERE email=%s", $email);
-$error = true;
-if ($row) {
-if(password_verify($pass, $row['password'])){
+    $pass = $app->request()->post('password');
+    $row = DB::queryFirstRow("SELECT * FROM patients WHERE email=%s", $email);
+    $error = true;
+    if ($row) {
+        if (password_verify($pass, $row['password'])) {
 //if ($pass == $row['password']) {
-$error = false;
-}
-}
-if ($error) {
-$app->render('login.html.twig', array('error' => true));
-} else {
-unset($row['password']);
-$_SESSION['user'] = $row;
-$app->render('login_success.html.twig', array('userSession' => $_SESSION['user']));
-}
+            $error = false;
+        }
+    }
+    if ($error) {
+        $app->render('login.html.twig', array('error' => true));
+    } else {
+        unset($row['password']);
+        $_SESSION['user'] = $row;
+        $app->render('login_success.html.twig', array('userSession' => $_SESSION['user']));
+    }
 });
+
 

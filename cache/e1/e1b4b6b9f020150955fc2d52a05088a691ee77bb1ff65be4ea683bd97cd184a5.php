@@ -30,7 +30,7 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        echo twig_escape_filter($this->env, (isset($context["Register"]) ? $context["Register"] : null), "html", null, true);
+        echo "Register";
     }
 
     // line 4
@@ -313,7 +313,7 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
     {
         return new Twig_Source("{% extends \"master.html.twig\" %}
 
-{% block title Register %}
+{% block title %}Register{% endblock %}
     {% block matchpwd %}
         <script src=\"https://s.codepen.io/assets/libs/modernizr.js\" type=\"text/javascript\"></script>
         <script src=\"/assets/bootstrap/js/bootstrap.min.js\"></script>

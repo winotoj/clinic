@@ -36,7 +36,11 @@ if (!isset($_SESSION['user'])) {
 }
 // url/event handler go here
 $app->get('/', function() use ($app) {
-    echo "This is clinic project";
+    $app->render('index.html.twig');
+});
+
+$app->get('/master', function() use ($app){
+    $app->render('master.html.twig');
 });
 
 $app->run();
