@@ -37,6 +37,7 @@ require_once 'payment.php';
 require_once 'patient.php';
 
 require_once 'account.php';
+require_once 'doctor_schedule.php';
 
 
 if (!isset($_SESSION['user'])) {
