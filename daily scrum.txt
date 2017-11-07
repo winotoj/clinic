@@ -11,7 +11,15 @@ date and name
 2. what will i do from now until next scrum?
 	- create register, login (UI and code behind), master using bootstrap
 	- populate db with data
-
+	
+2017-11-03 --Vaji
+1. what have i done / not done sincce last scrum?
+	- search about online appointment for clinic
+	- make mockup
+	
+2. what will i do from now until next scrum?
+	- search about schedule and online payment
+	
 2017-11-05 --Winoto
 1. what have i done / not done sincce last scrum?
 	- Register done
@@ -32,3 +40,14 @@ date and name
 3. where do i need help from?
 	-internet	
 
+2017-11-06 --Vaji
+1. what have i done / not done sincce last scrum?
+	-setup some settings in my computer
+	-search about the doctor schedule
+2. what will i do from now until next scrum?
+	-analyze patient part
+	-make myaccount page
+	-make page for makebooking
+	
+3. where do i need help from?
+	-internet	
