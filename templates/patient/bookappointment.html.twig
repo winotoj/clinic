@@ -20,6 +20,11 @@
     <div class="container">
 
         <form class="well form-horizontal" method="post"  id="contact_form">
+            
+            
+            <div>
+                <span class="select2 select2-container select2-container--default alt select2-container--below" dir="ltr" style="width: 293px;"><span class="selection"><span class="select2-selection select2-selection--multiple" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" aria-owns="select2-dr_specialty_id-results"><ul class="select2-selection__rendered"><li class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="-1" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="textbox" placeholder="Specialty" style=""></li></ul></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+            </div>
 
             <div class="form-group">
                 <label class="col-md-4 control-label">Speciallity: </label>  
@@ -37,18 +42,15 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" >Date:</label> 
                 <div class="col-md-4 inputGroupContainer">
-                   <div class='input-group date' data-provide='datetimepicker1'>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon">
+                   <div class='input-group date'>
+                       <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
+                    <input type='date' class="form-control" />
+                    
                 </div>
                 </div>
-                <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker1').datetimepicker();
-            });
-        </script>
+                
             </div>
         </form>
     </div>
