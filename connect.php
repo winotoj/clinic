@@ -6,7 +6,9 @@ if (false) {
 }
 
 // URL/event handlers go here
-
+function verifyPassword($pass1){
+    
+}
 
 $app->get('/register', function() use($app) {
 
@@ -37,7 +39,7 @@ $app->post('/register', function() use($app) {
         'sin' => $sin,
         'contact_no' => $phone
     );
-    $errorList = array();
+    //$errorList = array();
     $error = array();
 //
     if (strlen($firstName) < 2 || strlen($firstName) > 50) {
@@ -106,11 +108,11 @@ $app->post('/register', function() use($app) {
         $error['phoneError'] = "Phone (514) 123-4567";
     }
 
-    if ($errorList) { // 3. failed submission
-        $app->render('register.html.twig', array(
-            'errorList' => $errorList,
+    if ($error) { // 3. failed submission
+        $app->render('register.html.twig', array(            
             'v' => $values,
             'e' => $error));
+        
     } else { // 2. successful submission
         $passEnc = password_hash($pass1, PASSWORD_BCRYPT);
         DB::insert('patients', array('firstName' => $firstName, 'lastName' => $lastName,

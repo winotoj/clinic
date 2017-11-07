@@ -39,7 +39,8 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
         // line 5
         echo "        <script src=\"https://s.codepen.io/assets/libs/modernizr.js\" type=\"text/javascript\"></script>
         <script src=\"/assets/bootstrap/js/bootstrap.min.js\"></script>
-        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js\"></script>
+        
+        
         <script>
              \$(document).ready(function () {
             // respond to all events that may change the value of input
@@ -53,7 +54,7 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
     ";
     }
 
-    // line 19
+    // line 20
     public function block_css($context, array $blocks = array())
     {
         echo " 
@@ -62,10 +63,10 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
         ";
     }
 
-    // line 25
+    // line 26
     public function block_content($context, array $blocks = array())
     {
-        // line 26
+        // line 27
         echo "        <div class=\"container\">
 
     <form class=\"well form-horizontal\" method=\"post\"  id=\"contact_form\">
@@ -82,11 +83,13 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
   <div class=\"input-group\">
   <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></span>
   <input  name=\"first_name\" placeholder=\"First Name\" class=\"form-control\"  type=\"text\">
-  <p>";
-        // line 42
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["e"]) ? $context["e"] : null), "fNameError", array()), "html", null, true);
-        echo "</p>
+ 
+ 
     </div>
+      <span class=\"label-danger\">";
+        // line 46
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["e"]) ? $context["e"] : null), "fNameError", array()), "html", null, true);
+        echo "</</span>
   </div>
 </div>
 
@@ -98,11 +101,12 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
     <div class=\"input-group\">
   <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></span>
   <input name=\"last_name\" placeholder=\"Last Name\" class=\"form-control\"  type=\"text\">
-  <p>";
-        // line 55
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["e"]) ? $context["e"] : null), "lNameError", array()), "html", null, true);
-        echo "</p>
+  
     </div>
+        <span class=\"label-danger\">";
+        // line 60
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["e"]) ? $context["e"] : null), "lNameError", array()), "html", null, true);
+        echo "</span>
   </div>
 </div>
 
@@ -113,11 +117,12 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
     <div class=\"input-group\">
         <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-envelope\"></i></span>
   <input name=\"email\" placeholder=\"E-Mail Address\" class=\"form-control\"  type=\"text\">
-  <p>";
-        // line 67
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["e"]) ? $context["e"] : null), "emailError", array()), "html", null, true);
-        echo "</p>
+  
     </div>
+        <span class=\"label-danger\">";
+        // line 73
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["e"]) ? $context["e"] : null), "emailError", array()), "html", null, true);
+        echo "</span>
   </div>
 </div>
 
@@ -128,11 +133,12 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
     <div class=\"input-group\">
         <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-envelope\"></i></span>
   <input name=\"street\" placeholder=\"Civic No street Apt No\" class=\"form-control\"  type=\"text\">
-  <p>";
-        // line 79
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["e"]) ? $context["e"] : null), "addressError", array()), "html", null, true);
-        echo "</p>
+  
     </div>
+        <span class=\"label-danger\">";
+        // line 86
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["e"]) ? $context["e"] : null), "addressError", array()), "html", null, true);
+        echo "</span>
   </div>
 </div>
 <div class=\"form-group\">
@@ -141,11 +147,12 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
     <div class=\"input-group\">
         <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-envelope\"></i></span>
   <input name=\"city\" placeholder=\"City\" class=\"form-control\"  type=\"text\">
-  <p>";
-        // line 89
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["e"]) ? $context["e"] : null), "cityError", array()), "html", null, true);
-        echo "</p>
+  
     </div>
+        <span class=\"label-danger\">";
+        // line 97
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["e"]) ? $context["e"] : null), "cityError", array()), "html", null, true);
+        echo "</span>
   </div>
 </div>
 
@@ -181,12 +188,13 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
     <div class=\"input-group\">
         <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-home\"></i></span>
    <input name=\"postal\" placeholder=\"Postal\" class=\"form-control\"  type=\"text\">
-   <p>";
-        // line 126
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["e"]) ? $context["e"] : null), "postalError", array()), "html", null, true);
-        echo "</p>
+   
 
     </div>
+        <span class=\"label-danger\">";
+        // line 136
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["e"]) ? $context["e"] : null), "postalError", array()), "html", null, true);
+        echo "</span>
   </div>
 </div>
 <!-- Text input-->
@@ -196,12 +204,13 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
     <div class=\"input-group\">
         <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-home\"></i></span>
    <input name=\"country\" placeholder=\"Country\" class=\"form-control\"  type=\"text\">
-   <p>";
-        // line 138
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["e"]) ? $context["e"] : null), "countryError", array()), "html", null, true);
-        echo "</p>
+   
 
     </div>
+        <span class=\"label-danger\">";
+        // line 149
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["e"]) ? $context["e"] : null), "countryError", array()), "html", null, true);
+        echo "</span>
   </div>
 </div>
 <!-- Text input-->
@@ -211,12 +220,13 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
     <div class=\"input-group\">
         <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-home\"></i></span>
    <input name=\"sin\" placeholder=\"999999999\" class=\"form-control\"  type=\"text\">
-   <p>";
-        // line 150
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["e"]) ? $context["e"] : null), "sinError", array()), "html", null, true);
-        echo "</p>
+   
 
     </div>
+        <span class=\"label-danger\">";
+        // line 162
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["e"]) ? $context["e"] : null), "sinError", array()), "html", null, true);
+        echo "</span>
   </div>
 </div>
 
@@ -226,11 +236,12 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
     <div class=\"input-group\">
   <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></span>
   <input name=\"user_password\" placeholder=\"Password\" class=\"form-control\"  type=\"password\">
-  <p>";
-        // line 162
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["e"]) ? $context["e"] : null), "pass1Error", array()), "html", null, true);
-        echo "</p>
+  
     </div>
+        <span class=\"label-danger\">";
+        // line 174
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["e"]) ? $context["e"] : null), "pass1Error", array()), "html", null, true);
+        echo "</span>
   </div>
 </div>
 
@@ -242,11 +253,12 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
     <div class=\"input-group\">
   <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></span>
   <input name=\"confirm_password\" placeholder=\"Confirm Password\" class=\"form-control\"  type=\"password\">
-  <p>";
-        // line 175
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["e"]) ? $context["e"] : null), "pass2Error", array()), "html", null, true);
-        echo "</p>
+  
     </div>
+        <span class=\"label-danger\">";
+        // line 188
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["e"]) ? $context["e"] : null), "pass2Error", array()), "html", null, true);
+        echo "</span>
   </div>
 </div>
 
@@ -258,11 +270,12 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
     <div class=\"input-group\">
         <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-earphone\"></i></span>
   <input name=\"contact_no\" placeholder=\"(123) 123-1234\" class=\"form-control\" type=\"text\">
-  <p>";
-        // line 188
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["e"]) ? $context["e"] : null), "phoneError", array()), "html", null, true);
-        echo "</p>
+  
     </div>
+        <span class=\"label-danger\">";
+        // line 202
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["e"]) ? $context["e"] : null), "phoneError", array()), "html", null, true);
+        echo "</span>
   </div>
 </div>
 
@@ -298,7 +311,7 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
 
     public function getDebugInfo()
     {
-        return array (  263 => 188,  247 => 175,  231 => 162,  216 => 150,  201 => 138,  186 => 126,  146 => 89,  133 => 79,  118 => 67,  103 => 55,  87 => 42,  69 => 26,  66 => 25,  57 => 19,  40 => 5,  37 => 4,  31 => 3,  11 => 1,);
+        return array (  277 => 202,  260 => 188,  243 => 174,  228 => 162,  212 => 149,  196 => 136,  154 => 97,  140 => 86,  124 => 73,  108 => 60,  91 => 46,  70 => 27,  67 => 26,  58 => 20,  40 => 5,  37 => 4,  31 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -317,7 +330,8 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
     {% block matchpwd %}
         <script src=\"https://s.codepen.io/assets/libs/modernizr.js\" type=\"text/javascript\"></script>
         <script src=\"/assets/bootstrap/js/bootstrap.min.js\"></script>
-        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js\"></script>
+        
+        
         <script>
              \$(document).ready(function () {
             // respond to all events that may change the value of input
@@ -352,8 +366,10 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
   <div class=\"input-group\">
   <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></span>
   <input  name=\"first_name\" placeholder=\"First Name\" class=\"form-control\"  type=\"text\">
-  <p>{{ e.fNameError }}</p>
+ 
+ 
     </div>
+      <span class=\"label-danger\">{{ e.fNameError }}</</span>
   </div>
 </div>
 
@@ -365,8 +381,9 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
     <div class=\"input-group\">
   <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></span>
   <input name=\"last_name\" placeholder=\"Last Name\" class=\"form-control\"  type=\"text\">
-  <p>{{ e.lNameError }}</p>
+  
     </div>
+        <span class=\"label-danger\">{{ e.lNameError }}</span>
   </div>
 </div>
 
@@ -377,8 +394,9 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
     <div class=\"input-group\">
         <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-envelope\"></i></span>
   <input name=\"email\" placeholder=\"E-Mail Address\" class=\"form-control\"  type=\"text\">
-  <p>{{ e.emailError }}</p>
+  
     </div>
+        <span class=\"label-danger\">{{ e.emailError }}</span>
   </div>
 </div>
 
@@ -389,8 +407,9 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
     <div class=\"input-group\">
         <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-envelope\"></i></span>
   <input name=\"street\" placeholder=\"Civic No street Apt No\" class=\"form-control\"  type=\"text\">
-  <p>{{ e.addressError }}</p>
+  
     </div>
+        <span class=\"label-danger\">{{ e.addressError }}</span>
   </div>
 </div>
 <div class=\"form-group\">
@@ -399,8 +418,9 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
     <div class=\"input-group\">
         <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-envelope\"></i></span>
   <input name=\"city\" placeholder=\"City\" class=\"form-control\"  type=\"text\">
-  <p>{{ e.cityError }}</p>
+  
     </div>
+        <span class=\"label-danger\">{{ e.cityError }}</span>
   </div>
 </div>
 
@@ -436,9 +456,10 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
     <div class=\"input-group\">
         <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-home\"></i></span>
    <input name=\"postal\" placeholder=\"Postal\" class=\"form-control\"  type=\"text\">
-   <p>{{ e.postalError }}</p>
+   
 
     </div>
+        <span class=\"label-danger\">{{ e.postalError }}</span>
   </div>
 </div>
 <!-- Text input-->
@@ -448,9 +469,10 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
     <div class=\"input-group\">
         <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-home\"></i></span>
    <input name=\"country\" placeholder=\"Country\" class=\"form-control\"  type=\"text\">
-   <p>{{ e.countryError }}</p>
+   
 
     </div>
+        <span class=\"label-danger\">{{ e.countryError }}</span>
   </div>
 </div>
 <!-- Text input-->
@@ -460,9 +482,10 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
     <div class=\"input-group\">
         <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-home\"></i></span>
    <input name=\"sin\" placeholder=\"999999999\" class=\"form-control\"  type=\"text\">
-   <p>{{ e.sinError }}</p>
+   
 
     </div>
+        <span class=\"label-danger\">{{ e.sinError }}</span>
   </div>
 </div>
 
@@ -472,8 +495,9 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
     <div class=\"input-group\">
   <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></span>
   <input name=\"user_password\" placeholder=\"Password\" class=\"form-control\"  type=\"password\">
-  <p>{{ e.pass1Error }}</p>
+  
     </div>
+        <span class=\"label-danger\">{{ e.pass1Error }}</span>
   </div>
 </div>
 
@@ -485,8 +509,9 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
     <div class=\"input-group\">
   <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></span>
   <input name=\"confirm_password\" placeholder=\"Confirm Password\" class=\"form-control\"  type=\"password\">
-  <p>{{ e.pass2Error }}</p>
+  
     </div>
+        <span class=\"label-danger\">{{ e.pass2Error }}</span>
   </div>
 </div>
 
@@ -498,8 +523,9 @@ class __TwigTemplate_bad9f3f9ef7bb6cc18cfd77633e467e37a8c076747f1d37693fa4259450
     <div class=\"input-group\">
         <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-earphone\"></i></span>
   <input name=\"contact_no\" placeholder=\"(123) 123-1234\" class=\"form-control\" type=\"text\">
-  <p>{{ e.phoneError }}</p>
+  
     </div>
+        <span class=\"label-danger\">{{ e.phoneError }}</span>
   </div>
 </div>
 

@@ -42,12 +42,10 @@ $app->map('/passreset/request', function() use ($app, $log){
         $headers .= "From: Noreply <noreply@ipd10.com>\r\n";
         $headers .= sprintf("To: %s <%s>\r\n", htmlentities($user['firstName']), $user['email']);
         
-        mail($email, "Your password reset for ". $_SERVER['SERVER_NAME'],
-                $emailBody, $headers);
-        $log->info('Email sent for password reset for user id='.$user['id']);
-        $app-> render('passreset_request.html.twig', array('error' => true));
-        
-    }else{//3. state3 : failed request, email not registered
+        mail($toEmail, "Your password reset for " . $_SERVER['SERVER_NAME'], $emailBody, $headers);
+        $log->info('Email sent for password reset for user id=' . $user['id']);
+        $app->render('passreset_request_success.html.twig');
+    } else { // State 3: failed request, email not registered
         $app->render('passreset_request.html.twig', array('error' => true));
     }
 })->via('GET', 'POST');
@@ -55,14 +53,19 @@ $app->map('/passreset/request', function() use ($app, $log){
 
 $app->map('/passreset/token/:secretToken', function($secretToken) use ($app, $log) {
     $row = DB::queryFirstRow("SELECT * FROM passresets WHERE secretToken=%s", $secretToken);
+    
     if (!$row) { // row not found
         $app->render('passreset_notfound_expired.html.twig');
+        
         return;
+        
     }
-    if (strtotime($row['expiryDateTime']) < time()) {
+    if (strtotime($row['expiryDateToken']) < time()) {
         // row found but token expired
         $app->render('passreset_notfound_expired.html.twig');
+        
         return;
+        
     }
     //
     $user = DB::queryFirstRow("SELECT * FROM patients WHERE id=%d", $row['userId']);
