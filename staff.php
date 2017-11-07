@@ -167,3 +167,10 @@ $app->post('/signin', function() use($app) {
 //$app->render('login_success.html.twig', array('userSession' => $_SESSION['user']));
     }
 });
+
+//-------------------------------------------------GET SCHEDULE--------------------
+
+$app->get('/schedule', function() use($app){
+    $app->render('admin/schedule.html.twig');
+    
+});

@@ -31,7 +31,13 @@ $log->pushHandler(new StreamHandler('logs/errors.log', Logger::ERROR));
 
 require_once 'connect.php';
 require_once 'staff.php';
+
+require_once 'payment.php';
+
 require_once 'patient.php';
+
+require_once 'account.php';
+
 
 if (!isset($_SESSION['user'])) {
     $_SESSION['user'] = array();
@@ -44,5 +50,6 @@ $app->get('/', function() use ($app) {
 $app->get('/master', function() use ($app){
     $app->render('master.html.twig');
 });
+
 
 $app->run();

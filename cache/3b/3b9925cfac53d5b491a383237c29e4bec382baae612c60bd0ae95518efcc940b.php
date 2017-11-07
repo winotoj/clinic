@@ -63,6 +63,11 @@ class __TwigTemplate_25eb6fe289db761e6c7174aa98462c0ce3766c5ccd71c59dd7d0b4a758e
         echo "    <div class=\"container\">
 
         <form class=\"well form-horizontal\" method=\"post\"  id=\"contact_form\">
+            
+            
+            <div>
+                <span class=\"select2 select2-container select2-container--default alt select2-container--below\" dir=\"ltr\" style=\"width: 293px;\"><span class=\"selection\"><span class=\"select2-selection select2-selection--multiple\" tabindex=\"0\" role=\"combobox\" aria-autocomplete=\"list\" aria-haspopup=\"true\" aria-expanded=\"false\" aria-owns=\"select2-dr_specialty_id-results\"><ul class=\"select2-selection__rendered\"><li class=\"select2-search select2-search--inline\"><input class=\"select2-search__field\" type=\"search\" tabindex=\"-1\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" role=\"textbox\" placeholder=\"Specialty\" style=\"\"></li></ul></span></span><span class=\"dropdown-wrapper\" aria-hidden=\"true\"></span></span>
+            </div>
 
             <div class=\"form-group\">
                 <label class=\"col-md-4 control-label\">Speciallity: </label>  
@@ -71,7 +76,7 @@ class __TwigTemplate_25eb6fe289db761e6c7174aa98462c0ce3766c5ccd71c59dd7d0b4a758e
                         <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></span>
                         <input  name=\"speciallity\" placeholder=\"Speciallity\" class=\"form-control\"  type=\"text\">
                         <p>";
-        // line 30
+        // line 35
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["e"]) ? $context["e"] : null), "fNameError", array()), "html", null, true);
         echo "</p>
                     </div>
@@ -83,18 +88,15 @@ class __TwigTemplate_25eb6fe289db761e6c7174aa98462c0ce3766c5ccd71c59dd7d0b4a758e
             <div class=\"form-group\">
                 <label class=\"col-md-4 control-label\" >Date:</label> 
                 <div class=\"col-md-4 inputGroupContainer\">
-                   <div class='input-group date' data-provide='datetimepicker1'>
-                    <input type='text' class=\"form-control\" />
-                    <span class=\"input-group-addon\">
+                   <div class='input-group date'>
+                       <span class=\"input-group-addon\">
                         <span class=\"glyphicon glyphicon-calendar\"></span>
                     </span>
+                    <input type='date' class=\"form-control\" />
+                    
                 </div>
                 </div>
-                <script type=\"text/javascript\">
-            \$(function () {
-                \$('#datetimepicker1').datetimepicker();
-            });
-        </script>
+                
             </div>
         </form>
     </div>
@@ -113,7 +115,7 @@ class __TwigTemplate_25eb6fe289db761e6c7174aa98462c0ce3766c5ccd71c59dd7d0b4a758e
 
     public function getDebugInfo()
     {
-        return array (  75 => 30,  63 => 20,  60 => 19,  51 => 13,  40 => 5,  37 => 4,  31 => 3,  11 => 1,);
+        return array (  80 => 35,  63 => 20,  60 => 19,  51 => 13,  40 => 5,  37 => 4,  31 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -148,6 +150,11 @@ class __TwigTemplate_25eb6fe289db761e6c7174aa98462c0ce3766c5ccd71c59dd7d0b4a758e
     <div class=\"container\">
 
         <form class=\"well form-horizontal\" method=\"post\"  id=\"contact_form\">
+            
+            
+            <div>
+                <span class=\"select2 select2-container select2-container--default alt select2-container--below\" dir=\"ltr\" style=\"width: 293px;\"><span class=\"selection\"><span class=\"select2-selection select2-selection--multiple\" tabindex=\"0\" role=\"combobox\" aria-autocomplete=\"list\" aria-haspopup=\"true\" aria-expanded=\"false\" aria-owns=\"select2-dr_specialty_id-results\"><ul class=\"select2-selection__rendered\"><li class=\"select2-search select2-search--inline\"><input class=\"select2-search__field\" type=\"search\" tabindex=\"-1\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" role=\"textbox\" placeholder=\"Specialty\" style=\"\"></li></ul></span></span><span class=\"dropdown-wrapper\" aria-hidden=\"true\"></span></span>
+            </div>
 
             <div class=\"form-group\">
                 <label class=\"col-md-4 control-label\">Speciallity: </label>  
@@ -165,18 +172,15 @@ class __TwigTemplate_25eb6fe289db761e6c7174aa98462c0ce3766c5ccd71c59dd7d0b4a758e
             <div class=\"form-group\">
                 <label class=\"col-md-4 control-label\" >Date:</label> 
                 <div class=\"col-md-4 inputGroupContainer\">
-                   <div class='input-group date' data-provide='datetimepicker1'>
-                    <input type='text' class=\"form-control\" />
-                    <span class=\"input-group-addon\">
+                   <div class='input-group date'>
+                       <span class=\"input-group-addon\">
                         <span class=\"glyphicon glyphicon-calendar\"></span>
                     </span>
+                    <input type='date' class=\"form-control\" />
+                    
                 </div>
                 </div>
-                <script type=\"text/javascript\">
-            \$(function () {
-                \$('#datetimepicker1').datetimepicker();
-            });
-        </script>
+                
             </div>
         </form>
     </div>
