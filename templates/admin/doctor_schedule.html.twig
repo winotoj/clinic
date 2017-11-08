@@ -1,0 +1,45 @@
+{% extends "master.html.twig" %}
+
+
+{% block title %}Add Schedule{% endblock %}
+
+{% block css %} 
+
+    <link rel='stylesheet prefetch' href='https://www.google.com/fonts#UsePlace:use/Collection:Roboto:400,300,100,500'>
+    <link rel='stylesheet prefetch' href='https://www.google.com/fonts#UsePlace:use/Collection:Roboto+Slab:400,700,300,100'>
+    <link rel='stylesheet' href='/assets/css/datepicker.css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js"></script>
+    <script src="/assets/js/bootstrap-datepicker.js"></script>
+
+{% endblock %}
+{% block content %}
+
+    <label for="month">Month: </label>
+    <input type="text" id="datepicker" name="month" class="monthPicker" />
+    <script>
+        $(document).ready(function () {
+            $("#datepicker").datepicker({
+                format: "mm-yyyy",
+                startView: "year",
+                minViewMode: "months",
+                showAnim: "bounce",
+                viewMode: "months"
+
+            }).on("changeDate", function () {
+                        alert('wow' + $("#datepicker").val());
+            });
+
+        });
+
+    </script>
+    <script>
+        //$(document).ready(function () {
+        // respond to all events that may change the value of input
+        //     $('input[name=datePicker]').bind('propertychange change', function () {
+        // AJAX request
+        //         var yearpicker = $('input[name=yearpicker]').val();
+        //        window.alert("test" + yearpicker);
+        //   });
+        // });
+    </script>
+{% endblock %}
