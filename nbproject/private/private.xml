@@ -3,26 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/xampp/htdocs/php-project/templates/patient/bookappointment.html.twig</file>
-            <file>file:/C:/xampp/htdocs/php-project/templates/patient/myaccount.html.twig</file>
+            <file>file:/C:/xampp/htdocs/php-project/templates/passreset_request_success.html.twig</file>
+            <file>file:/C:/xampp/htdocs/php-project/assets/bootstrap/css/bootstrap.min.css</file>
             <file>file:/C:/xampp/htdocs/php-project/connect.php</file>
-            <file>file:/C:/xampp/htdocs/php-project/patient.php</file>
-=======
-            <file>file:/C:/xampp/htdocs/php-project/staff.php</file>
             <file>file:/C:/xampp/htdocs/php-project/templates/login.html.twig</file>
-            <file>file:/C:/xampp/htdocs/php-project/templates/master.html.twig</file>
             <file>file:/C:/xampp/htdocs/php-project/assets/js/script.js</file>
             <file>file:/C:/xampp/htdocs/php-project/assets/css/styles.css</file>
-            <file>file:/C:/xampp/htdocs/php-project/templates/register.html.twig</file>
-            <file>file:/C:/xampp/htdocs/php-project/templates/payment.html.twig</file>
-            <file>file:/C:/xampp/htdocs/php-project/templates/admin/signin.html.twig</file>
-            <file>file:/C:/xampp/htdocs/php-project/templates/admin/create_doctor_account.html.twig</file>
-            <file>file:/C:/xampp/htdocs/php-project/connect.php</file>
-            <file>file:/C:/xampp/htdocs/php-project/templates/admin/schedule.html.twig</file>
-            <file>file:/C:/xampp/htdocs/php-project/payment.php</file>
             <file>file:/C:/xampp/htdocs/php-project/project.php</file>
->>>>>>> 8d89befc3e7123a76133f4dcdc44b6c3245e52b8
+            <file>file:/C:/xampp/htdocs/php-project/templates/register.html.twig</file>
         </group>
     </open-files>
 </project-private>
