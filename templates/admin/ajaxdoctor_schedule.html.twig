@@ -1,0 +1,21 @@
+
+    <div id="viewSchedule">
+        <p>{{ datelist }}</p>
+       <p>{{ firstday[0] }}</p>
+       <table>
+         {% set dat = 1 %}
+        {% for day in range(1, datelist ) %}
+             <tr>
+                 {% set foo = 1 %}
+                 
+            {% for num in range(0,datelist-1) if foo < 8  %}
+                <td>{{ firstday[num] }} {{ dat }} </td> 
+                {% set foo = foo + 1 %}
+                {% set dat = dat + 1 %}
+            {% endfor %}
+            </tr>
+            
+        {% endfor %}
+       </table>
+    </div>
+    
