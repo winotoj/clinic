@@ -608,6 +608,14 @@ h3,
 
 html, body {
     overflow: visible;
+    background: white;
 }
 
 .label-danger{color:#a94442; background-color: transparent; font-size: 85%;}
+
+.drschedule{
+    width: 80px;
+    margin-left: 10px;
+    margin-right: 10px;
+        
+}

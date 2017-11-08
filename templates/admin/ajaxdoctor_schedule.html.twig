@@ -2,20 +2,17 @@
     <div id="viewSchedule">
         <p>{{ datelist }}</p>
        <p>{{ firstday[0] }}</p>
-       <table>
-         {% set dat = 1 %}
-        {% for day in range(1, datelist ) %}
-             <tr>
-                 {% set foo = 1 %}
-                 
-            {% for num in range(0,datelist-1) if foo < 8  %}
-                <td>{{ firstday[num] }} {{ dat }} </td> 
-                {% set foo = foo + 1 %}
-                {% set dat = dat + 1 %}
+       <form>
+        {% for day in range(0, datelist-1 ) %}
+            {% if day == 7 or day == 14 or day == 21 or day ==28 %}
+                <br>
+            {% endif %}
+            <div class="drschedule">
+            <label> {{ firstday[day] }} {{ day+1 }} </label><br>
+            <input type="checkbox" name="doctorwork{{ day+1 }}" value="true">
+            </div>
             {% endfor %}
-            </tr>
-            
-        {% endfor %}
-       </table>
+
+       </form>
     </div>
     
