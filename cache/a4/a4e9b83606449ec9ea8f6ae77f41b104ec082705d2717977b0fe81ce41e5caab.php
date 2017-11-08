@@ -53,6 +53,9 @@ class __TwigTemplate_7b7c693b4ee54f726d7ad87c89b357076e7904cd3529db5a00d844ded0a
         echo "
     <label for=\"month\">Month: </label>
     <input type=\"text\" id=\"datepicker\" name=\"month\" class=\"monthPicker\" />
+    <div id=\"viewSchedule\">
+        
+    </div>
     <script>
         \$(document).ready(function () {
             \$(\"#datepicker\").datepicker({
@@ -63,22 +66,13 @@ class __TwigTemplate_7b7c693b4ee54f726d7ad87c89b357076e7904cd3529db5a00d844ded0a
                 viewMode: \"months\"
 
             }).on(\"changeDate\", function () {
-                        alert('wow' + \$(\"#datepicker\").val());
+                alert('wow' + \$(\"#datepicker\").val());
+               \$(\"#viewSchedule\").load(\"/ajax/myschedule/\" + \$(\"#datepicker\").val());
             });
-
         });
 
     </script>
-    <script>
-        //\$(document).ready(function () {
-        // respond to all events that may change the value of input
-        //     \$('input[name=datePicker]').bind('propertychange change', function () {
-        // AJAX request
-        //         var yearpicker = \$('input[name=yearpicker]').val();
-        //        window.alert(\"test\" + yearpicker);
-        //   });
-        // });
-    </script>
+
 ";
     }
 
@@ -125,6 +119,9 @@ class __TwigTemplate_7b7c693b4ee54f726d7ad87c89b357076e7904cd3529db5a00d844ded0a
 
     <label for=\"month\">Month: </label>
     <input type=\"text\" id=\"datepicker\" name=\"month\" class=\"monthPicker\" />
+    <div id=\"viewSchedule\">
+        
+    </div>
     <script>
         \$(document).ready(function () {
             \$(\"#datepicker\").datepicker({
@@ -135,22 +132,13 @@ class __TwigTemplate_7b7c693b4ee54f726d7ad87c89b357076e7904cd3529db5a00d844ded0a
                 viewMode: \"months\"
 
             }).on(\"changeDate\", function () {
-                        alert('wow' + \$(\"#datepicker\").val());
+                alert('wow' + \$(\"#datepicker\").val());
+               \$(\"#viewSchedule\").load(\"/ajax/myschedule/\" + \$(\"#datepicker\").val());
             });
-
         });
 
     </script>
-    <script>
-        //\$(document).ready(function () {
-        // respond to all events that may change the value of input
-        //     \$('input[name=datePicker]').bind('propertychange change', function () {
-        // AJAX request
-        //         var yearpicker = \$('input[name=yearpicker]').val();
-        //        window.alert(\"test\" + yearpicker);
-        //   });
-        // });
-    </script>
+
 {% endblock %}
 ", "admin/doctor_schedule.html.twig", "C:\\xampp\\htdocs\\php-project\\templates\\admin\\doctor_schedule.html.twig");
     }

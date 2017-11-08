@@ -16,6 +16,9 @@
 
     <label for="month">Month: </label>
     <input type="text" id="datepicker" name="month" class="monthPicker" />
+    <div id="viewSchedule">
+        
+    </div>
     <script>
         $(document).ready(function () {
             $("#datepicker").datepicker({
@@ -26,20 +29,11 @@
                 viewMode: "months"
 
             }).on("changeDate", function () {
-                        alert('wow' + $("#datepicker").val());
+                alert('wow' + $("#datepicker").val());
+               $("#viewSchedule").load("/ajax/myschedule/" + $("#datepicker").val());
             });
-
         });
 
     </script>
-    <script>
-        //$(document).ready(function () {
-        // respond to all events that may change the value of input
-        //     $('input[name=datePicker]').bind('propertychange change', function () {
-        // AJAX request
-        //         var yearpicker = $('input[name=yearpicker]').val();
-        //        window.alert("test" + yearpicker);
-        //   });
-        // });
-    </script>
+
 {% endblock %}
