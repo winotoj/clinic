@@ -37,36 +37,63 @@ class __TwigTemplate_25eb6fe289db761e6c7174aa98462c0ce3766c5ccd71c59dd7d0b4a758e
     public function block_matchpwd($context, array $blocks = array())
     {
         // line 5
-        echo "    <script src=\"https://s.codepen.io/assets/libs/modernizr.js\" type=\"text/javascript\"></script>
-    <script src=\"/assets/bootstrap/js/bootstrap.min.js\"></script>
-    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js\"></script>
-    
-    
-<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js\" integrity=\"sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ\" crossorigin=\"anonymous\"></script>
-
+        echo "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>
+        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js\"></script>
+ ";
+        // line 10
+        echo "
 ";
+        // line 15
+        echo "  ";
+        // line 17
+        echo "    <script type=\"text/javascript\">
+             
+        \$(document).ready(function () {
+            \$('.itemName').select2({
+                placeholder: 'Select an item',
+                ajax: {
+                    url: '../ajaxpro.php',
+                    dataType: 'json',
+                    delay: 250,
+                    data: function (term, page) {
+              return {
+                  term: term, // search term
+                  page: 10
+              };
+            },
+                    processResults: function (data, page) {
+                        return {
+                            results: data.items
+                        };
+                    },
+                    cache: true
+                }
+            });            
+        });
+    </script>
+  ";
     }
 
-    // line 13
+    // line 44
     public function block_css($context, array $blocks = array())
     {
         echo " 
-    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css\">
-    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css\">
+    <link href=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css\" rel=\"stylesheet\" />
+    
 ";
     }
 
-    // line 19
+    // line 49
     public function block_content($context, array $blocks = array())
     {
-        // line 20
+        // line 50
         echo "    <div class=\"container\">
 
         <form class=\"well form-horizontal\" method=\"post\"  id=\"contact_form\">
-            
-            
-            <div>
-                <span class=\"select2 select2-container select2-container--default alt select2-container--below\" dir=\"ltr\" style=\"width: 293px;\"><span class=\"selection\"><span class=\"select2-selection select2-selection--multiple\" tabindex=\"0\" role=\"combobox\" aria-autocomplete=\"list\" aria-haspopup=\"true\" aria-expanded=\"false\" aria-owns=\"select2-dr_specialty_id-results\"><ul class=\"select2-selection__rendered\"><li class=\"select2-search select2-search--inline\"><input class=\"select2-search__field\" type=\"search\" tabindex=\"-1\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" role=\"textbox\" placeholder=\"Specialty\" style=\"\"></li></ul></span></span><span class=\"dropdown-wrapper\" aria-hidden=\"true\"></span></span>
+
+            <div style=\"width:520px;margin:0px auto;margin-top:30px;height:500px;\">
+                <h2>Select Box with Search Option Jquery Select2.js</h2>
+                <select class=\"itemName form-control\" style=\"width:500px\" name=\"itemName\"></select>
             </div>
 
             <div class=\"form-group\">
@@ -74,11 +101,7 @@ class __TwigTemplate_25eb6fe289db761e6c7174aa98462c0ce3766c5ccd71c59dd7d0b4a758e
                 <div class=\"col-md-4 inputGroupContainer\">
                     <div class=\"input-group\">
                         <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></span>
-                        <input  name=\"speciallity\" placeholder=\"Speciallity\" class=\"form-control\"  type=\"text\">
-                        <p>";
-        // line 35
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["e"]) ? $context["e"] : null), "fNameError", array()), "html", null, true);
-        echo "</p>
+                        <input  name=\"speciallity\" placeholder=\"Speciallity\" class=\"form-control\"  type=\"text\">                        
                     </div>
                 </div>
             </div>
@@ -88,15 +111,15 @@ class __TwigTemplate_25eb6fe289db761e6c7174aa98462c0ce3766c5ccd71c59dd7d0b4a758e
             <div class=\"form-group\">
                 <label class=\"col-md-4 control-label\" >Date:</label> 
                 <div class=\"col-md-4 inputGroupContainer\">
-                   <div class='input-group date'>
-                       <span class=\"input-group-addon\">
-                        <span class=\"glyphicon glyphicon-calendar\"></span>
-                    </span>
-                    <input type='date' class=\"form-control\" />
-                    
+                    <div class='input-group date'>
+                        <span class=\"input-group-addon\">
+                            <span class=\"glyphicon glyphicon-calendar\"></span>
+                        </span>
+                        <input type='date' class=\"form-control\" />
+
+                    </div>
                 </div>
-                </div>
-                
+
             </div>
         </form>
     </div>
@@ -115,7 +138,7 @@ class __TwigTemplate_25eb6fe289db761e6c7174aa98462c0ce3766c5ccd71c59dd7d0b4a758e
 
     public function getDebugInfo()
     {
-        return array (  80 => 35,  63 => 20,  60 => 19,  51 => 13,  40 => 5,  37 => 4,  31 => 3,  11 => 1,);
+        return array (  90 => 50,  87 => 49,  78 => 44,  49 => 17,  47 => 15,  44 => 10,  40 => 5,  37 => 4,  31 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -132,28 +155,58 @@ class __TwigTemplate_25eb6fe289db761e6c7174aa98462c0ce3766c5ccd71c59dd7d0b4a758e
 
 {% block title %}Register{% endblock %}
 {% block matchpwd %}
-    <script src=\"https://s.codepen.io/assets/libs/modernizr.js\" type=\"text/javascript\"></script>
-    <script src=\"/assets/bootstrap/js/bootstrap.min.js\"></script>
-    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js\"></script>
-    
-    
-<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js\" integrity=\"sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ\" crossorigin=\"anonymous\"></script>
+<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>
+        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js\"></script>
+ {#       <script src=\"https://s.codepen.io/assets/libs/modernizr.js\" type=\"text/javascript\"></script>#}
+{#        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/esm/popper.js\"></script>#}
+{#        <script src=\"/assets/bootstrap/js/bootstrap.min.js\"></script>#}
 
-{% endblock %}
+{#<script src=\"https://code.jquery.com/jquery-3.1.1.slim.min.js\" integrity=\"sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n\" crossorigin=\"anonymous\"></script>
+<script src=\"https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js\" integrity=\"sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb\" crossorigin=\"anonymous\"></script>
+<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js\" integrity=\"sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn\" crossorigin=\"anonymous\"></script>
+#}
+  {#  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js\"></script>
+    #}
+    <script type=\"text/javascript\">
+             
+        \$(document).ready(function () {
+            \$('.itemName').select2({
+                placeholder: 'Select an item',
+                ajax: {
+                    url: '../ajaxpro.php',
+                    dataType: 'json',
+                    delay: 250,
+                    data: function (term, page) {
+              return {
+                  term: term, // search term
+                  page: 10
+              };
+            },
+                    processResults: function (data, page) {
+                        return {
+                            results: data.items
+                        };
+                    },
+                    cache: true
+                }
+            });            
+        });
+    </script>
+  {#  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js\" integrity=\"sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ\" crossorigin=\"anonymous\"></script>
+#}{% endblock %}
 {% block css %} 
-    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css\">
-    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css\">
+    <link href=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css\" rel=\"stylesheet\" />
+    
 {% endblock %}
-
 
 {% block content %}
     <div class=\"container\">
 
         <form class=\"well form-horizontal\" method=\"post\"  id=\"contact_form\">
-            
-            
-            <div>
-                <span class=\"select2 select2-container select2-container--default alt select2-container--below\" dir=\"ltr\" style=\"width: 293px;\"><span class=\"selection\"><span class=\"select2-selection select2-selection--multiple\" tabindex=\"0\" role=\"combobox\" aria-autocomplete=\"list\" aria-haspopup=\"true\" aria-expanded=\"false\" aria-owns=\"select2-dr_specialty_id-results\"><ul class=\"select2-selection__rendered\"><li class=\"select2-search select2-search--inline\"><input class=\"select2-search__field\" type=\"search\" tabindex=\"-1\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" role=\"textbox\" placeholder=\"Specialty\" style=\"\"></li></ul></span></span><span class=\"dropdown-wrapper\" aria-hidden=\"true\"></span></span>
+
+            <div style=\"width:520px;margin:0px auto;margin-top:30px;height:500px;\">
+                <h2>Select Box with Search Option Jquery Select2.js</h2>
+                <select class=\"itemName form-control\" style=\"width:500px\" name=\"itemName\"></select>
             </div>
 
             <div class=\"form-group\">
@@ -161,8 +214,7 @@ class __TwigTemplate_25eb6fe289db761e6c7174aa98462c0ce3766c5ccd71c59dd7d0b4a758e
                 <div class=\"col-md-4 inputGroupContainer\">
                     <div class=\"input-group\">
                         <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></span>
-                        <input  name=\"speciallity\" placeholder=\"Speciallity\" class=\"form-control\"  type=\"text\">
-                        <p>{{ e.fNameError }}</p>
+                        <input  name=\"speciallity\" placeholder=\"Speciallity\" class=\"form-control\"  type=\"text\">                        
                     </div>
                 </div>
             </div>
@@ -172,15 +224,15 @@ class __TwigTemplate_25eb6fe289db761e6c7174aa98462c0ce3766c5ccd71c59dd7d0b4a758e
             <div class=\"form-group\">
                 <label class=\"col-md-4 control-label\" >Date:</label> 
                 <div class=\"col-md-4 inputGroupContainer\">
-                   <div class='input-group date'>
-                       <span class=\"input-group-addon\">
-                        <span class=\"glyphicon glyphicon-calendar\"></span>
-                    </span>
-                    <input type='date' class=\"form-control\" />
-                    
+                    <div class='input-group date'>
+                        <span class=\"input-group-addon\">
+                            <span class=\"glyphicon glyphicon-calendar\"></span>
+                        </span>
+                        <input type='date' class=\"form-control\" />
+
+                    </div>
                 </div>
-                </div>
-                
+
             </div>
         </form>
     </div>
