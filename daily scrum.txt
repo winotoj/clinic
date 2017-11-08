@@ -50,4 +50,14 @@ date and name
 	-make page for makebooking
 	
 3. where do i need help from?
-	-internet	
+	-internet
+
+2017-11-08 --Winoto
+1. what have i done / not done sincce last scrum?
+	-Created side project for doctor datepicker to populate schedule - done
+	-Created schedule - not done
+2. what will i do from now until next scrum?
+	-Create availability schedule
+3. where do i need help from?
+	-internet, wrong js (between bootstrap-datepicker.js and jquerydatepicker.js)
+	-internet, ajax to pass the selected month back to php to be able to render the schedule	
