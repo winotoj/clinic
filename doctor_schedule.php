@@ -15,7 +15,7 @@ $app->map('/myschedule', function() use ($app, $log){
         $app->render('admin/doctor_schedule.html.twig');
         return;
     }
-    $yearpicker = $app->request()->post('yearpicker');
+    $yearpicker = $app->request()->post('monthpicker');
     print_r($yearpicker);
     //inpost -receving submission
     

@@ -29,63 +29,56 @@ class __TwigTemplate_7b7c693b4ee54f726d7ad87c89b357076e7904cd3529db5a00d844ded0a
     // line 4
     public function block_title($context, array $blocks = array())
     {
-        echo "Forgotten Password";
+        echo "Add Schedule";
     }
 
     // line 6
     public function block_css($context, array $blocks = array())
     {
         echo " 
-    <style>
 
-        select.monthpick {
-            margin-right: 5px;
-        }
-
-        select.yearpick {
-            margin-left: 5px;
-        }
-    </style>
     <link rel='stylesheet prefetch' href='https://www.google.com/fonts#UsePlace:use/Collection:Roboto:400,300,100,500'>
     <link rel='stylesheet prefetch' href='https://www.google.com/fonts#UsePlace:use/Collection:Roboto+Slab:400,700,300,100'>
+    <link rel='stylesheet' href='/assets/css/datepicker.css'>
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js\"></script>
-    <script type=\"text/javascript\" src=\"/assets/js/jquery.monthpicker.js\"></script>
-    <script>
-        \$(document).ready(function () {
-            \$('#yearpicker').monthpicker();
-           
+    <script src=\"/assets/js/bootstrap-datepicker.js\"></script>
 
-            \$('input:submit').click(function () {
-                \$('#yearpicker').show();
-                
-                return false;
-            });
-        });
-        
-    </script>
-    <script>
-        \$(document).ready(function () {
-            // respond to all events that may change the value of input
-            \$('input[name=yearpicker]').bind('propertychange change click keyup input paste', function () {
-                // AJAX request
-                var yearpicker = \$('input[name=yearpicker]').val();
-                
-            });
-        });
-    </script>
 ";
     }
 
-    // line 45
+    // line 15
     public function block_content($context, array $blocks = array())
     {
-        // line 46
-        echo "    <form name=\"test\">
-        <input type=\"text\" id=\"yearpicker\" name=\"yearpicker\" >
-        <br>
-    </form>
+        // line 16
+        echo "
+    <label for=\"month\">Month: </label>
+    <input type=\"text\" id=\"datepicker\" name=\"month\" class=\"monthPicker\" />
+    <script>
+        \$(document).ready(function () {
+            \$(\"#datepicker\").datepicker({
+                format: \"mm-yyyy\",
+                startView: \"year\",
+                minViewMode: \"months\",
+                showAnim: \"bounce\",
+                viewMode: \"months\"
 
+            }).on(\"changeDate\", function () {
+                        alert('wow' + \$(\"#datepicker\").val());
+            });
 
+        });
+
+    </script>
+    <script>
+        //\$(document).ready(function () {
+        // respond to all events that may change the value of input
+        //     \$('input[name=datePicker]').bind('propertychange change', function () {
+        // AJAX request
+        //         var yearpicker = \$('input[name=yearpicker]').val();
+        //        window.alert(\"test\" + yearpicker);
+        //   });
+        // });
+    </script>
 ";
     }
 
@@ -101,7 +94,7 @@ class __TwigTemplate_7b7c693b4ee54f726d7ad87c89b357076e7904cd3529db5a00d844ded0a
 
     public function getDebugInfo()
     {
-        return array (  83 => 46,  80 => 45,  36 => 6,  30 => 4,  11 => 1,);
+        return array (  53 => 16,  50 => 15,  36 => 6,  30 => 4,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -117,54 +110,47 @@ class __TwigTemplate_7b7c693b4ee54f726d7ad87c89b357076e7904cd3529db5a00d844ded0a
         return new Twig_Source("{% extends \"master.html.twig\" %}
 
 
-{% block title %}Forgotten Password{% endblock %}
+{% block title %}Add Schedule{% endblock %}
 
 {% block css %} 
-    <style>
 
-        select.monthpick {
-            margin-right: 5px;
-        }
-
-        select.yearpick {
-            margin-left: 5px;
-        }
-    </style>
     <link rel='stylesheet prefetch' href='https://www.google.com/fonts#UsePlace:use/Collection:Roboto:400,300,100,500'>
     <link rel='stylesheet prefetch' href='https://www.google.com/fonts#UsePlace:use/Collection:Roboto+Slab:400,700,300,100'>
+    <link rel='stylesheet' href='/assets/css/datepicker.css'>
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js\"></script>
-    <script type=\"text/javascript\" src=\"/assets/js/jquery.monthpicker.js\"></script>
-    <script>
-        \$(document).ready(function () {
-            \$('#yearpicker').monthpicker();
-           
+    <script src=\"/assets/js/bootstrap-datepicker.js\"></script>
 
-            \$('input:submit').click(function () {
-                \$('#yearpicker').show();
-                
-                return false;
-            });
-        });
-        
-    </script>
-    <script>
-        \$(document).ready(function () {
-            // respond to all events that may change the value of input
-            \$('input[name=yearpicker]').bind('propertychange change click keyup input paste', function () {
-                // AJAX request
-                var yearpicker = \$('input[name=yearpicker]').val();
-                
-            });
-        });
-    </script>
 {% endblock %}
 {% block content %}
-    <form name=\"test\">
-        <input type=\"text\" id=\"yearpicker\" name=\"yearpicker\" >
-        <br>
-    </form>
 
+    <label for=\"month\">Month: </label>
+    <input type=\"text\" id=\"datepicker\" name=\"month\" class=\"monthPicker\" />
+    <script>
+        \$(document).ready(function () {
+            \$(\"#datepicker\").datepicker({
+                format: \"mm-yyyy\",
+                startView: \"year\",
+                minViewMode: \"months\",
+                showAnim: \"bounce\",
+                viewMode: \"months\"
 
+            }).on(\"changeDate\", function () {
+                        alert('wow' + \$(\"#datepicker\").val());
+            });
+
+        });
+
+    </script>
+    <script>
+        //\$(document).ready(function () {
+        // respond to all events that may change the value of input
+        //     \$('input[name=datePicker]').bind('propertychange change', function () {
+        // AJAX request
+        //         var yearpicker = \$('input[name=yearpicker]').val();
+        //        window.alert(\"test\" + yearpicker);
+        //   });
+        // });
+    </script>
 {% endblock %}
 ", "admin/doctor_schedule.html.twig", "C:\\xampp\\htdocs\\php-project\\templates\\admin\\doctor_schedule.html.twig");
     }
