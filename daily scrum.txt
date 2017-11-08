@@ -50,4 +50,19 @@ date and name
 	-make page for makebooking
 	
 3. where do i need help from?
+	-internet
+	
+	2017-11-07 --Vaji
+1. what have i done / not done sincce last scrum?
+	-complete myaccount page	
+	-fix the problem in register page 
+	-fix the UI for register page
+	
+2. what will i do from now until next scrum?
+        -serachh about using select2 jquery in php
+	-make page for search dr.list 
+	-make page to make appointment	
+	
+3. where do i need help from?
 	-internet	
+
