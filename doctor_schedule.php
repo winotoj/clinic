@@ -9,11 +9,17 @@ $app->get('/myschedule', function() use ($app, $log){
 //        $app->render('access_denied.html.twig');
 //        return;
 //    }
-
-    $app->render('admin/doctor_schedule.html.twig');
+    $doctorList = DB::query('SELECT * FROM doctors');
+    if(!$doctorList){
+        http_response_code(500);
+        $app->render('internal_error.html.twig');
+    }
     
+    $app->render('admin/doctor_schedule.html.twig', array("doctorList" => $doctorList));    
 });
-$app->get('/ajax/myschedule(/:date)', function($date) use ($app, $log){
+
+
+$app->get('/ajax/myschedule(/:date/:id)', function($date, $id) use ($app, $log){
 //    if(!isset($_SESSION['staff'])){
 //        $app->render('access_denied.html.twig');
 //        return;
@@ -30,8 +36,36 @@ $app->get('/ajax/myschedule(/:date)', function($date) use ($app, $log){
     //$firstDay= date('D', strtotime($year . '-' . $month . '-' . '1')); 
     $app->render('admin/ajaxdoctor_schedule.html.twig', array(
         "datelist" =>$number,
-        "firstday" =>$arrayDay
+        "firstday" =>$arrayDay,
+        "doctorId" =>$id,
+        "date" =>$date
         ));
+    
+});
+
+$app->post('/ajax/myschedule(/:date/:id)', function($date, $id) use ($app, $log){
+    $doctorId = $id;
+    $arrayDate = explode('-', $date);
+    $month = $arrayDate[0];
+    $year = $arrayDate[1];
+    $number = date('t', mktime(0, 0, 0, $month,1, $year));
+    $schedule = array();
+    for($i=1; $i <= $number; $i++){
+        if($app->request()->post('doctorAvailable' . $i)){
+            $dateSql = date('Y-m-d', strtotime($year . '-' . $month . '-' . $i));
+            $start = $app->request()->post('doctorStart' . $i);
+            $end = $app->request()->post('doctorEnd' . $i);
+            DB::insertUpdate('dailySchedules', array(
+                'doctorId' => $doctorId,
+                'date' => $dateSql,
+                'startTime' => $start,
+                'endTime' => $end
+            ));
+        }
+                
+    }
+    $task = $app->request()->post('task');
+    
     
 });
 

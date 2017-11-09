@@ -16,6 +16,11 @@
 
     <label for="month">Month: </label>
     <input type="text" id="datepicker" name="month" class="monthPicker" />
+    <select name="selectDoctor" id="selectDoctor">
+        {% for doctor in doctorList %}
+            <option value="{{ doctor.id }}">{{ doctor.firstName }}&nbsp;{{ doctor.lastName }}</option> 
+        {% endfor %}
+    </select>
     <div id="viewSchedule">
         
     </div>
@@ -29,8 +34,7 @@
                 viewMode: "months"
 
             }).on("changeDate", function () {
-                alert('wow' + $("#datepicker").val());
-               $("#viewSchedule").load("/ajax/myschedule/" + $("#datepicker").val());
+               $("#viewSchedule").load("/ajax/myschedule/" + $("#datepicker").val() + "/" + $("#selectDoctor").val());
             });
         });
 

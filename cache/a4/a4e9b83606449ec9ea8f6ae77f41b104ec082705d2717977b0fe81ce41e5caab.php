@@ -53,6 +53,27 @@ class __TwigTemplate_7b7c693b4ee54f726d7ad87c89b357076e7904cd3529db5a00d844ded0a
         echo "
     <label for=\"month\">Month: </label>
     <input type=\"text\" id=\"datepicker\" name=\"month\" class=\"monthPicker\" />
+    <select name=\"selectDoctor\" id=\"selectDoctor\">
+        ";
+        // line 20
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["doctorList"]) ? $context["doctorList"] : null));
+        foreach ($context['_seq'] as $context["_key"] => $context["doctor"]) {
+            // line 21
+            echo "            <option value=\"";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["doctor"], "id", array()), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["doctor"], "firstName", array()), "html", null, true);
+            echo "&nbsp;";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["doctor"], "lastName", array()), "html", null, true);
+            echo "</option> 
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['doctor'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 23
+        echo "    </select>
     <div id=\"viewSchedule\">
         
     </div>
@@ -66,8 +87,7 @@ class __TwigTemplate_7b7c693b4ee54f726d7ad87c89b357076e7904cd3529db5a00d844ded0a
                 viewMode: \"months\"
 
             }).on(\"changeDate\", function () {
-                alert('wow' + \$(\"#datepicker\").val());
-               \$(\"#viewSchedule\").load(\"/ajax/myschedule/\" + \$(\"#datepicker\").val());
+               \$(\"#viewSchedule\").load(\"/ajax/myschedule/\" + \$(\"#datepicker\").val() + \"/\" + \$(\"#selectDoctor\").val());
             });
         });
 
@@ -88,7 +108,7 @@ class __TwigTemplate_7b7c693b4ee54f726d7ad87c89b357076e7904cd3529db5a00d844ded0a
 
     public function getDebugInfo()
     {
-        return array (  53 => 16,  50 => 15,  36 => 6,  30 => 4,  11 => 1,);
+        return array (  76 => 23,  63 => 21,  59 => 20,  53 => 16,  50 => 15,  36 => 6,  30 => 4,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -119,6 +139,11 @@ class __TwigTemplate_7b7c693b4ee54f726d7ad87c89b357076e7904cd3529db5a00d844ded0a
 
     <label for=\"month\">Month: </label>
     <input type=\"text\" id=\"datepicker\" name=\"month\" class=\"monthPicker\" />
+    <select name=\"selectDoctor\" id=\"selectDoctor\">
+        {% for doctor in doctorList %}
+            <option value=\"{{ doctor.id }}\">{{ doctor.firstName }}&nbsp;{{ doctor.lastName }}</option> 
+        {% endfor %}
+    </select>
     <div id=\"viewSchedule\">
         
     </div>
@@ -132,8 +157,7 @@ class __TwigTemplate_7b7c693b4ee54f726d7ad87c89b357076e7904cd3529db5a00d844ded0a
                 viewMode: \"months\"
 
             }).on(\"changeDate\", function () {
-                alert('wow' + \$(\"#datepicker\").val());
-               \$(\"#viewSchedule\").load(\"/ajax/myschedule/\" + \$(\"#datepicker\").val());
+               \$(\"#viewSchedule\").load(\"/ajax/myschedule/\" + \$(\"#datepicker\").val() + \"/\" + \$(\"#selectDoctor\").val());
             });
         });
 
