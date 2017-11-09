@@ -656,3 +656,19 @@ p{
     width: 14.285714285714285714285714285714%;
     *width: 14.285714285714285714285714285714%;
   }
+}
+
+.avTime{
+    display: inline;
+    padding: 10px;
+}
+.avTime ul{
+        float: left;
+    padding: 10px 0;
+    width: 80px;
+}
+.ulavtime{
+        float: left;
+    padding: 10px 0;
+    width: 80px;
+}
