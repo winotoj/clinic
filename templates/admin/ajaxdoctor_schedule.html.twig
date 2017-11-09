@@ -1,18 +1,54 @@
 
-    <div id="viewSchedule">
-        <p>{{ datelist }}</p>
-       <p>{{ firstday[0] }}</p>
-       <form>
+<div id="viewSchedule">
+    <p>{{ datelist }}</p>
+    <p>{{ firstday[0] }}</p>
+    <form class="form-horizontal">
         {% for day in range(0, datelist-1 ) %}
-            {% if day == 7 or day == 14 or day == 21 or day ==28 %}
-                <br>
-            {% endif %}
-            <div class="drschedule">
-            <label> {{ firstday[day] }} {{ day+1 }} </label><br>
-            <input type="checkbox" name="doctorwork{{ day+1 }}" value="true">
-            </div>
-            {% endfor %}
+            {% if day ==0 or day == 7 or day == 14 or day == 21 or day ==28 %}
+                <div class="row">
+                {% endif %}
 
-       </form>
-    </div>
-    
+                <div class="col-sm-1">
+                    <div class="input-group">
+                        <span class="input-group-addon"></span>
+                        <label class="form-control form-horizontal">{{ firstday[day] }}&nbsp;{{ day+1 }}</label>
+                        <label class="form-check-label form-horizontal">Available
+                            <input class="form-control form-check-input" type="checkbox" name="doctorwork{{ day+1 }}" value="true" checked></label>
+                        <div class="inform-inline">
+                             <label for="startTime" class="form-horizontal">Start
+                            <select class="form-control" class="startTime">
+                                <option>8:00</option>
+                                <option>9:00</option>
+                                <option>10:00</option>
+                                <option>11:00</option>
+                                <option>12:00</option>
+                                <option>13:00</option>
+                                <option>14:00</option>
+                                <option>15:00</option>
+                                <option>16:00</option>
+                                <option>17:00</option>
+                            </select></label>
+                            <label for="endTime" class="form-horizontal">End
+                            <select class="form-control" class="endTime">
+                                <option>8:00</option>
+                                <option>9:00</option>
+                                <option>10:00</option>
+                                <option>11:00</option>
+                                <option>12:00</option>
+                                <option>13:00</option>
+                                <option>14:00</option>
+                                <option>15:00</option>
+                                <option>16:00</option>
+                                <option>17:00</option>
+                            </select></label>     
+                        </div>
+                    </div>
+                </div>
+                {% if day ==6 or day == 13 or day == 20 or day == 27 or day == datelist-1 %}
+                </div>
+            {% endif %}
+        {% endfor %}
+
+    </form>
+</div>
+
