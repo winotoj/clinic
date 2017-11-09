@@ -38,7 +38,7 @@ require_once 'patient.php';
 
 require_once 'account.php';
 require_once 'doctor_schedule.php';
-require_once 'ajaxpro.php';
+//require_once 'ajaxpro.php';
 
 
 if (!isset($_SESSION['user'])) {
