@@ -60,4 +60,13 @@ date and name
 	-Create availability schedule
 3. where do i need help from?
 	-internet, wrong js (between bootstrap-datepicker.js and jquerydatepicker.js)
-	-internet, ajax to pass the selected month back to php to be able to render the schedule	
+	-internet, ajax to pass the selected month back to php to be able to render the schedule
+
+2017-11-09 --Winoto
+1. what have i done / not done sincce last scrum?
+	-Created doctor schedule (availability),using ajax and datepicker done 
+2. what will i do from now until next scrum?
+	-Create doctor calendar
+	-Search about websocket
+3. where do i need help from?
+	-Internet
