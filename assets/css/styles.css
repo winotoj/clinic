@@ -55,10 +55,8 @@ body {
 }
 body {
   margin: 0;
-  padding: 0;
-  
-  overflow: hidden;
-  background-color: #222;
+  padding: 0;  
+  overflow: hidden;  
   font-size: 14px;
   position: relative;
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
@@ -66,9 +64,7 @@ body {
 h1,
 .h1,
 h2,
-.h2,
-h3,
-.h3 {
+.h2 {
   font-weight: 300;
   color: #22A7F0;
 }
@@ -619,6 +615,16 @@ html, body {
     margin-right: 10px;
         
 }
+
+.row{
+    display: flex;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+p{
+    text-align: justify;
+}
 @media (min-width: 768px){
   .seven-cols .col-md-1,
   .seven-cols .col-sm-1,
@@ -650,4 +656,3 @@ html, body {
     width: 14.285714285714285714285714285714%;
     *width: 14.285714285714285714285714285714%;
   }
-}

@@ -30,17 +30,23 @@ class __TwigTemplate_87a86df006dd2202e643b264156f3e573238b8b43873d89825885252259
         // line 7
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
-        <script src=\"/assets/js/jquery.min.js\"></script>
+        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>
+
+
+        <!-- Latest compiled JavaScript -->
+        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>
+        <!-- <script src=\"/assets/js/jquery.min.js\"></script>-->
     ";
-        // line 9
+        // line 14
         $this->displayBlock('matchpwd', $context, $blocks);
-        // line 10
+        // line 15
         echo "    <script src=\"/assets/js/script.js\"></script>
+    <!-- Latest compiled and minified CSS -->
     <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">
 ";
-        // line 12
+        // line 18
         $this->displayBlock('css', $context, $blocks);
-        // line 13
+        // line 19
         echo "<link rel=\"stylesheet\" href=\"/assets/css/styles.css\">
 </head>
 
@@ -58,9 +64,9 @@ class __TwigTemplate_87a86df006dd2202e643b264156f3e573238b8b43873d89825885252259
                     </ul>
 
                     ";
-        // line 29
+        // line 35
         if ((isset($context["userSession"]) ? $context["userSession"] : null)) {
-            // line 30
+            // line 36
             echo "                        <p class=\"navbar-text navbar-right actions\">You're logged in as ";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["userSession"]) ? $context["userSession"] : null), "firstName", array()), "html", null, true);
             echo " ";
@@ -69,21 +75,21 @@ class __TwigTemplate_87a86df006dd2202e643b264156f3e573238b8b43873d89825885252259
                             You may <a href=\"/logout\">Logout</a></p>
                         ";
         } else {
-            // line 33
+            // line 39
             echo "                        <p class=\"navbar-text navbar-right actions\">You're not logged in. You may <a href=\"/register\">Register</a>
                             or <a href=\"/login\">Login</a></p>
                         ";
         }
-        // line 36
+        // line 42
         echo "                </div>
             </div>
         </nav>
     </div>
-    <div class=\"listTrip\">
+    <div class=\"container\">
     ";
-        // line 41
+        // line 47
         $this->displayBlock('content', $context, $blocks);
-        // line 42
+        // line 48
         echo "
 
 </div>
@@ -98,17 +104,17 @@ class __TwigTemplate_87a86df006dd2202e643b264156f3e573238b8b43873d89825885252259
     {
     }
 
-    // line 9
+    // line 14
     public function block_matchpwd($context, array $blocks = array())
     {
     }
 
-    // line 12
+    // line 18
     public function block_css($context, array $blocks = array())
     {
     }
 
-    // line 41
+    // line 47
     public function block_content($context, array $blocks = array())
     {
     }
@@ -125,7 +131,7 @@ class __TwigTemplate_87a86df006dd2202e643b264156f3e573238b8b43873d89825885252259
 
     public function getDebugInfo()
     {
-        return array (  112 => 41,  107 => 12,  102 => 9,  97 => 7,  87 => 42,  85 => 41,  78 => 36,  73 => 33,  64 => 30,  62 => 29,  44 => 13,  42 => 12,  38 => 10,  36 => 9,  31 => 7,  23 => 1,);
+        return array (  118 => 47,  113 => 18,  108 => 14,  103 => 7,  93 => 48,  91 => 47,  84 => 42,  79 => 39,  70 => 36,  68 => 35,  50 => 19,  48 => 18,  43 => 15,  41 => 14,  31 => 7,  23 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -145,9 +151,15 @@ class __TwigTemplate_87a86df006dd2202e643b264156f3e573238b8b43873d89825885252259
         <meta charset=\"utf-8\">
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
         <title>{% block title %}{% endblock %}</title>
-        <script src=\"/assets/js/jquery.min.js\"></script>
+        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>
+
+
+        <!-- Latest compiled JavaScript -->
+        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>
+        <!-- <script src=\"/assets/js/jquery.min.js\"></script>-->
     {% block matchpwd %}{% endblock %}
     <script src=\"/assets/js/script.js\"></script>
+    <!-- Latest compiled and minified CSS -->
     <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">
 {% block css %}{% endblock %}
 <link rel=\"stylesheet\" href=\"/assets/css/styles.css\">
@@ -177,7 +189,7 @@ class __TwigTemplate_87a86df006dd2202e643b264156f3e573238b8b43873d89825885252259
             </div>
         </nav>
     </div>
-    <div class=\"listTrip\">
+    <div class=\"container\">
     {% block content %}{% endblock %}
 
 
