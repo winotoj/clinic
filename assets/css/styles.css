@@ -649,9 +649,7 @@ p{
  *  The following is not really needed in this case
  *  Only to demonstrate the usage of @media for large screens
  */    
-<<<<<<< HEAD
 
-=======
 @media (min-width: 1200px) {
   .seven-cols .col-md-1,
   .seven-cols .col-sm-1,
@@ -675,4 +673,3 @@ p{
     padding: 10px 0;
     width: 80px;
 }
->>>>>>> ac8385603d86eb4f2d2729ccbc5de7c0abf64b34

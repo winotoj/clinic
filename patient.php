@@ -94,9 +94,9 @@ $app->get('/doctors/:id/:drname', function($id, $drname) use ($app){
     $row = DB::queryFirstRow("SELECT * FROM doctors WHERE id = %i ", $id);
     $timeRow = DB::query("SELECT * FROM dailyschedules WHERE doctorId = %i", $id);
     
-    for( $i = 0; $i < 2; $i++){
-    print_r(halfHourTimes($timeRow[0].['startTime'], $timeRow[0].['endTime']));
-    }
+//    for( $i = 0; $i < 2; $i++){
+//    print_r(halfHourTimes($timeRow[0].['startTime'], $timeRow[0].['endTime']));
+//    }
     
     $startdate = strtotime("now");
     $enddate = strtotime("+6 days", $startdate);
