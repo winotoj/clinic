@@ -18,12 +18,38 @@ $app->get('/myschedule', function() use ($app, $log){
     $app->render('admin/doctor_schedule.html.twig', array("doctorList" => $doctorList));    
 });
 
+$app->post('/myschedule/:date/:id', function($date, $id) use ($app, $log){
+    $doctorId = $id;
+    $arrayDate = explode('-', $date);
+    $month = $arrayDate[0];
+    $year = $arrayDate[1];
+    $number = date('t', mktime(0, 0, 0, $month,1, $year));
+    $schedule = array();
+    for($i=1; $i <= $number; $i++){
+        if($app->request()->post('doctorAvailable' . $i)){
+            $dateSql = date('Y-m-d', strtotime($year . '-' . $month . '-' . $i));
+            $start = $app->request()->post('doctorStart' . $i);
+            $end = $app->request()->post('doctorEnd' . $i);
+            DB::insertUpdate('dailyschedules', array(
+                'doctorId' => $doctorId,
+                'date' => $dateSql,
+                'startTime' => $start,
+                'endTime' => $end
+            ));
+        }
+                
+    }
+});
 
-$app->get('/ajax/myschedule(/:date/:id)', function($date, $id) use ($app, $log){
+
+$app->get('/ajax/myschedule/:date/:id', function($date, $id) use ($app, $log){
 //    if(!isset($_SESSION['staff'])){
 //        $app->render('access_denied.html.twig');
 //        return;
 //    }
+    
+    
+    //
     $arrayDate = explode('-', $date);
     $month = $arrayDate[0];
     $year = $arrayDate[1];
@@ -41,9 +67,12 @@ $app->get('/ajax/myschedule(/:date/:id)', function($date, $id) use ($app, $log){
         "date" =>$date
         ));
     
-});
+})->conditions(array(
+    'date' => '[0-9]{2}-[0-9]{4}'
+));;
 
-$app->post('/ajax/myschedule(/:date/:id)', function($date, $id) use ($app, $log){
+/*
+$app->post('/ajax/myschedule/:date/:id', function($date, $id) use ($app, $log){
     $doctorId = $id;
     $arrayDate = explode('-', $date);
     $month = $arrayDate[0];
@@ -55,7 +84,7 @@ $app->post('/ajax/myschedule(/:date/:id)', function($date, $id) use ($app, $log)
             $dateSql = date('Y-m-d', strtotime($year . '-' . $month . '-' . $i));
             $start = $app->request()->post('doctorStart' . $i);
             $end = $app->request()->post('doctorEnd' . $i);
-            DB::insertUpdate('dailySchedules', array(
+            DB::insertUpdate('dailyschedules', array(
                 'doctorId' => $doctorId,
                 'date' => $dateSql,
                 'startTime' => $start,
@@ -67,7 +96,7 @@ $app->post('/ajax/myschedule(/:date/:id)', function($date, $id) use ($app, $log)
     $task = $app->request()->post('task');
     
     
-});
+})
 
-
+*/
 

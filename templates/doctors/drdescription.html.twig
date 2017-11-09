@@ -24,12 +24,13 @@
     </div>
     <div class="col-sm-6">  
         <p>available Time</p>
-        
-            {% for d in date %}
-            
-                <span style="padding: 5">{{d.dayOfWeek}} {{d.month}} {{d.day}}</span>
-            
-            {% endfor %}
-           </div>
+        <ul class="ulavtime">
+            {% for d in weekDate %}
+
+                <li class="avTime">               
+                        <span style="display: block; text-align: center;">{{d.dayOfWeek}}</span><span style="display: block; text-align: center;"> {{d.day}}{{d.month}} </span></li>
+                        {% endfor %}
+        </ul>
+    </div>
 
 {% endblock %}
