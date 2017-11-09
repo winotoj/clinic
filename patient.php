@@ -43,6 +43,20 @@ class DateInfo {
        echo $this->month;
     }
 }
+
+function halfHourTimes($sttime, $endtime) {
+  $formatter = function ($sttime, $endtime) {
+      
+    if ($sttime % 3600 == 0 || $endtime % 3600 == 0) {
+      return date('ga', $sttime);
+    } else {
+      return date('g:ia', $sttime);
+    }
+  };
+  //$halfHourSteps = range(0, 47*1800, 1800);
+  $halfHourSteps = range($sttime, $endtime, 1800);
+  return array_map($formatter, $halfHourSteps);
+}
    
 if (false) {
     $app = new \Slim\Slim();
@@ -78,20 +92,26 @@ $app->post('/bookappointment', function() use ($app){
 $app->get('/doctors/:id/:drname', function($id, $drname) use ($app){
     //TODO: check URL
     $row = DB::queryFirstRow("SELECT * FROM doctors WHERE id = %i ", $id);
+    $timeRow = DB::query("SELECT * FROM dailyschedules WHERE doctorId = %i", $id);
+    
+    for( $i = 0; $i < 2; $i++){
+    print_r(halfHourTimes($timeRow[0].['startTime'], $timeRow[0].['endTime']));
+    }
+    
     $startdate = strtotime("now");
     $enddate = strtotime("+6 days", $startdate);
-    $date = array();
-    
+    $weekDate = array();    
     while ($startdate < $enddate) {
         $dateInfo = new DateInfo();
         $dateInfo->setMonth(date("M", $startdate));
         $dateInfo->setDay(date("d", $startdate));
         $dateInfo->setDayOfWeek(date("D", $startdate));
         //array_push($date, date("d M D", $startdate)) ;
-        array_push($date, $dateInfo) ;
+        array_push($weekDate, $dateInfo) ;
         $startdate = strtotime("+1 day", $startdate);
     }
-    $app->render('doctors/drdescription.html.twig', array('dr' => $row, 'date' => $date));
+    //print_r($timeRow);
+    $app->render('doctors/drdescription.html.twig', array('dr' => $row, 'weekDate' => $weekDate));
 });
 
 

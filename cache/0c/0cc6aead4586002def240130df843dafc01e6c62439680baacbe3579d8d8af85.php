@@ -84,30 +84,30 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
     </div>
     <div class=\"col-sm-6\">  
         <p>available Time</p>
-        
+        <ul class=\"ulavtime\">
             ";
         // line 28
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["date"]) ? $context["date"] : null));
+        $context['_seq'] = twig_ensure_traversable((isset($context["weekDate"]) ? $context["weekDate"] : null));
         foreach ($context['_seq'] as $context["_key"] => $context["d"]) {
             // line 29
-            echo "            
-                <span style=\"padding: 5\">";
-            // line 30
+            echo "
+                <li class=\"avTime\">               
+                        <span style=\"display: block; text-align: center;\">";
+            // line 31
             echo twig_escape_filter($this->env, $this->getAttribute($context["d"], "dayOfWeek", array()), "html", null, true);
-            echo " ";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["d"], "month", array()), "html", null, true);
-            echo " ";
+            echo "</span><span style=\"display: block; text-align: center;\"> ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["d"], "day", array()), "html", null, true);
-            echo "</span>
-            
-            ";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["d"], "month", array()), "html", null, true);
+            echo " </span></li>
+                        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['d'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 33
-        echo "           </div>
+        echo "        </ul>
+    </div>
 
 ";
     }
@@ -124,7 +124,7 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
 
     public function getDebugInfo()
     {
-        return array (  110 => 33,  97 => 30,  94 => 29,  90 => 28,  81 => 22,  76 => 21,  72 => 20,  64 => 18,  60 => 16,  57 => 15,  48 => 10,  40 => 5,  37 => 4,  31 => 3,  11 => 1,);
+        return array (  109 => 33,  98 => 31,  94 => 29,  90 => 28,  81 => 22,  76 => 21,  72 => 20,  64 => 18,  60 => 16,  57 => 15,  48 => 10,  40 => 5,  37 => 4,  31 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -163,13 +163,14 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
     </div>
     <div class=\"col-sm-6\">  
         <p>available Time</p>
-        
-            {% for d in date %}
-            
-                <span style=\"padding: 5\">{{d.dayOfWeek}} {{d.month}} {{d.day}}</span>
-            
-            {% endfor %}
-           </div>
+        <ul class=\"ulavtime\">
+            {% for d in weekDate %}
+
+                <li class=\"avTime\">               
+                        <span style=\"display: block; text-align: center;\">{{d.dayOfWeek}}</span><span style=\"display: block; text-align: center;\"> {{d.day}}{{d.month}} </span></li>
+                        {% endfor %}
+        </ul>
+    </div>
 
 {% endblock %}", "doctors/drdescription.html.twig", "C:\\xampp\\htdocs\\php-project\\templates\\doctors\\drdescription.html.twig");
     }
