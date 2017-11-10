@@ -1,3 +1,4 @@
+
 <?php
 
 if (false) {
@@ -99,4 +100,3 @@ $app->post('/ajax/myschedule/:date/:id', function($date, $id) use ($app, $log){
 })
 
 */
-

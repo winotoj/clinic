@@ -649,6 +649,7 @@ p{
  *  The following is not really needed in this case
  *  Only to demonstrate the usage of @media for large screens
  */    
+
 @media (min-width: 1200px) {
   .seven-cols .col-md-1,
   .seven-cols .col-sm-1,
