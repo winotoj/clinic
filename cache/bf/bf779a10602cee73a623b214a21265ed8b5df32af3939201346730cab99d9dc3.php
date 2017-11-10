@@ -31,22 +31,20 @@ class __TwigTemplate_87a86df006dd2202e643b264156f3e573238b8b43873d89825885252259
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
         <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>
-
-
         <!-- Latest compiled JavaScript -->
         <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>
         <!-- <script src=\"/assets/js/jquery.min.js\"></script>-->
     ";
-        // line 14
+        // line 12
         $this->displayBlock('matchpwd', $context, $blocks);
-        // line 15
+        // line 13
         echo "    <script src=\"/assets/js/script.js\"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">
 ";
-        // line 18
+        // line 16
         $this->displayBlock('css', $context, $blocks);
-        // line 19
+        // line 17
         echo "<link rel=\"stylesheet\" href=\"/assets/css/styles.css\">
 </head>
 
@@ -64,9 +62,9 @@ class __TwigTemplate_87a86df006dd2202e643b264156f3e573238b8b43873d89825885252259
                     </ul>
 
                     ";
-        // line 35
+        // line 33
         if ((isset($context["userSession"]) ? $context["userSession"] : null)) {
-            // line 36
+            // line 34
             echo "                        <p class=\"navbar-text navbar-right actions\">You're logged in as ";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["userSession"]) ? $context["userSession"] : null), "firstName", array()), "html", null, true);
             echo " ";
@@ -75,21 +73,21 @@ class __TwigTemplate_87a86df006dd2202e643b264156f3e573238b8b43873d89825885252259
                             You may <a href=\"/logout\">Logout</a></p>
                         ";
         } else {
-            // line 39
+            // line 37
             echo "                        <p class=\"navbar-text navbar-right actions\">You're not logged in. You may <a href=\"/register\">Register</a>
                             or <a href=\"/login\">Login</a></p>
                         ";
         }
-        // line 42
+        // line 40
         echo "                </div>
             </div>
         </nav>
     </div>
     <div class=\"container\">
     ";
-        // line 47
+        // line 45
         $this->displayBlock('content', $context, $blocks);
-        // line 48
+        // line 46
         echo "
 
 </div>
@@ -104,17 +102,17 @@ class __TwigTemplate_87a86df006dd2202e643b264156f3e573238b8b43873d89825885252259
     {
     }
 
-    // line 14
+    // line 12
     public function block_matchpwd($context, array $blocks = array())
     {
     }
 
-    // line 18
+    // line 16
     public function block_css($context, array $blocks = array())
     {
     }
 
-    // line 47
+    // line 45
     public function block_content($context, array $blocks = array())
     {
     }
@@ -131,7 +129,7 @@ class __TwigTemplate_87a86df006dd2202e643b264156f3e573238b8b43873d89825885252259
 
     public function getDebugInfo()
     {
-        return array (  118 => 47,  113 => 18,  108 => 14,  103 => 7,  93 => 48,  91 => 47,  84 => 42,  79 => 39,  70 => 36,  68 => 35,  50 => 19,  48 => 18,  43 => 15,  41 => 14,  31 => 7,  23 => 1,);
+        return array (  116 => 45,  111 => 16,  106 => 12,  101 => 7,  91 => 46,  89 => 45,  82 => 40,  77 => 37,  68 => 34,  66 => 33,  48 => 17,  46 => 16,  41 => 13,  39 => 12,  31 => 7,  23 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -152,8 +150,6 @@ class __TwigTemplate_87a86df006dd2202e643b264156f3e573238b8b43873d89825885252259
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
         <title>{% block title %}{% endblock %}</title>
         <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>
-
-
         <!-- Latest compiled JavaScript -->
         <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>
         <!-- <script src=\"/assets/js/jquery.min.js\"></script>-->

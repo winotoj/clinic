@@ -1,11 +1,11 @@
 {% extends "master.html.twig" %}
 {% block title %}Calendar{% endblock %}
 {% block matchpwd %}
-    <link href='fullcalendar.css' rel='stylesheet' />
-    <script src='jquery-1.9.1.min.js'></script>
-    <script src='moment.min.js'></script>
-    <script src='jquery-ui-1.10.2.custom.min.js'></script>
-    <script src='fullcalendar.min.js'></script>
+    <link href='/assets/css/fullcalendar.css' rel='stylesheet' />
+    <script src='/assets/js/jquery-1.9.1.min.js'></script>
+    <script src='/assets/js/moment.min.js'></script>
+    <script src='/assets/js/jquery-ui-1.10.2.custom.min.js'></script>
+    <script src='/assets/js/fullcalendar.min.js'></script>
     <script>
 
         $(document).ready(function () {
@@ -22,8 +22,7 @@
                     right: 'month,agendaWeek,agendaDay'
                 },
 
-                events: "http://localhost:8080/ipd/fullcalendar/events.php",
-
+                events: "events",
                 // Convert the allDay from string to boolean
                 eventRender: function (event, element, view) {
                     if (event.allDay === 'true') {
@@ -92,6 +91,7 @@
     </script>
 {% endblock %}
 {% block css %}
+    <style>
     body {
   margin-top: 40px;
   text-align: center;
@@ -105,10 +105,7 @@
   width: 900px;
   margin: 0 auto;
   }
+  </style>
 {% endblock %}
-
-<div class="container">
     {% block content %}<div id='calendar'></div>{% endblock %}
 
-
-</div>

@@ -75,7 +75,7 @@ class __TwigTemplate_7b7c693b4ee54f726d7ad87c89b357076e7904cd3529db5a00d844ded0a
         // line 23
         echo "    </select>
     <div id=\"viewSchedule\">
-        
+
     </div>
     <script>
         \$(document).ready(function () {
@@ -86,8 +86,23 @@ class __TwigTemplate_7b7c693b4ee54f726d7ad87c89b357076e7904cd3529db5a00d844ded0a
                 showAnim: \"bounce\",
                 viewMode: \"months\"
 
-            }).on(\"changeDate\", function () {
-               \$(\"#viewSchedule\").load(\"/ajax/myschedule/\" + \$(\"#datepicker\").val() + \"/\" + \$(\"#selectDoctor\").val());
+            })
+                    .bind('propertychange change click keyup input paste', dateChangedHandler)
+                    .on(\"changeDate\", dateChangedHandler);
+            
+            function dateChangedHandler(ev) {
+                var date = (ev.date === undefined) ? \$(\"#datepicker\").val() : ev.date.getMonth() + \"-\" +  ev.date.getFullYear();
+                var doctorId = \$(\"#selectDoctor\").val();
+                \$(\"#viewSchedule\").load(\"/ajax/myschedule/\" + date + \"/\" + doctorId, function(response, status, xhr) {
+                    console.log(\"handler called, status is: \" + status);
+                     if ( status == \"error\" ) {
+                         \$(\"#viewSchedule\").html(\"<span>Please select a valid year and month to view calendar</span>\");
+                     }
+                });
+            }
+            
+            \$('#selectDoctor').bind('propertychange change click keyup input paste', function () {
+                \$(\"#viewSchedule\").load(\"/ajax/myschedule/\" + \$(\"#datepicker\").val() + \"/\" + \$(\"#selectDoctor\").val());
             });
         });
 
@@ -145,7 +160,7 @@ class __TwigTemplate_7b7c693b4ee54f726d7ad87c89b357076e7904cd3529db5a00d844ded0a
         {% endfor %}
     </select>
     <div id=\"viewSchedule\">
-        
+
     </div>
     <script>
         \$(document).ready(function () {
@@ -156,8 +171,23 @@ class __TwigTemplate_7b7c693b4ee54f726d7ad87c89b357076e7904cd3529db5a00d844ded0a
                 showAnim: \"bounce\",
                 viewMode: \"months\"
 
-            }).on(\"changeDate\", function () {
-               \$(\"#viewSchedule\").load(\"/ajax/myschedule/\" + \$(\"#datepicker\").val() + \"/\" + \$(\"#selectDoctor\").val());
+            })
+                    .bind('propertychange change click keyup input paste', dateChangedHandler)
+                    .on(\"changeDate\", dateChangedHandler);
+            
+            function dateChangedHandler(ev) {
+                var date = (ev.date === undefined) ? \$(\"#datepicker\").val() : ev.date.getMonth() + \"-\" +  ev.date.getFullYear();
+                var doctorId = \$(\"#selectDoctor\").val();
+                \$(\"#viewSchedule\").load(\"/ajax/myschedule/\" + date + \"/\" + doctorId, function(response, status, xhr) {
+                    console.log(\"handler called, status is: \" + status);
+                     if ( status == \"error\" ) {
+                         \$(\"#viewSchedule\").html(\"<span>Please select a valid year and month to view calendar</span>\");
+                     }
+                });
+            }
+            
+            \$('#selectDoctor').bind('propertychange change click keyup input paste', function () {
+                \$(\"#viewSchedule\").load(\"/ajax/myschedule/\" + \$(\"#datepicker\").val() + \"/\" + \$(\"#selectDoctor\").val());
             });
         });
 
