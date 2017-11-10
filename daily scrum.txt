@@ -70,3 +70,13 @@ date and name
 	-Search about websocket
 3. where do i need help from?
 	-Internet
+
+2017-11-10 --Winoto
+1. what have i done / not done sincce last scrum?
+	-Created miniproject for calendar--done
+	-Websocket --not done
+2. what will i do from now until next scrum?
+	-Create doctor calendar in project
+	-Search about websocket
+3. where do i need help from?
+	-Internet
