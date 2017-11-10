@@ -177,8 +177,11 @@ $app->post('/bookappointment', function() use ($app){
 $app->get('/doctors/:id/:drname', function($id, $drname) use ($app){
     //TODO: check URL
     $row = DB::queryFirstRow("SELECT * FROM doctors WHERE id = %i ", $id);
-    //$timeRow = DB::query("SELECT * FROM dailyschedules WHERE doctorId = %i", $id);
-    
+    //show time available - main page
+    $startDate = strtotime('now'); 
+    $endDate = strtotime("+6 days", $startDate);
+    $timeRow = DB::query("SELECT * FROM dailyschedules WHERE doctorId = %i and date >= %s and date < %s", $id, gmdate("Y-m-d", $startDate), gmdate("Y-m-d", $endDate));
+    print_r($timeRow);
 //    for( $i = 0; $i < 2; $i++){
 //    print_r(halfHourTimes($timeRow[0].['startTime'], $timeRow[0].['endTime']));
 //    }
@@ -206,7 +209,7 @@ $app->get('/avtime/:id/:start', function ($id, $start) use ($app) {
     $endDate = strtotime("+6 days", $startDate); 
 
     $timeRow = DB::query("SELECT * FROM dailyschedules WHERE doctorId = %i and date >= %s and date < %s", $id,
-        gmdate("Y-m-d", $startDate), gmdate("Y-m-d", $endDate));    
+    gmdate("Y-m-d", $startDate), gmdate("Y-m-d", $endDate));    
     
     for ($i=0; $i<6; $i++) {
         $currentDate = strtotime("+" . "$i" . " days", $startDate);
