@@ -51,6 +51,28 @@ date and name
 	
 3. where do i need help from?
 	-internet
+	
+2017-11-07 --Vaji
+1. what have i done / not done sincce last scrum?
+	-Create page for patient to see their appointments, their profile, ..
+	
+2. what will i do from now until next scrum?
+	-add template and impelement forgot password
+		
+3. where do i need help from?
+	-internet
+	
+2017-11-08 --Vaji
+1. what have i done / not done sincce last scrum?
+	-Create page and template for forgotten password
+	-Create UI to search the doctor's name and impelent process 
+	-fix the bug in register page
+2. what will i do from now until next scrum?
+	-Serach about using select2
+	-Create page for doctor's description and their available time	
+	
+3. where do i need help from?
+	-internet
 
 2017-11-08 --Winoto
 1. what have i done / not done sincce last scrum?
@@ -61,13 +83,34 @@ date and name
 3. where do i need help from?
 	-internet, wrong js (between bootstrap-datepicker.js and jquerydatepicker.js)
 	-internet, ajax to pass the selected month back to php to be able to render the schedule
-
+	
+2017-11-09 --Vaji
+1. what have i done / not done sincce last scrum?
+	-Create UI for doctor's description and doctor's List
+	-Serach about the way to show doctor's available time by ajax and javascript
+	
+2. what will i do from now until next scrum?
+	-Create UI to show doctor's available time and impelement process
+	-work on make appointment process
+3. where do i need help from?
+	-internet
+	
 2017-11-09 --Winoto
 1. what have i done / not done sincce last scrum?
 	-Created doctor schedule (availability),using ajax and datepicker done 
 2. what will i do from now until next scrum?
 	-Create doctor calendar
 	-Search about websocket
+3. where do i need help from?
+	-Internet
+	
+2017-11-10 --Vaji
+1. what have i done / not done sincce last scrum?
+	-Create UI to show doctor's available time and impelement process
+	-fix bug in login page 
+2. what will i do from now until next scrum?
+	-make relation between table appointment and page available time
+	-work on process make appointment
 3. where do i need help from?
 	-Internet
 
