@@ -19,7 +19,7 @@ $app->get('/events', function() use ($app, $log){
 
  // Query that retrieves events
  
- $cal = DB::query('SELECT d.id as doctorId, p.firstName as firstName, p.lastName as lastName, a.date, a.startTime, a.endTime, a.patientMessage as msg, a.doctorNote as note, a.readStatus as status, a.type as type FROM doctors as d JOIN appointments as a ON d.id = a.doctorId JOIN patients AS p ON a.patientId = p.id WHERE d.id = 1');
+ $cal = DB::query('SELECT a.id as id, d.id as doctorId, p.id as patientId, p.firstName as firstName, p.lastName as lastName, a.date, a.startTime, a.endTime, a.patientMessage as msg, a.doctorNote as note, a.readStatus as status, a.type as type FROM doctors as d JOIN appointments as a ON d.id = a.doctorId JOIN patients AS p ON a.patientId = p.id WHERE d.id = 1');
     if(!$cal){
         http_response_code(500);
         $app->render('internal_error.html.twig');
@@ -29,6 +29,8 @@ $app->get('/events', function() use ($app, $log){
          
         foreach($cal as $c){
             $calTemp = array(
+                'id' => $c[id],
+                'patientId' =>$c[patientId],
                 'doctorId' => $c[doctorId],
                 'title' =>$c[firstName] . ' ' . $c[lastName],
                 'start' => $c[date] . ' ' . $c[startTime],
@@ -45,7 +47,7 @@ $app->get('/events', function() use ($app, $log){
  echo json_encode($calendar);
 });
 
-$app->get('/add_events', function() use ($app, $log){
+$app->post('/add_events', function() use ($app, $log){
     $title = $_POST['title'];
     $start = $_POST['start'];
     $end = $_POST['end'];
@@ -58,4 +60,19 @@ DB::insertUpdate('appointments', array(
                 'startTime' => $start,
                 'endTime' => $end
             ));
+});
+
+
+    $app->post('/add_note_event', function() use ($app, $log){
+    $note = $_POST['note'];
+    $id = $_POST['id'];
+    DB::update('appointments', ['doctorNote' => $note], 'id=%i', $id);  
+
+
+//DB::insertUpdate('appointments', array(
+//                'doctorId' => $doctorId,
+//                'date' => $dateSql,
+//                'startTime' => $start,
+//                'endTime' => $end
+//            ));
 });
