@@ -123,3 +123,13 @@ date and name
 	-Search about websocket
 3. where do i need help from?
 	-Internet
+
+2017-11-12 -- Winoto
+1 what have i done / not done sincce last scrum?
+	-Doctor Calendar to be tested -done
+	-Websocket --not done
+2. What will i do from now until next scrum?
+	-Search about websocket
+	-Continue customer history (part of appointment calendar)
+3. where do i need help from?
+	-internet
