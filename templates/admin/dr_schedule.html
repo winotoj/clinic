@@ -103,6 +103,7 @@
                      $('#modalPatientMessage').html(event.patientmsg);
                      $('#doctorName').html(event.doctorName);
                      $('#doctorNote').val(event.doctornote);
+                     $('#patientId').val(event.patientId);
                      $('#fullCalModal').modal();
                      $('#calendar').fullCalendar('refetchEvents');
                      
@@ -123,6 +124,7 @@
                         }
                     });
                 });
+
             });
 
         </script>
@@ -159,15 +161,16 @@
                         <div class="form-group">
                             <label for="comment" id="doctorName"></label>
                             <textarea class="form-control" rows="5" id="doctorNote"></textarea>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button class="btn btn-primary"><a id="modalSaveNote">Save</a></button>
-                        <button class="btn btn-primary"><a id="modalShowHistory">Load History</a></button>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button class="btn btn-primary"><a id="modalSaveNote">Save</a></button>
-                        <button class="btn btn-primary"><a id="modalShowHistory">Load History</a></button>
+                        <button class="btn btn-primary" id="modalSaveNote">Save</button>
+                        <form method="post" action="/load_history">
+                            <input type="hidden" id="patientId" name="patientId" value="">
+                            <input type="submit" name="showHistory" value="Load History">
+                        </form>
+                        
                     </div>
                 </div>
             </div>
