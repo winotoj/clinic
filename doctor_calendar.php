@@ -80,7 +80,7 @@ $app->post('/add_note_event', function() use ($app, $log) {
 
 $app->post('/load_history', function() use ($app, $log) {
     $patientId = $_POST['patientId'];
-    $history = DB::query('SELECT d.firstName as dfirstName, d.lastName as dlastName, a.date as date, a.patientMessage as message, a.doctorNote as note, p.firstName as pfirstName, p.lastName as plastName FROM doctors AS d JOIN appointments as a ON d.id = a.doctorId JOIN patients as p on a.patientId = p.id WHERE a.patientId = %i and a.date < CURRENT_DATE() order by a.date ASC', $patientId);
+    $history = DB::query('SELECT d.firstName as dfirstName, d.lastName as dlastName, a.date as date, a.patientMessage as message, a.doctorNote as note, p.firstName as pfirstName, p.lastName as plastName FROM doctors AS d JOIN appointments as a ON d.id = a.doctorId JOIN patients as p on a.patientId = p.id WHERE a.patientId = %i and a.date <= CURRENT_DATE() order by a.date ASC', $patientId);
 
     if (!$history) {
         if(empty($history)){
