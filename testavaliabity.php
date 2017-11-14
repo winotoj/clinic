@@ -17,16 +17,25 @@ function get_hours_range( $start, $end, $step) {
 
 $app->get('/testwinoto', function() use($app) {
 $result = DB::query('SELECT doctorId, date, TIME_TO_SEC(startTime) as start, TIME_TO_SEC(endTime) as end FROM dailyschedules WHERE doctorId = 1');
-//print_r($result);
-//$newData = array();
+
 $splithour = array();
-print_r($result[0].['start']);
-//foreach($result as $r){
-//    $working = ($r.end - $r.start)/1800;
-//    for ($i = 0; $i < $working; i++){
-//        $newdata[]
-//    }
-//}
+$newdata = array();
+//print_r($result['0']['start']);
+foreach($result as $r){
+    $working = ($r['end'] - $r['start'])/1800;
+    $newdata[] =array(
+            'doctorId' => $r['doctorId'],
+            'date' => $r['date']
+            );
+    for ($i = 0; $i < $working; $i++){
+          $splithour = get_hours_range($r['start'], $r['end'], 1800);
+          $newdata['date'] = array(
+              'avaliable' => "true",
+              'hour' => $splithour
+          );
+    }
+}
+print_r($newdata);
 
 //for ($i=0 ; $i < count($result); $i++){
 //    $working = ($result[i].end - $result[i].start)/1800;

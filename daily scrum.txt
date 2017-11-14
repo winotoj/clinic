@@ -163,3 +163,11 @@ date and name
 
 3. where do i need help from?
 	-internet
+
+2017-11-14 -- Winoto
+1 what have i done / not done sincce last scrum?
+	-Search about websocket, will decide to use websocket or pusher, will use html5_serversentevents
+2. What will i do from now until next scrum?
+	-try to apply html5_serversentevents
+3. where do i need help from?
+	-internet
