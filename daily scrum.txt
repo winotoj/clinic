@@ -133,3 +133,14 @@ date and name
 	-Continue customer history (part of appointment calendar)
 3. where do i need help from?
 	-internet
+
+2017-11-14 -- Vaji
+1 what have i done / not done sincce last scrum?
+	-create a mini project to use modale
+	-Add modale in page get appointment and create the related form
+                     -change the javascript in page show available time to php code
+2. What will i do from now until next scrum?
+	-work on process make appointment
+	-make code to pass data from page showavailable time to modal (Appointment form) and compelet appointment process
+3. where do i need help from?
+	-internet

@@ -166,7 +166,7 @@ $app->post('/bookappointment', function() use ($app){
     
     
     $speciality = $app->request()->post('speciality');
-    $app_date = $app->request()->post('app_date');
+    //$app_date = $app->request()->post('app_date');
     
     
     $drList = DB::query("SELECT * FROM doctors WHERE speciality = %s", $speciality);
