@@ -154,3 +154,12 @@ date and name
 
 3. where do i need help from?
 	-internet
+2017-11-13 -- Winoto
+1 what have i done / not done sincce last scrum?
+	-Found that we dont need websocket or pusher, server event is enough because one way
+
+2. What will i do from now until next scrum?
+	-Try to do with server event tomorrow, postpone the project
+
+3. where do i need help from?
+	-internet
