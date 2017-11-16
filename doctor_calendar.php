@@ -11,8 +11,64 @@ $app->get('/mycalendar', function() use ($app, $log) {
 });
 
 $app->get('/cal', function() use ($app, $log) {
+
     $app->render('admin/dr_schedule.html');
 });
+
+
+$app->get('/calx', function() use ($app, $log) {
+header('Content-Type: text/event-stream');
+header('Cache-Control: no-cache');
+        $max_exec_time = 30; // seconds
+        $query_frequency = 3; // seconds
+        for ($i=0; $i<$max_exec_time - $query_frequency; $i+=$query_frequency) 
+        //while(true)
+        {
+            $cal = DB::query('SELECT * FROM appointments WHERE readStatus = 0 AND doctorId = %i', 1);
+            if ($cal) {
+                DB::update('appointments', array(
+                    'readStatus' => 1
+                    ), "doctorId=%i", 1);
+                echo json_encode($cal);
+                return;
+            }
+            sleep($query_frequency);
+        }
+        
+        
+        if(empty($cal)){
+            echo "";
+        }
+        else if (!$cal) {
+            http_response_code(500);
+            $app->render('internal_error.html.twig');
+        }
+        $result=array();
+        foreach ($cal as $c) {
+            $result = ['id' => $c['id'],
+                'doctorId' => $c['doctorId']
+                ];
+        }
+        
+        $count = sizeof($result);
+        
+        if($count > 0){
+            //echo "id: $lastId\n";
+            echo "event: message\n";
+            echo "data: " . $count . "\n\n";           
+            flush();
+            DB::update('appointments', array(
+  'readStatus' => 1
+  ), "doctorId=%i", 1);
+           //$app->render(admin/dr_schedule.html);
+            
+        }
+        //sleep(15);
+  
+
+   // $app->render('admin/test_dr_schedule.html');
+});
+
 
 $app->get('/events', function() use ($app, $log) {
     $json = array();

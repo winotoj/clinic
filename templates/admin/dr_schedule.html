@@ -124,6 +124,51 @@
                         }
                     });
                 });
+                var n;
+
+ if (!("Notification" in window)) {
+    alert("This browser does not support system notifications");
+  }
+// Let's check whether notification permissions have already been granted
+/*  else if (Notification.permission === "granted") {
+    // If it's okay let's create a notification
+    var options = {
+      body: "!!!",
+      icon: "/images/rock.jpg"
+  }
+    n = new Notification("Hi there!",options);
+  }*/
+  // Otherwise, we need to ask the user for permission
+  else if (Notification.permission !== 'denied') {
+    Notification.requestPermission(function (permission) {
+      // If the user accepts, let's create a notification
+      if (permission === "granted") {
+        n = new Notification("Notification OK!");
+      }
+    });
+  }
+
+  var n;
+
+  function spawnNotification(theBody,theIcon,theTitle) {
+  var options = {
+      body: "you have " + theBody + "new appointment(s)",
+      icon: theIcon
+  }
+   n = new Notification(theTitle,options);
+}
+
+
+if(typeof(!EventSource) !== "undefined") {
+    var source = new EventSource("/cal1");
+        source.onmessage = function(event) {
+    	//var msg = $.parseJSON(event.data);
+    	spawnNotification(event.data,'/images/ok.png','New Notification');
+    	n.close.bind(n);
+    };
+} else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support server-sent events...";
+}
 
             });
 
@@ -146,7 +191,8 @@
 
         </style>
     </head>
-    <body>      
+    <body>
+        <div id="result"></div>
         <div id='calendar'></div>
         <div id="fullCalModal" class="modal fade">
             <div class="modal-dialog">
