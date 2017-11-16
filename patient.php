@@ -129,12 +129,24 @@ class DoctorSchedule {
     }
 }
 
+function get_hours_range($start, $end, $step) {
+    $times = array();
+    foreach (range($start, $end, $step) as $timestamp) {
+        $hour_mins = gmdate('H:i', $timestamp);
+        if (!empty($format))
+            $times[$hour_mins] = gmdate($format, $timestamp);
+        else
+            $times[$hour_mins] = $hour_mins;
+    }
+   return $times;
+}
+
 //function halfHourTimes($sttime, $endtime) {
 //  $formatter = function ($sttime, $endtime) {
 //      
 //    if ($sttime % 3600 == 0 || $endtime % 3600 == 0) {
 //      return date('ga', $sttime);
-//    } else {
+//   } else {
 //      return date('g:ia', $sttime);
 //    }
 //  };
@@ -212,16 +224,63 @@ $app->post('/prepayment', function() use ($app){
     DB::insert('test', array('doctorId' => $doctorId, 'time' => $time));
 });
 
+
+//
+//$app->get('/avtime/:id/:start', function ($id, $start) use ($app) {
+//   // $data = array();   
+//    
+//    $startDate = strtotime($start); // DateTime::createFromFormat("Y-m-d", $start);
+//    $endDate = strtotime("+6 days", $startDate); 
+//
+//    $docDaysList = DB::query("SELECT * FROM dailyschedules WHERE doctorId = %i and date >= %s and date < %s", $id,
+//    gmdate("Y-m-d", $startDate), gmdate("Y-m-d", $endDate));    
+//    
+//    $splithour = array();
+//    $data = array();
+////print_r($result['0']['start']);
+//    foreach ($docDaysList as $docDay) {
+//        $appsForDay = DB::queryFirstColumn ("SELECT startTime FROM appointments WHERE doctorId = %d AND date = %s", 1, $docDay['date']);
+//        // $working = ($docDay['end'] - $docDay['start']) / 1800;
+////        for ($i = 0; $i < $working; $i++) {
+//        $apptsHoursList = get_hours_range($docDay['start'], $docDay['end'], 1800);
+//        
+//        $newApptsHoursList = array();
+//        foreach ($apptsHoursList as $appt) {
+//            $newApptsHoursList[$appt] = in_array($appt . ":00", $appsForDay) ? "true" : "false";            
+//        }
+//        /*
+//        $newdata[$docDay['date']] = array(
+//            'avaliable' => "true",
+//            'timeSlotList' => $splithour
+//                // ,     'doctorId' => $docDay['doctorId']
+//                //,            'date' => $docDay['date']
+//        );
+//        //      }
+//        //); */
+//        $data[$docDay['date']] = $newApptsHoursList;
+//    }
+//    
+//    header('Content-Type: application/json');
+//    
+//    echo json_encode($data);    
+//    
+//});
+
+
+
+
 $app->get('/avtime/:id/:start', function ($id, $start) use ($app) {
     $data = array();   
     
     $startDate = strtotime($start); // DateTime::createFromFormat("Y-m-d", $start);
     $endDate = strtotime("+6 days", $startDate); 
 
-    $timeRow = DB::query("SELECT * FROM dailyschedules WHERE doctorId = %i and date >= %s and date < %s", $id,
+    $docDaysList = DB::query("SELECT * FROM dailyschedules WHERE doctorId = %i and date >= %s and date < %s", $id,
     gmdate("Y-m-d", $startDate), gmdate("Y-m-d", $endDate));    
     
-    $timeApp = DB::query("SELECT * FROM appointments WHERE doctorId = %i ", $id);    
+//    foreach ($docDaysList as $docDay) {
+//    $appsForDay = DB::queryFirstColumn ("SELECT startTime FROM appointments WHERE doctorId = %d AND date = %s", 1, $docDay['date']);    
+//    }
     
     for ($i=0; $i<6; $i++) {
         $currentDate = strtotime("+" . "$i" . " days", $startDate);
@@ -237,11 +296,13 @@ $app->get('/avtime/:id/:start', function ($id, $start) use ($app) {
         $value->setDate($date);
 
         $times = array();
+        $newApptsHoursList = array();
         
-        foreach ($timeRow as $r) {
+        foreach ($docDaysList as $r) {
             $d = $r['date'];
             $t1 = $r['startTime'];
             $t2 = $r['endTime'];
+            $appsForDay = DB::queryFirstColumn ("SELECT startTime FROM appointments WHERE doctorId = %d AND date = %s", $id, $r['date']); 
             
             if($d == $currentDateStr) {               
                 $slot = new TimeSlot();
@@ -251,9 +312,25 @@ $app->get('/avtime/:id/:start', function ($id, $start) use ($app) {
                 $end = new Time();
                 $end->setHour(((int) substr($t2, 0, 2)));
                 $end->setMinute(((int) substr($t2, 3, 5)));
+                
+                $apptsHoursList = get_hours_range($start, $end, 1800);
+                $newApptsHoursList = array();
+        foreach ($apptsHoursList as $appt) {
+                if(in_array($appt , $appsForDay)){
+                    
+                }
+                else{
+                array_push($times, $appt);
+                }
+        }
                 $slot->setStart($start);
                 $slot->setEnd($end);
+                
                 array_push($times, $slot);
+                
+//                foreach ($times as $appt) {
+//            $newApptsHoursList[$appt] = in_array($appt , $appsForDay) ? "true" : "false";            
+//        }
             }
             
         }
@@ -268,4 +345,6 @@ $app->get('/avtime/:id/:start', function ($id, $start) use ($app) {
     echo json_encode($data);    
     
 });
+
+
 
