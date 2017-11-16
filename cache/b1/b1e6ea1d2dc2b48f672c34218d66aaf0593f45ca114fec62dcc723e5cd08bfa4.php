@@ -30,7 +30,7 @@ class __TwigTemplate_dfea46f5507f44e3fb232aa78da7179a226d77e8445f81fb90e7ee280e4
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        echo "Register";
+        echo "Make Appointment";
     }
 
     // line 4
@@ -88,21 +88,7 @@ class __TwigTemplate_dfea46f5507f44e3fb232aa78da7179a226d77e8445f81fb90e7ee280e4
                 </div>
             </div>
 
-            <!-- Text input-->
-
-            <div class=\"form-group\">
-                <label class=\"col-md-4 control-label\" >Date:</label> 
-                <div class=\"col-md-4 inputGroupContainer\">
-                    <div class='input-group date'>
-                        <span class=\"input-group-addon\">
-                            <span class=\"glyphicon glyphicon-calendar\"></span>
-                        </span>
-                        <input type='date' class=\"form-control\" name=\"app_date\" />
-
-                    </div>
-                </div>
-
-            </div>
+            <!-- Text input-->           
             <div class=\"form-group\">
   <label class=\"col-md-4 control-label\"></label>
   <div class=\"col-md-4\"><br>
@@ -141,7 +127,7 @@ class __TwigTemplate_dfea46f5507f44e3fb232aa78da7179a226d77e8445f81fb90e7ee280e4
     {
         return new Twig_Source("{% extends \"master.html.twig\" %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Make Appointment{% endblock %}
 {% block matchpwd %}
     <!--<script src=\"https://s.codepen.io/assets/libs/modernizr.js\" type=\"text/javascript\"></script>
     <script src=\"/assets/bootstrap/js/bootstrap.min.js\"></script>-->
@@ -171,21 +157,7 @@ class __TwigTemplate_dfea46f5507f44e3fb232aa78da7179a226d77e8445f81fb90e7ee280e4
                 </div>
             </div>
 
-            <!-- Text input-->
-
-            <div class=\"form-group\">
-                <label class=\"col-md-4 control-label\" >Date:</label> 
-                <div class=\"col-md-4 inputGroupContainer\">
-                    <div class='input-group date'>
-                        <span class=\"input-group-addon\">
-                            <span class=\"glyphicon glyphicon-calendar\"></span>
-                        </span>
-                        <input type='date' class=\"form-control\" name=\"app_date\" />
-
-                    </div>
-                </div>
-
-            </div>
+            <!-- Text input-->           
             <div class=\"form-group\">
   <label class=\"col-md-4 control-label\"></label>
   <div class=\"col-md-4\"><br>
