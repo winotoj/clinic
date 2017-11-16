@@ -181,7 +181,7 @@ $app->get('/doctors/:id/:drname', function($id, $drname) use ($app){
     $startDate = strtotime('now'); 
     $endDate = strtotime("+6 days", $startDate);
     $timeRow = DB::query("SELECT * FROM dailyschedules WHERE doctorId = %i and date >= %s and date < %s", $id, gmdate("Y-m-d", $startDate), gmdate("Y-m-d", $endDate));
-    print_r($timeRow);
+   // print_r($timeRow);
 //    for( $i = 0; $i < 2; $i++){
 //    print_r(halfHourTimes($timeRow[0].['startTime'], $timeRow[0].['endTime']));
 //    }
@@ -198,8 +198,11 @@ $app->get('/doctors/:id/:drname', function($id, $drname) use ($app){
         array_push($weekDate, $dateInfo) ;
         $startdate = strtotime("+1 day", $startdate);
     }
+    
+    
+    //print_r($weekDate);
     //print_r($timeRow);
-    $app->render('doctors/drdescription.html.twig', array('dr' => $row, 'weekDate' => $weekDate));
+    $app->render('doctors/drdescription.html.twig', array('dr' => $row));
 });
 
 $app->post('/prepayment', function() use ($app){
@@ -217,6 +220,8 @@ $app->get('/avtime/:id/:start', function ($id, $start) use ($app) {
 
     $timeRow = DB::query("SELECT * FROM dailyschedules WHERE doctorId = %i and date >= %s and date < %s", $id,
     gmdate("Y-m-d", $startDate), gmdate("Y-m-d", $endDate));    
+    
+    $timeApp = DB::query("SELECT * FROM appointments WHERE doctorId = %i ", $id);    
     
     for ($i=0; $i<6; $i++) {
         $currentDate = strtotime("+" . "$i" . " days", $startDate);
@@ -253,12 +258,14 @@ $app->get('/avtime/:id/:start', function ($id, $start) use ($app) {
             
         }
         
-        $value->setTimes($times);
+        $value->setTimes($times);        
 
         array_push($data, $value);
     }
+    
     header('Content-Type: application/json');
     
-    echo json_encode($data);
+    echo json_encode($data);    
+    
 });
 

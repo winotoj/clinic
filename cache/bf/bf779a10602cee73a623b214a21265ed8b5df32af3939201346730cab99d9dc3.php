@@ -52,13 +52,13 @@ class __TwigTemplate_87a86df006dd2202e643b264156f3e573238b8b43873d89825885252259
     <div>
         <nav class=\"navbar navbar-default navigation-clean-button\">
             <div class=\"container\">
-                <div class=\"navbar-header\"><a class=\"navbar-brand navbar-link\" href=\"#\">Todo List</a>
+                <div class=\"navbar-header\"><a class=\"navbar-brand navbar-link\" href=\"#\">Clinic Medical</a>
                     <button class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navcol-1\"><span class=\"sr-only\">Toggle navigation</span><span class=\"icon-bar\"></span><span class=\"icon-bar\"></span><span class=\"icon-bar\"></span></button>
                 </div>
                 <div class=\"collapse navbar-collapse\" id=\"navcol-1\">
                     <ul class=\"nav navbar-nav\">
-                        <li role=\"presentation\"><a href=\"/\">List Todo</a></li>
-                        <li role=\"presentation\"><a href=\"/add\">Add Todo</a></li>
+                        <li role=\"presentation\"><a href=\"/\">Services</a></li>
+                        <li role=\"presentation\"><a href=\"/add\">Contact Us</a></li>                        
                     </ul>
 
                     ";
@@ -100,6 +100,7 @@ class __TwigTemplate_87a86df006dd2202e643b264156f3e573238b8b43873d89825885252259
     // line 7
     public function block_title($context, array $blocks = array())
     {
+        echo "Clinical Medical";
     }
 
     // line 12
@@ -129,7 +130,7 @@ class __TwigTemplate_87a86df006dd2202e643b264156f3e573238b8b43873d89825885252259
 
     public function getDebugInfo()
     {
-        return array (  116 => 45,  111 => 16,  106 => 12,  101 => 7,  91 => 46,  89 => 45,  82 => 40,  77 => 37,  68 => 34,  66 => 33,  48 => 17,  46 => 16,  41 => 13,  39 => 12,  31 => 7,  23 => 1,);
+        return array (  117 => 45,  112 => 16,  107 => 12,  101 => 7,  91 => 46,  89 => 45,  82 => 40,  77 => 37,  68 => 34,  66 => 33,  48 => 17,  46 => 16,  41 => 13,  39 => 12,  31 => 7,  23 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -148,7 +149,7 @@ class __TwigTemplate_87a86df006dd2202e643b264156f3e573238b8b43873d89825885252259
     <head>
         <meta charset=\"utf-8\">
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-        <title>{% block title %}{% endblock %}</title>
+        <title>{% block title %}Clinical Medical{% endblock %}</title>
         <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>
         <!-- Latest compiled JavaScript -->
         <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>
@@ -165,13 +166,13 @@ class __TwigTemplate_87a86df006dd2202e643b264156f3e573238b8b43873d89825885252259
     <div>
         <nav class=\"navbar navbar-default navigation-clean-button\">
             <div class=\"container\">
-                <div class=\"navbar-header\"><a class=\"navbar-brand navbar-link\" href=\"#\">Todo List</a>
+                <div class=\"navbar-header\"><a class=\"navbar-brand navbar-link\" href=\"#\">Clinic Medical</a>
                     <button class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navcol-1\"><span class=\"sr-only\">Toggle navigation</span><span class=\"icon-bar\"></span><span class=\"icon-bar\"></span><span class=\"icon-bar\"></span></button>
                 </div>
                 <div class=\"collapse navbar-collapse\" id=\"navcol-1\">
                     <ul class=\"nav navbar-nav\">
-                        <li role=\"presentation\"><a href=\"/\">List Todo</a></li>
-                        <li role=\"presentation\"><a href=\"/add\">Add Todo</a></li>
+                        <li role=\"presentation\"><a href=\"/\">Services</a></li>
+                        <li role=\"presentation\"><a href=\"/add\">Contact Us</a></li>                        
                     </ul>
 
                     {% if userSession %}

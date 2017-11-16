@@ -171,3 +171,24 @@ date and name
 	-try to apply html5_serversentevents
 3. where do i need help from?
 	-internet
+
+2017-11-15 -- Vaji
+1 what have i done / not done sincce last scrum?
+	-create mini project to test ajax form
+                     -make changes in javascript to create modal
+                     -make changes in code to pass data from page showavailable time to modal (Appointment form) and compelet appointment process
+2. What will i do from now until next scrum?
+	-complete process make appointment	
+3. where do i need help from?
+	-internet
+
+
+2017-11-16 -- Vaji
+1 what have i done / not done sincce last scrum?
+	-create mini project to test ajax form
+                     -make changes in javascript to create modal
+                     -make changes in code to pass data from page showavailable time to modal (Appointment form) and compelet appointment process
+2. What will i do from now until next scrum?
+	-complete process make appointment	
+3. where do i need help from?
+	-internet
