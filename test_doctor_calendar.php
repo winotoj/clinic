@@ -6,8 +6,6 @@ if (false) {
 }
 
 $app->get('/cal1', function() use ($app, $log) {
-   // $ticketsLength = count($tickets);
-
 
 header('Content-Type: text/event-stream');
 header('Cache-Control: no-cache');
@@ -19,13 +17,13 @@ header('Cache-Control: no-cache');
 
    // while (true) {
         $cal = DB::query('SELECT * FROM appointments WHERE readStatus = 0 AND doctorId = %i', 1);
-        if(empty($cal)){
-           return;
-        }
-        else if (!$cal) {
-            http_response_code(500);
-            $app->render('internal_error.html.twig');
-        }
+//        if(empty($cal)){
+//           return;
+//        }
+//        else if (!$cal) {
+//            http_response_code(500);
+//            $app->render('internal_error.html.twig');
+//        }
         $result=array();
         foreach ($cal as $c) {
             $result = ['id' => $c['id'],
@@ -43,7 +41,7 @@ header('Cache-Control: no-cache');
             DB::update('appointments', array(
   'readStatus' => 1
   ), "doctorId=%i", 1);
-           // $app->render(admin/dr_schedule.html);
+           //$app->render(admin/dr_schedule.html);
             
         }
         //sleep(15);

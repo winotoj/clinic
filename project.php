@@ -39,7 +39,7 @@ require_once 'patient.php';
 require_once 'account.php';
 require_once 'doctor_schedule.php';
 require_once 'doctor_calendar.php';
-require_once 'test_doctor_calendar.php';
+require_once 'testavaliabity.php';
 //require_once 'events.php';
 //require_once 'ajaxpro.php';
 
