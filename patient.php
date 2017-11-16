@@ -202,6 +202,13 @@ $app->get('/doctors/:id/:drname', function($id, $drname) use ($app){
     $app->render('doctors/drdescription.html.twig', array('dr' => $row, 'weekDate' => $weekDate));
 });
 
+$app->post('/prepayment', function() use ($app){
+    
+    $doctorId = $app->request()->post('doctorId');
+    $time = $app->request()->post('time');
+    DB::insert('test', array('doctorId' => $doctorId, 'time' => $time));
+});
+
 $app->get('/avtime/:id/:start', function ($id, $start) use ($app) {
     $data = array();   
     

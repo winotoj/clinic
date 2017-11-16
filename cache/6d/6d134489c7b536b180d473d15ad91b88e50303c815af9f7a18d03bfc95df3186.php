@@ -7,17 +7,42 @@ class __TwigTemplate_e16371dd43bfeac20bdb9bbb398aedf062ceba023825fc407025c140424
     {
         parent::__construct($env);
 
-        $this->parent = false;
-
+        // line 1
+        $this->parent = $this->loadTemplate("master.html.twig", "index.html.twig", 1);
         $this->blocks = array(
+            'title' => array($this, 'block_title'),
+            'content' => array($this, 'block_content'),
         );
+    }
+
+    protected function doGetParent(array $context)
+    {
+        return "master.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        // line 2
-        echo "
-This is index.";
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+    }
+
+    // line 2
+    public function block_title($context, array $blocks = array())
+    {
+        echo "Clinic Medical";
+    }
+
+    // line 5
+    public function block_content($context, array $blocks = array())
+    {
+        // line 6
+        echo "<div class=\"container\">
+    <div style=\"text-align: center\">
+    <label class=\"btn-default\"><a class=\"navbar-brand navbar-link\" href=\"/bookappointment\">Book Appointment</a></label>
+    </div>
+  
+</div>
+        
+";
     }
 
     public function getTemplateName()
@@ -25,9 +50,14 @@ This is index.";
         return "index.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  19 => 2,);
+        return array (  38 => 6,  35 => 5,  29 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -40,8 +70,18 @@ This is index.";
 
     public function getSourceContext()
     {
-        return new Twig_Source("{# empty Twig template #}
+        return new Twig_Source("{% extends \"master.html.twig\" %}
+{% block title %}Clinic Medical{% endblock %}
 
-This is index.", "index.html.twig", "C:\\xampp\\htdocs\\php-project\\templates\\index.html.twig");
+
+{% block content %}
+<div class=\"container\">
+    <div style=\"text-align: center\">
+    <label class=\"btn-default\"><a class=\"navbar-brand navbar-link\" href=\"/bookappointment\">Book Appointment</a></label>
+    </div>
+  
+</div>
+        
+{% endblock %}", "index.html.twig", "C:\\xampp\\htdocs\\php-project\\templates\\index.html.twig");
     }
 }
