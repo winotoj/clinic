@@ -40,7 +40,7 @@ class __TwigTemplate_caf40df14809fe2adf9a3beec96156ed51020de8ee6138a681bbead23a8
     Our team of coding ninjas has been notified
     and is already working on the problem.</p>
 <p><a href=\"/\">Click to continue</a></p>
-<img src=\"/images/ninja.png\">
+<img src=\"/images/code-ninja.png\">
 
 ";
     }
@@ -80,7 +80,7 @@ class __TwigTemplate_caf40df14809fe2adf9a3beec96156ed51020de8ee6138a681bbead23a8
     Our team of coding ninjas has been notified
     and is already working on the problem.</p>
 <p><a href=\"/\">Click to continue</a></p>
-<img src=\"/images/ninja.png\">
+<img src=\"/images/code-ninja.png\">
 
 {% endblock %}", "internal_error.html.twig", "C:\\xampp\\htdocs\\php-project\\templates\\internal_error.html.twig");
     }
