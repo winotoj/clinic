@@ -7,15 +7,40 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js"></script>
         <script type="text/javascript">
             $(document).ready(function () {
-                 var $modal = $('#confirmModalDelete');
+                var $modal = $('#confirmModalDelete');
                 $("#appList .btn-cancel").click(function (e) {
                     e.preventDefault();
                     var appId = $(this).attr('data-appid');
+                    var drName = $(this).attr('dr-name');
+                    var appDate = $(this).attr('app-date');
+                    var appTime = $(this).attr('app-time');
+                    
                     $modal.find('input[name=appid]').val(appId);
+                    $modal.find('.modal-body h4').text('DR.' + drName + ' on ' + appDate + ' at ' + appTime );
+                    
                     $("#confirmModalDelete").modal({show: true});
                 });
-            });
+           
 
+            $modal.find("form").submit(function (e) {
+                var $modal = $('#confirmModalDelete');
+                e.preventDefault();
+                var appId = $('#appid').val();
+                var $form = $(this);
+                //var action = $form.attr('action');
+                $.ajax({
+                    url: '/' + appId + '/deleteappointment' ,
+                    method: 'POST',
+                    data: $form.serializeArray(),
+                    success: function (data) {
+                        
+                        $modal.find('.modal-body p').text(data);
+                        $modal.find('.content1').addClass('hidden');
+                        $modal.find('.content2').removeClass('hidden');
+                    }
+                });
+            });
+});
         </script>
     {% endblock %}
     {% block css %} 
@@ -58,7 +83,14 @@
                 <table cellpadding="0" cellspacing="0" class="table table-bordered table-hover table-responsive">
                     <tr><th>Dr.Name</th><th>Date</th><th>Time</th><th>Action</th></tr>
                             {% for app in myapp %}
-                        <tr><td>{{app.firstName }} {{app.lastName}}</td><td>{{app.date}}</td><td>{{app.startTime}}</td><td><button  type="button" class="btn-cancel btn btn-primary" data-appid="{{app.id}}">Cancel</button></td></tr>
+                        <tr>
+                            <td>{{app.firstName }} {{app.lastName}}</td>
+                            <td>{{app.date}}</td>
+                            <td>{{app.startTime}}</td>
+                            <td>
+                                <button  type="button" class="btn-cancel btn btn-primary" data-appid="{{app.id}}" dr-name="{{app.firstName }} {{app.lastName}}" app-date="{{app.date}}" app-time="{{app.startTime}}">Cancel</button>
+                            </td>
+                        </tr>
                     {% endfor %}
                 </table>
             </div>
@@ -66,16 +98,18 @@
         <div id="confirmModalDelete" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <div class="content1">
-                    <form action="/prepayment" method="post">
-                        <input type="hidden" name="appid" value="" />
+                    <form method="post">
+                        <input type="hidden" id="appid" name="appid" value="" />
                         <!-- Modal content-->
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Book Appointment / With Dr.{{app.firstName }} {{app.lastName}}</h4>
+                                <h4 class="modal-title">Cancel Appointment</h4>
                             </div>
                             <div class="modal-body">
-                                <p>Your Appointment : </p>
+                                <p>Your Appointment is with :</p>
+                                <h4></h4>
+                                <p>Are you sure to cancel it?</p>
 
                             </div>
                             <div class="modal-footer">
@@ -85,6 +119,21 @@
                             </div>
                         </div>
                     </form>
+                </div>
+                <div class="content2 hidden">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>                            
+                        </div>
+                        <div class="modal-body">
+                            <p></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>                           
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
