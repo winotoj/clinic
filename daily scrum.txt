@@ -1,173 +1,81 @@
-date and name
-1. what have i done / not done sincce last scrum?
-2. what will i do from now until next scrum?
-3. where do i need help from my teammate, teacher, or internet?
-
-2017-11-03 --Winoto
-1. what have i done / not done sincce last scrum?
-	- create proposal -- done
-	- create DB -- done
-	- create trello missing checklist
-2. what will i do from now until next scrum?
-	- create register, login (UI and code behind), master using bootstrap
-	- populate db with data
-	
-2017-11-03 --Vaji
-1. what have i done / not done sincce last scrum?
-	- search about online appointment for clinic
-	- make mockup
-	
-2. what will i do from now until next scrum?
-	- search about schedule and online payment
-	
-2017-11-05 --Winoto
-1. what have i done / not done sincce last scrum?
-	- Register done
-	- Login done
-	- Edit trello missing checklist not done
-	- populate DB (doctors) not done
-2. what will i do from now until next scrum?
-	- create trello missing checklist
-	- fix DB structure in hosting, wrong field in some tables
-	- populate db with data
-
-2017-11-06 --Winoto
-1. what have i done / not done sincce last scrum?
-	-populate DB (doctors) - done
-	-fixed DB structure - done
-2. what will i do from now until next scrum?
-	-search about payment API
-3. where do i need help from?
-	-internet	
-
-2017-11-06 --Vaji
-1. what have i done / not done sincce last scrum?
-	-setup some settings in my computer
-	-search about the doctor schedule
-2. what will i do from now until next scrum?
-	-analyze patient part
-	-make myaccount page
-	-make page for makebooking
-	
-3. where do i need help from?
-	-internet
-	
-2017-11-07 --Vaji
-1. what have i done / not done sincce last scrum?
-	-Create page for patient to see their appointments, their profile, ..
-	
-2. what will i do from now until next scrum?
-	-add template and impelement forgot password
-		
-3. where do i need help from?
-	-internet
-	
-2017-11-08 --Vaji
-1. what have i done / not done sincce last scrum?
-	-Create page and template for forgotten password
-	-Create UI to search the doctor's name and impelent process 
-	-fix the bug in register page
-2. what will i do from now until next scrum?
-	-Serach about using select2
-	-Create page for doctor's description and their available time	
-	
-3. where do i need help from?
-	-internet
-
-2017-11-08 --Winoto
-1. what have i done / not done sincce last scrum?
-	-Created side project for doctor datepicker to populate schedule - done
-	-Created schedule - not done
-2. what will i do from now until next scrum?
-	-Create availability schedule
-3. where do i need help from?
-	-internet, wrong js (between bootstrap-datepicker.js and jquerydatepicker.js)
-	-internet, ajax to pass the selected month back to php to be able to render the schedule
-	
-2017-11-09 --Vaji
-1. what have i done / not done sincce last scrum?
-	-Create UI for doctor's description and doctor's List
-	-Serach about the way to show doctor's available time by ajax and javascript
-	
-2. what will i do from now until next scrum?
-	-Create UI to show doctor's available time and impelement process
-	-work on make appointment process
-3. where do i need help from?
-	-internet
-	
-2017-11-09 --Winoto
-1. what have i done / not done sincce last scrum?
-	-Created doctor schedule (availability),using ajax and datepicker done 
-2. what will i do from now until next scrum?
-	-Create doctor calendar
-	-Search about websocket
-3. where do i need help from?
-	-Internet
-	
-2017-11-10 --Vaji
-1. what have i done / not done sincce last scrum?
-	-Create UI to show doctor's available time and impelement process
-	-fix bug in login page 
-2. what will i do from now until next scrum?
-	-make relation between table appointment and page available time
-	-work on process make appointment
-3. where do i need help from?
-	-Internet
-
-2017-11-10 --Winoto
-1. what have i done / not done sincce last scrum?
-	-Created miniproject for calendar--done
-	-Websocket --not done
-2. what will i do from now until next scrum?
-	-Create doctor calendar in project
-	-Search about websocket
-3. where do i need help from?
-	-Internet
-
-2017-11-12 -- Winoto
-1 what have i done / not done sincce last scrum?
-	-Doctor Calendar to be tested -done
-	-Websocket --not done
-2. What will i do from now until next scrum?
-	-Search about websocket
-	-Continue customer history (part of appointment calendar)
-3. where do i need help from?
-	-internet
-
-
-2017-11-14 -- Vaji
-1 what have i done / not done sincce last scrum?
-	-create a mini project to use modale
-	-Add modale in page get appointment and create the related form
-                     -change the javascript in page show available time to php code
-2. What will i do from now until next scrum?
-	-work on process make appointment
-	-make code to pass data from page showavailable time to modal (Appointment form) and compelet appointment process
-
-2017-11-13 -- Winoto
-1 what have i done / not done sincce last scrum?
-	-Search about websocket, will decide to use websocket or pusher
-	-Created side project
-	-Customer history -- done
-2. What will i do from now until next scrum?
-	-Continue websocket/ pusher
-
-3. where do i need help from?
-	-internet
-2017-11-13 -- Winoto
-1 what have i done / not done sincce last scrum?
-	-Found that we dont need websocket or pusher, server event is enough because one way
-
-2. What will i do from now until next scrum?
-	-Try to do with server event tomorrow, postpone the project
-
-3. where do i need help from?
-	-internet
-
-2017-11-14 -- Winoto
-1 what have i done / not done sincce last scrum?
-	-Search about websocket, will decide to use websocket or pusher, will use html5_serversentevents
-2. What will i do from now until next scrum?
-	-try to apply html5_serversentevents
-3. where do i need help from?
-	-internet
+date and name
+1. what have i done / not done sincce last scrum?
+2. what will i do from now until next scrum?
+3. where do i need help from my teammate, teacher, or internet?
+
+2017-11-03 --Winoto
+1. what have i done / not done sincce last scrum?
+	- create proposal -- done
+	- create DB -- done
+	- create trello missing checklist
+2. what will i do from now until next scrum?
+	- create register, login (UI and code behind), master using bootstrap
+	- populate db with data
+	
+2017-11-03 --Vaji
+1. what have i done / not done sincce last scrum?
+	- search about online appointment for clinic
+	- make mockup
+	
+2. what will i do from now until next scrum?
+	- search about schedule and online payment
+	
+2017-11-05 --Winoto
+1. what have i done / not done sincce last scrum?
+	- Register done
+	- Login done
+	- Edit trello missing checklist not done
+	- populate DB (doctors) not done
+2. what will i do from now until next scrum?
+	- create trello missing checklist
+	- fix DB structure in hosting, wrong field in some tables
+	- populate db with data
+
+2017-11-06 --Winoto
+1. what have i done / not done sincce last scrum?
+	-populate DB (doctors) - done
+	-fixed DB structure - done
+2. what will i do from now until next scrum?
+	-search about payment API
+3. where do i need help from?
+	-internet	
+
+2017-11-06 --Vaji
+1. what have i done / not done sincce last scrum?
+	-setup some settings in my computer
+	-search about the doctor schedule
+2. what will i do from now until next scrum?
+	-analyze patient part
+	-make myaccount page
+	-make page for makebooking
+	
+3. where do i need help from?
+	-internet
+	
+2017-11-07 --Vaji
+1. what have i done / not done sincce last scrum?
+	-complete myaccount page	
+	-fix the problem in register page 
+	-fix the UI for register page
+	
+2. what will i do from now until next scrum?
+        -serachh about using select2 jquery in php
+	-make page for search dr.list 
+	-make page to make appointment	
+	
+3. where do i need help from?
+	-internet
+
+2017-11-08 --Vaji
+1. what have i done / not done sincce last scrum?
+	-make page to serach dr.list	
+	-make page and temlate for forgot password 
+	-search about how to use select2 jquery in php
+	
+2. what will i do from now until next scrum?
+        -complete page make appointment
+	-compelet UI for dr.list
+		
+3. where do i need help from?
+	-internet	
+
