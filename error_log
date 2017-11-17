@@ -427,6 +427,7 @@
 [16-Nov-2017 16:47:58 UTC] PHP Fatal error:  Cannot redeclare get_hours_range() (previously declared in /home/cp4809/clinic.ipd10.com/patient.php:132) in /home/cp4809/clinic.ipd10.com/testavaliabity.php on line 8
 [16-Nov-2017 16:47:58 UTC] PHP Fatal error:  Cannot redeclare get_hours_range() (previously declared in /home/cp4809/clinic.ipd10.com/patient.php:132) in /home/cp4809/clinic.ipd10.com/testavaliabity.php on line 8
 [16-Nov-2017 16:47:59 UTC] PHP Fatal error:  Cannot redeclare get_hours_range() (previously declared in /home/cp4809/clinic.ipd10.com/patient.php:132) in /home/cp4809/clinic.ipd10.com/testavaliabity.php on line 8
+<<<<<<< HEAD
 [16-Nov-2017 17:58:00 UTC] PHP Fatal error:  Call to a member function get() on null in /home/cp4809/clinic.ipd10.com/patient.php on line 166
 [16-Nov-2017 18:19:09 UTC] PHP Fatal error:  Cannot redeclare get_hours_range() (previously declared in /home/cp4809/clinic.ipd10.com/patient.php:132) in /home/cp4809/clinic.ipd10.com/testavaliabity.php on line 8
 [16-Nov-2017 18:19:24 UTC] PHP Fatal error:  Cannot redeclare get_hours_range() (previously declared in /home/cp4809/clinic.ipd10.com/patient.php:132) in /home/cp4809/clinic.ipd10.com/testavaliabity.php on line 8
@@ -584,3 +585,5 @@
 [16-Nov-2017 23:19:10 UTC] PHP Fatal error:  Cannot redeclare get_hours_range() (previously declared in /home/cp4809/clinic.ipd10.com/patient.php:201) in /home/cp4809/clinic.ipd10.com/testavaliabity.php on line 8
 [16-Nov-2017 23:19:10 UTC] PHP Fatal error:  Cannot redeclare get_hours_range() (previously declared in /home/cp4809/clinic.ipd10.com/patient.php:201) in /home/cp4809/clinic.ipd10.com/testavaliabity.php on line 8
 [16-Nov-2017 23:19:17 UTC] PHP Fatal error:  Cannot redeclare get_hours_range() (previously declared in /home/cp4809/clinic.ipd10.com/patient.php:201) in /home/cp4809/clinic.ipd10.com/testavaliabity.php on line 8
+=======
+>>>>>>> 8bd43798e5e0aac37a423189deccc21741bade0e
