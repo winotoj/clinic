@@ -482,6 +482,7 @@
                         endDate = d.date.dateStr;
                     }
                     var date = d.date;
+                    var appointments = d.appointments;
                     var dateStr = d.date.dateStr; // 2017-08-02
                     var $e = $('<li><span>' + d.date.dow + '</span><span>' + d.date.day + " " + d.date.month + '</span></li>');
                     $headerUrl.append($e);
@@ -493,15 +494,19 @@
 
                         var total_hours = e - s;
                         for (var j = s; j < e + 1; j++) {
-                            var timeStr = j.toString() + ":" + "00";
+                            var timeStr = (j.toString() + ":" + "00").padStart(5, '0');
                             var dateTime = dateStr + ' - ' + timeStr;
+                            
+                            var hasAppointment = appointments.indexOf(timeStr) >= 0;
 
-                            var $li = $('<li><button data-time="' + dateTime + '" type="button" class="btn-time inverted btn btn-info btn-lg">' + timeStr + '</button></li>')
+                            var $li = $('<li><button ' + (hasAppointment ? 'disabled' : '') + ' data-time="' + dateTime + '" type="button" class="btn-time inverted btn btn-info btn-lg" onclick="getappointment(this)">' + timeStr + '</button></li>');
                             $ul.append($li);
-                            timeStr = j.toString() + ":" + "30";
+                            timeStr = (j.toString() + ":" + "30").padStart(5, '0');
+                            
+                            hasAppointment = appointments.indexOf(timeStr) >= 0;
                             
                             dateTime = dateStr + ' ' + timeStr;
-                            $li = $('<li><button data-time="' + dateTime + '" type="button" class="btn-time inverted btn btn-info btn-lg">' + timeStr + '</button></li>');
+                            $li = $('<li><button '  + (hasAppointment ? 'disabled' : '') + ' data-time="' + dateTime + '" type="button" class="btn-time inverted btn btn-info btn-lg" onclick="getappointment(this)">' + timeStr + '</button></li>');
                             $ul.append($li);
                         }
                     });
@@ -510,7 +515,7 @@
             }  
             //var data = [{"date":{"dow":"Wed","day":"06","month":"2017-12-06"},"times":[{"start":{"hour":8,"minute":0},"end":{"hour":20,"minute":0}},{"start":{"hour":8,"minute":0},"end":{"hour":20,"minute":0}}]},{"date":{"dow":"Thu","day":"07","month":"2017-12-07"},"times":[{"start":{"hour":8,"minute":0},"end":{"hour":20,"minute":0}},{"start":{"hour":8,"minute":0},"end":{"hour":20,"minute":0}}]},{"date":{"dow":"Fri","day":"08","month":"2017-12-08"},"times":[]},{"date":{"dow":"Sat","day":"09","month":"2017-12-09"},"times":[{"start":{"hour":8,"minute":0},"end":{"hour":20,"minute":0}}]},{"date":{"dow":"Sun","day":"10","month":"2017-12-10"},"times":[{"start":{"hour":8,"minute":0},"end":{"hour":20,"minute":0}},{"start":{"hour":8,"minute":0},"end":{"hour":20,"minute":0}}]}];
             var getDate = function (start) {
-                var url = 'http://clinic.ipd10.com/avtime/' + doctorId + '/' + start;
+                var url = '/avtime/' + doctorId + '/' + start;
                 $.ajax({
                     url: url,
                     success: function (data) {
@@ -541,9 +546,8 @@
                 getDate(formatDate(d));
             });
             
-            $('#doctor').bind('click', '.btn-time', function (e) {
-                e.preventDefault();
-                var time = $(e.target).attr('data-time');
+            window.getappointment = function (e) {
+                var time = $(e).attr('data-time');
                 $modal.find('input[name=time]').val(time);
                 
                 //$modal.find('.modal-title').text('New message to ' + recipient);
@@ -552,7 +556,8 @@
                 $modal.find('.content2').addClass('hidden');
                         
                 $modal.modal('show');
-            });
+                return false;
+            };
             
             $modal.find("form").submit(function (e) {
                 e.preventDefault();
