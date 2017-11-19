@@ -85,13 +85,13 @@ require_once 'doctor_calendar.php';
 //require_once 'ajaxpro.php';
 
 
+if (!isset($_SESSION['userSession'])) {
 
+    $_SESSION['userSession'] = array();
+}
+if (!isset($_SESSION['staffSession'])) {
 
-
-if (!isset($_SESSION['user'])) {
-
-    $_SESSION['user'] = array();
-
+    $_SESSION['staffSession'] = array();
 }
 
 // url/event handler go here

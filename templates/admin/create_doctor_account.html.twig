@@ -11,7 +11,7 @@
                 $('input[name=email]').bind('propertychange change click keyup input paste', function () {
                     // AJAX request
                     var email = $('input[name=email]').val();
-                    $('#isTaken').load('/isemailregistered/' + email);
+                    $('#isTaken').load('/isdoctoremailregistered/' + email);
                 });
             });
         </script>
