@@ -57,7 +57,9 @@ class __TwigTemplate_dfea46f5507f44e3fb232aa78da7179a226d77e8445f81fb90e7ee280e4
     public function block_content($context, array $blocks = array())
     {
         // line 16
-        echo "    <div class=\"container\">
+        echo "     <section id=\"padding\" class=\"section-sm-padding\">
+    </section>
+    <div class=\"container\">
 
         <form class=\"well form-horizontal\" method=\"POST\" id=\"apointment_form\" enctype=\"multipart/form-data\">           
             <div class=\"form-group\">
@@ -67,11 +69,11 @@ class __TwigTemplate_dfea46f5507f44e3fb232aa78da7179a226d77e8445f81fb90e7ee280e4
                         <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></span>
                         <select class=\"itemName form-control\"  name=\"speciality\">
                             ";
-        // line 25
+        // line 27
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["r"]) ? $context["r"] : null));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 26
+            // line 28
             echo "                                <option value=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "speciality", array()), "html", null, true);
             echo "\">";
@@ -82,7 +84,7 @@ class __TwigTemplate_dfea46f5507f44e3fb232aa78da7179a226d77e8445f81fb90e7ee280e4
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 28
+        // line 30
         echo "                        </select>                    
                     </div>
                 </div>
@@ -90,13 +92,15 @@ class __TwigTemplate_dfea46f5507f44e3fb232aa78da7179a226d77e8445f81fb90e7ee280e4
 
             <!-- Text input-->           
             <div class=\"form-group\">
-  <label class=\"col-md-4 control-label\"></label>
-  <div class=\"col-md-4\"><br>
-    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class=\"btn btn-warning\" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSearch <span class=\"glyphicon glyphicon-search\"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
-  </div>
-</div>
+                <label class=\"col-md-4 control-label\"></label>
+                <div class=\"col-md-4\"><br>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class=\"btn btn-warning\" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSearch <span class=\"glyphicon glyphicon-search\"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+                </div>
+            </div>
         </form>
     </div>
+    <section id=\"padding\" class=\"section-sm-padding\">
+    </section>
 ";
     }
 
@@ -112,7 +116,7 @@ class __TwigTemplate_dfea46f5507f44e3fb232aa78da7179a226d77e8445f81fb90e7ee280e4
 
     public function getDebugInfo()
     {
-        return array (  86 => 28,  75 => 26,  71 => 25,  60 => 16,  57 => 15,  48 => 10,  40 => 5,  37 => 4,  31 => 3,  11 => 1,);
+        return array (  88 => 30,  77 => 28,  73 => 27,  60 => 16,  57 => 15,  48 => 10,  40 => 5,  37 => 4,  31 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -140,6 +144,8 @@ class __TwigTemplate_dfea46f5507f44e3fb232aa78da7179a226d77e8445f81fb90e7ee280e4
 {% endblock %}
 
 {% block content %}
+     <section id=\"padding\" class=\"section-sm-padding\">
+    </section>
     <div class=\"container\">
 
         <form class=\"well form-horizontal\" method=\"POST\" id=\"apointment_form\" enctype=\"multipart/form-data\">           
@@ -159,13 +165,15 @@ class __TwigTemplate_dfea46f5507f44e3fb232aa78da7179a226d77e8445f81fb90e7ee280e4
 
             <!-- Text input-->           
             <div class=\"form-group\">
-  <label class=\"col-md-4 control-label\"></label>
-  <div class=\"col-md-4\"><br>
-    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class=\"btn btn-warning\" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSearch <span class=\"glyphicon glyphicon-search\"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
-  </div>
-</div>
+                <label class=\"col-md-4 control-label\"></label>
+                <div class=\"col-md-4\"><br>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class=\"btn btn-warning\" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSearch <span class=\"glyphicon glyphicon-search\"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+                </div>
+            </div>
         </form>
     </div>
+    <section id=\"padding\" class=\"section-sm-padding\">
+    </section>
 {% endblock %}", "patient/makeAppointment.html.twig", "C:\\xampp\\htdocs\\php-project\\templates\\patient\\makeAppointment.html.twig");
     }
 }

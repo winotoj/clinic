@@ -13,17 +13,26 @@
 
 {% endblock %}
 {% block content %}
+    <section id="padding" class="section-sm-padding">
+    </section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">  
+                <label for="month">Month: </label>
+                <input type="text" id="datepicker" name="month" class="monthPicker" />
+                <select name="selectDoctor" id="selectDoctor">
+                    {% for doctor in doctorList %}
+                        <option value="{{ doctor.id }}">{{ doctor.firstName }}&nbsp;{{ doctor.lastName }}</option> 
+                    {% endfor %}
+                </select>
+                <div id="viewSchedule">
 
-    <label for="month">Month: </label>
-    <input type="text" id="datepicker" name="month" class="monthPicker" />
-    <select name="selectDoctor" id="selectDoctor">
-        {% for doctor in doctorList %}
-            <option value="{{ doctor.id }}">{{ doctor.firstName }}&nbsp;{{ doctor.lastName }}</option> 
-        {% endfor %}
-    </select>
-    <div id="viewSchedule">
-
+                </div>
+            </div>
+        </div>
     </div>
+    <section id="padding" class="section-sm-padding">
+    </section>
     <script>
         $(document).ready(function () {
             $("#datepicker").datepicker({
@@ -36,18 +45,18 @@
             })
                     .bind('propertychange change click keyup input paste', dateChangedHandler)
                     .on("changeDate", dateChangedHandler);
-            
+
             function dateChangedHandler(ev) {
-                var date = (ev.date === undefined) ? $("#datepicker").val() : ev.date.getMonth() + "-" +  ev.date.getFullYear();
+                var date = (ev.date === undefined) ? $("#datepicker").val() : ev.date.getMonth() + "-" + ev.date.getFullYear();
                 var doctorId = $("#selectDoctor").val();
-                $("#viewSchedule").load("/ajax/myschedule/" + date + "/" + doctorId, function(response, status, xhr) {
+                $("#viewSchedule").load("/ajax/myschedule/" + date + "/" + doctorId, function (response, status, xhr) {
                     console.log("handler called, status is: " + status);
-                     if ( status == "error" ) {
-                         $("#viewSchedule").html("<span>Please select a valid year and month to view calendar</span>");
-                     }
+                    if (status == "error") {
+                        $("#viewSchedule").html("<span>Please select a valid year and month to view calendar</span>");
+                    }
                 });
             }
-            
+
             $('#selectDoctor').bind('propertychange change click keyup input paste', function () {
                 $("#viewSchedule").load("/ajax/myschedule/" + $("#datepicker").val() + "/" + $("#selectDoctor").val());
             });

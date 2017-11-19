@@ -393,94 +393,98 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
     public function block_content($context, array $blocks = array())
     {
         // line 352
-        echo "
-    <div class=\"col-sm-6\">  
+        echo "    <section id=\"cta-1\" class=\"section-padding\">
+        <div class=\"container\">
+            <div class=\"row\">
+                <div class=\"col-sm-6\">  
 
-        <p><img src=\"";
-        // line 355
+                    <p><img src=\"";
+        // line 357
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "pathImage", array()), "html", null, true);
         echo "\" width=\"100\" height=\"100\" alt=\"";
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "firstName", array()), "html", null, true);
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "lastName", array()), "html", null, true);
         echo "\" class=\"img-circle img-responsive\">
-        </p>
-        <p>";
-        // line 357
+                    </p>
+                    <p>";
+        // line 359
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), (isset($context["id"]) ? $context["id"] : null), array(), "array"), "html", null, true);
         echo "</p>
-        <p>NAMe ";
-        // line 358
+                    <p>NAMe ";
+        // line 360
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "firstName", array()), "html", null, true);
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "lastName", array()), "html", null, true);
         echo "</p>
-        <p>Description: ";
-        // line 359
+                    <p>Description: ";
+        // line 361
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "description", array()), "html", null, true);
         echo "</p>       
 
-    </div>
-    <div class=\"col-sm-6\">  
-        <p>available Time</p>
+                </div>
 
-        <div id=\"doctor-page\" class=\"ember-view\">
-            <section id=\"doctor\" data-id=\"";
-        // line 366
+                <div class=\"col-sm-6\">  
+                    <p>available Time</p>
+
+                    <div id=\"doctor-page\" class=\"ember-view\">
+                        <section id=\"doctor\" data-id=\"";
+        // line 369
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "id", array()), "html", null, true);
         echo "\">
-                <div>
-                    <ul>
-                        <li style=\"order: undefined; width: 100%;\" itemprop=\"employee\" itemtype=\"https://schema.org/Physician\" itemscope=\"\" id=\"ember2154\"
-                            class=\"doctor-row doctor ember-view\">
-                            <!---->
-                            <div class=\"times\">
+                            <div>
+                                <ul>
+                                    <li style=\"order: undefined; width: 100%;\" itemprop=\"employee\" itemtype=\"https://schema.org/Physician\" itemscope=\"\" id=\"ember2154\"
+                                        class=\"doctor-row doctor ember-view\">
+                                        <!---->
+                                        <div class=\"times\">
 
-                                <div class=\"dates mobile-only\">
-                                    <ul>
-                                    </ul>
-                                    <nav>
-                                        <button class=\"next five\"><i class=\"fa fa-caret-right\">&#8250;</i></button>
-                                        <button class=\"prev five\"><i class=\"fa fa-caret-left\">&#8249;</i></button>
-                                    </nav>
-                                </div>
+                                            <div class=\"dates mobile-only\">
+                                                <ul>
+                                                </ul>
+                                                <nav>
+                                                    <button class=\"next five\"><i class=\"fa fa-caret-right\">&#8250;</i></button>
+                                                    <button class=\"prev five\"><i class=\"fa fa-caret-left\">&#8249;</i></button>
+                                                </nav>
+                                            </div>
 
-                                <div class=\"container\">
-                                    <div id=\"ember2164\" class=\"doctor-row-times ember-view\">
-                                        <div class=\"time-slots\">
+                                            <div class=\"container\">
+                                                <div id=\"ember2164\" class=\"doctor-row-times ember-view\">
+                                                    <div class=\"time-slots\">
+                                                    </div>
+                                                    <!-- <button class=\"small toggle-button\" data-ember-action=\"\" data-ember-action-5088=\"5088\">See all times<i class=\"fa fa-caret-down\"></i></button>
+                                                    --> </div>
+                                            </div>
+
+                                            <div class=\"bg-times columns mobile-only\">
+                                                <div class=\"column one\"></div>
+                                                <div class=\"column two\"></div>
+                                            </div>
+
                                         </div>
-                                        <!-- <button class=\"small toggle-button\" data-ember-action=\"\" data-ember-action-5088=\"5088\">See all times<i class=\"fa fa-caret-down\"></i></button>
-                                        --> </div>
-                                </div>
 
-                                <div class=\"bg-times columns mobile-only\">
+
+                                    </li>
+                                </ul>
+                                <div class=\"bg columns\">
                                     <div class=\"column one\"></div>
                                     <div class=\"column two\"></div>
                                 </div>
-
                             </div>
-
-
-                        </li>
-                    </ul>
-                    <div class=\"bg columns\">
-                        <div class=\"column one\"></div>
-                        <div class=\"column two\"></div>
+                        </section>
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
-
-
         <!-- <ul class=\"ulavtime\">
         ";
-        // line 411
+        // line 415
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["weekDate"]) ? $context["weekDate"] : null));
         foreach ($context['_seq'] as $context["_key"] => $context["d"]) {
-            // line 412
+            // line 416
             echo "
             <li class=\"avTime\">               
                     <span style=\"display: block; text-align: center;\">";
-            // line 414
+            // line 418
             echo twig_escape_filter($this->env, $this->getAttribute($context["d"], "dayOfWeek", array()), "html", null, true);
             echo "</span><span style=\"display: block; text-align: center;\"> ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["d"], "day", array()), "html", null, true);
@@ -491,20 +495,20 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['d'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 416
+        // line 420
         echo "</ul>-->
     </div>
     <!-- Modal -->
     <div id=\"myModal\" class=\"modal fade\" role=\"dialog\">
         <div class=\"modal-dialog\">
             ";
-        // line 421
+        // line 425
         if ((isset($context["userSession"]) ? $context["userSession"] : null)) {
-            // line 422
+            // line 426
             echo "                <div class=\"content1\">
                     <form action=\"/prepayment\" method=\"post\">
                         <input type=\"hidden\" name=\"doctorId\" value=\"";
-            // line 424
+            // line 428
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "id", array()), "html", null, true);
             echo "\" />
                         <input type=\"hidden\" name=\"time\" value=\"\" />
@@ -514,7 +518,7 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
                             <div class=\"modal-header\">
                                 <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
                                 <h4 class=\"modal-title\">Book Appointment / With Dr.";
-            // line 431
+            // line 435
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "firstName", array()), "html", null, true);
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "lastName", array()), "html", null, true);
             echo "</h4>
@@ -539,7 +543,7 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
                         <div class=\"modal-header\">
                             <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
                             <h4 class=\"modal-title\">Book Appointment / With Dr.";
-            // line 452
+            // line 456
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "firstName", array()), "html", null, true);
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "lastName", array()), "html", null, true);
             echo "</h4>
@@ -556,7 +560,7 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
                 </div>
             ";
         } else {
-            // line 465
+            // line 469
             echo "                <div class=\"modal-content\">
                     <div class=\"modal-body\">
                         <h4>You must <a href=\"/register\">register</a> or <a href=\"/login\">login </a>first to make an apointment.</h4>
@@ -565,7 +569,7 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
                 </div>
             ";
         }
-        // line 472
+        // line 476
         echo "        </div>
     </div>
 
@@ -702,7 +706,7 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
 
     public function getDebugInfo()
     {
-        return array (  569 => 472,  560 => 465,  543 => 452,  518 => 431,  508 => 424,  504 => 422,  502 => 421,  495 => 416,  484 => 414,  480 => 412,  476 => 411,  428 => 366,  418 => 359,  413 => 358,  409 => 357,  401 => 355,  396 => 352,  393 => 351,  50 => 12,  40 => 5,  37 => 4,  31 => 3,  11 => 1,);
+        return array (  573 => 476,  564 => 469,  547 => 456,  522 => 435,  512 => 428,  508 => 426,  506 => 425,  499 => 420,  488 => 418,  484 => 416,  480 => 415,  431 => 369,  420 => 361,  415 => 360,  411 => 359,  403 => 357,  396 => 352,  393 => 351,  50 => 12,  40 => 5,  37 => 4,  31 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -1066,64 +1070,68 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
 {% endblock %}
 
 {% block content %}
+    <section id=\"cta-1\" class=\"section-padding\">
+        <div class=\"container\">
+            <div class=\"row\">
+                <div class=\"col-sm-6\">  
 
-    <div class=\"col-sm-6\">  
+                    <p><img src=\"{{dr.pathImage}}\" width=\"100\" height=\"100\" alt=\"{{dr.firstName }}{{dr.lastName }}\" class=\"img-circle img-responsive\">
+                    </p>
+                    <p>{{dr[id]}}</p>
+                    <p>NAMe {{dr.firstName}}{{dr.lastName}}</p>
+                    <p>Description: {{dr.description}}</p>       
 
-        <p><img src=\"{{dr.pathImage}}\" width=\"100\" height=\"100\" alt=\"{{dr.firstName }}{{dr.lastName }}\" class=\"img-circle img-responsive\">
-        </p>
-        <p>{{dr[id]}}</p>
-        <p>NAMe {{dr.firstName}}{{dr.lastName}}</p>
-        <p>Description: {{dr.description}}</p>       
+                </div>
 
-    </div>
-    <div class=\"col-sm-6\">  
-        <p>available Time</p>
+                <div class=\"col-sm-6\">  
+                    <p>available Time</p>
 
-        <div id=\"doctor-page\" class=\"ember-view\">
-            <section id=\"doctor\" data-id=\"{{dr.id}}\">
-                <div>
-                    <ul>
-                        <li style=\"order: undefined; width: 100%;\" itemprop=\"employee\" itemtype=\"https://schema.org/Physician\" itemscope=\"\" id=\"ember2154\"
-                            class=\"doctor-row doctor ember-view\">
-                            <!---->
-                            <div class=\"times\">
+                    <div id=\"doctor-page\" class=\"ember-view\">
+                        <section id=\"doctor\" data-id=\"{{dr.id}}\">
+                            <div>
+                                <ul>
+                                    <li style=\"order: undefined; width: 100%;\" itemprop=\"employee\" itemtype=\"https://schema.org/Physician\" itemscope=\"\" id=\"ember2154\"
+                                        class=\"doctor-row doctor ember-view\">
+                                        <!---->
+                                        <div class=\"times\">
 
-                                <div class=\"dates mobile-only\">
-                                    <ul>
-                                    </ul>
-                                    <nav>
-                                        <button class=\"next five\"><i class=\"fa fa-caret-right\">&#8250;</i></button>
-                                        <button class=\"prev five\"><i class=\"fa fa-caret-left\">&#8249;</i></button>
-                                    </nav>
-                                </div>
+                                            <div class=\"dates mobile-only\">
+                                                <ul>
+                                                </ul>
+                                                <nav>
+                                                    <button class=\"next five\"><i class=\"fa fa-caret-right\">&#8250;</i></button>
+                                                    <button class=\"prev five\"><i class=\"fa fa-caret-left\">&#8249;</i></button>
+                                                </nav>
+                                            </div>
 
-                                <div class=\"container\">
-                                    <div id=\"ember2164\" class=\"doctor-row-times ember-view\">
-                                        <div class=\"time-slots\">
+                                            <div class=\"container\">
+                                                <div id=\"ember2164\" class=\"doctor-row-times ember-view\">
+                                                    <div class=\"time-slots\">
+                                                    </div>
+                                                    <!-- <button class=\"small toggle-button\" data-ember-action=\"\" data-ember-action-5088=\"5088\">See all times<i class=\"fa fa-caret-down\"></i></button>
+                                                    --> </div>
+                                            </div>
+
+                                            <div class=\"bg-times columns mobile-only\">
+                                                <div class=\"column one\"></div>
+                                                <div class=\"column two\"></div>
+                                            </div>
+
                                         </div>
-                                        <!-- <button class=\"small toggle-button\" data-ember-action=\"\" data-ember-action-5088=\"5088\">See all times<i class=\"fa fa-caret-down\"></i></button>
-                                        --> </div>
-                                </div>
 
-                                <div class=\"bg-times columns mobile-only\">
+
+                                    </li>
+                                </ul>
+                                <div class=\"bg columns\">
                                     <div class=\"column one\"></div>
                                     <div class=\"column two\"></div>
                                 </div>
-
                             </div>
-
-
-                        </li>
-                    </ul>
-                    <div class=\"bg columns\">
-                        <div class=\"column one\"></div>
-                        <div class=\"column two\"></div>
+                        </section>
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
-
-
         <!-- <ul class=\"ulavtime\">
         {% for d in weekDate %}
 

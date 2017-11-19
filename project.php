@@ -95,8 +95,10 @@ require_once 'doctor_calendar.php';
 
 
 $app->get('/', function() use ($app) {
+    
+    $dr_List = DB::query("SELECT *  FROM doctors LIMIT 4"); 
 
-    $app->render('index.html.twig');
+    $app->render('index.html.twig', array('dr_List' => $dr_List));
 
 });
 

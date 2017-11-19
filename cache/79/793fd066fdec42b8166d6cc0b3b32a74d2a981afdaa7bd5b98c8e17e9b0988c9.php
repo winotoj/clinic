@@ -38,7 +38,7 @@ class __TwigTemplate_9724ea60e445061663779e8b403a415a92e074bd105d818cf80b91f21f4
     {
         // line 5
         echo "        <script src=\"https://s.codepen.io/assets/libs/modernizr.js\" type=\"text/javascript\"></script>
-        <script src=\"/assets/bootstrap/js/bootstrap.min.js\"></script>
+
         <script src=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js\"></script>
 
     ";
@@ -48,54 +48,55 @@ class __TwigTemplate_9724ea60e445061663779e8b403a415a92e074bd105d818cf80b91f21f4
     public function block_css($context, array $blocks = array())
     {
         echo " 
-        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css\">
         <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css\">
     ";
     }
 
-    // line 16
+    // line 15
     public function block_content($context, array $blocks = array())
     {
-        // line 17
-        echo "        <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
+        // line 16
+        echo "        <section id=\"padding\" class=\"section-sm-padding\">
+        </section>
+        <div class=\"container\">
+            <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">      
 
-            <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-                <span class=\"navbar-toggler-icon\"></span>
-            </button>
+                <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
+                    <ul class=\"nav nav-pills nav-justified\">
+                        <li class=\"nav-item\">
+                            <a class=\"nav-link active\" href=\"#\">My Account</a>
+                        </li>
+                        <li class=\"nav-item\">
+                            <a class=\"nav-link\" href=\"#\">Make Booking</a>
+                        </li>
+                        <li class=\"nav-item\">
+                            <a class=\"nav-link\" href=\"#\">My Bookings</a>
+                        </li>
 
-            <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
-                <ul class=\"nav nav-pills nav-justified\">
-                    <li class=\"nav-item\">
-                        <a class=\"nav-link active\" href=\"#\">My Account</a>
-                    </li>
-                    <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"#\">Make Booking</a>
-                    </li>
-                    <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"#\">My Bookings</a>
-                    </li>
+                    </ul>
+                </div>
+            </nav>
 
-                </ul>
+            <div class=\"col-xs-12\">
+                <div class=\"mha-common-header\">
+                    Welcome to your MyHealthAccess Account
+                </div>
             </div>
-        </nav>
-
-        <div class=\"col-xs-12\">
-            <div class=\"mha-common-header\">
-                Welcome to your MyHealthAccess Account
+            <div class=\"col-xs-12\">
+                <div class=\"mha-common-header\"> 
+                    <p> To book an appointment, please go to the My Clinics tab and click \"Book Appointment\" beside the Clinic you would like to book with, or click \"Find a Clinic\" to request a connection with a new clinic.
+                    </p>
+                    <p>
+                        You can see a list of appointments you have booked and make changes to them by clicking Appointments.
+                    </p>
+                    <p>
+                        To edit your contact preferences and account details, or to log-out, please click the username dropdown on the top right.
+                    </p>
+                </div>
             </div>
         </div>
-        <div class=\"col-xs-12\">
-            <div class=\"mha-common-header\"> 
-                <p> To book an appointment, please go to the My Clinics tab and click \"Book Appointment\" beside the Clinic you would like to book with, or click \"Find a Clinic\" to request a connection with a new clinic.
-                </p>
-                <p>
-                    You can see a list of appointments you have booked and make changes to them by clicking Appointments.
-                </p>
-                <p>
-                    To edit your contact preferences and account details, or to log-out, please click the username dropdown on the top right.
-                </p>
-            </div>
-        </div>
+        <section id=\"padding\" class=\"section-sm-padding\">
+        </section>
     ";
     }
 
@@ -111,7 +112,7 @@ class __TwigTemplate_9724ea60e445061663779e8b403a415a92e074bd105d818cf80b91f21f4
 
     public function getDebugInfo()
     {
-        return array (  60 => 17,  57 => 16,  48 => 10,  40 => 5,  37 => 4,  31 => 3,  11 => 1,);
+        return array (  59 => 16,  56 => 15,  48 => 10,  40 => 5,  37 => 4,  31 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -129,56 +130,57 @@ class __TwigTemplate_9724ea60e445061663779e8b403a415a92e074bd105d818cf80b91f21f4
 {% block title MyAccount %}
     {% block matchpwd %}
         <script src=\"https://s.codepen.io/assets/libs/modernizr.js\" type=\"text/javascript\"></script>
-        <script src=\"/assets/bootstrap/js/bootstrap.min.js\"></script>
+
         <script src=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js\"></script>
 
     {% endblock %}
     {% block css %} 
-        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css\">
         <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css\">
     {% endblock %}
 
 
     {% block content %}
-        <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
+        <section id=\"padding\" class=\"section-sm-padding\">
+        </section>
+        <div class=\"container\">
+            <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">      
 
-            <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-                <span class=\"navbar-toggler-icon\"></span>
-            </button>
+                <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
+                    <ul class=\"nav nav-pills nav-justified\">
+                        <li class=\"nav-item\">
+                            <a class=\"nav-link active\" href=\"#\">My Account</a>
+                        </li>
+                        <li class=\"nav-item\">
+                            <a class=\"nav-link\" href=\"#\">Make Booking</a>
+                        </li>
+                        <li class=\"nav-item\">
+                            <a class=\"nav-link\" href=\"#\">My Bookings</a>
+                        </li>
 
-            <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
-                <ul class=\"nav nav-pills nav-justified\">
-                    <li class=\"nav-item\">
-                        <a class=\"nav-link active\" href=\"#\">My Account</a>
-                    </li>
-                    <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"#\">Make Booking</a>
-                    </li>
-                    <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"#\">My Bookings</a>
-                    </li>
+                    </ul>
+                </div>
+            </nav>
 
-                </ul>
+            <div class=\"col-xs-12\">
+                <div class=\"mha-common-header\">
+                    Welcome to your MyHealthAccess Account
+                </div>
             </div>
-        </nav>
-
-        <div class=\"col-xs-12\">
-            <div class=\"mha-common-header\">
-                Welcome to your MyHealthAccess Account
+            <div class=\"col-xs-12\">
+                <div class=\"mha-common-header\"> 
+                    <p> To book an appointment, please go to the My Clinics tab and click \"Book Appointment\" beside the Clinic you would like to book with, or click \"Find a Clinic\" to request a connection with a new clinic.
+                    </p>
+                    <p>
+                        You can see a list of appointments you have booked and make changes to them by clicking Appointments.
+                    </p>
+                    <p>
+                        To edit your contact preferences and account details, or to log-out, please click the username dropdown on the top right.
+                    </p>
+                </div>
             </div>
         </div>
-        <div class=\"col-xs-12\">
-            <div class=\"mha-common-header\"> 
-                <p> To book an appointment, please go to the My Clinics tab and click \"Book Appointment\" beside the Clinic you would like to book with, or click \"Find a Clinic\" to request a connection with a new clinic.
-                </p>
-                <p>
-                    You can see a list of appointments you have booked and make changes to them by clicking Appointments.
-                </p>
-                <p>
-                    To edit your contact preferences and account details, or to log-out, please click the username dropdown on the top right.
-                </p>
-            </div>
-        </div>
+        <section id=\"padding\" class=\"section-sm-padding\">
+        </section>
     {% endblock %}", "patient/myaccount.html.twig", "C:\\xampp\\htdocs\\php-project\\templates\\patient\\myaccount.html.twig");
     }
 }
