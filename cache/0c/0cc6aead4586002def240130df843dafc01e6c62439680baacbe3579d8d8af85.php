@@ -393,10 +393,11 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
     public function block_content($context, array $blocks = array())
     {
         // line 352
-        echo "    <div class=\"col-sm-6\">  
+        echo "
+    <div class=\"col-sm-6\">  
 
         <p><img src=\"";
-        // line 354
+        // line 355
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "pathImage", array()), "html", null, true);
         echo "\" width=\"100\" height=\"100\" alt=\"";
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "firstName", array()), "html", null, true);
@@ -404,16 +405,16 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
         echo "\" class=\"img-circle img-responsive\">
         </p>
         <p>";
-        // line 356
+        // line 357
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), (isset($context["id"]) ? $context["id"] : null), array(), "array"), "html", null, true);
         echo "</p>
         <p>NAMe ";
-        // line 357
+        // line 358
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "firstName", array()), "html", null, true);
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "lastName", array()), "html", null, true);
         echo "</p>
         <p>Description: ";
-        // line 358
+        // line 359
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "description", array()), "html", null, true);
         echo "</p>       
 
@@ -423,7 +424,7 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
 
         <div id=\"doctor-page\" class=\"ember-view\">
             <section id=\"doctor\" data-id=\"";
-        // line 365
+        // line 366
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "id", array()), "html", null, true);
         echo "\">
                 <div>
@@ -471,15 +472,15 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
 
         <!-- <ul class=\"ulavtime\">
         ";
-        // line 410
+        // line 411
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["weekDate"]) ? $context["weekDate"] : null));
         foreach ($context['_seq'] as $context["_key"] => $context["d"]) {
-            // line 411
+            // line 412
             echo "
             <li class=\"avTime\">               
                     <span style=\"display: block; text-align: center;\">";
-            // line 413
+            // line 414
             echo twig_escape_filter($this->env, $this->getAttribute($context["d"], "dayOfWeek", array()), "html", null, true);
             echo "</span><span style=\"display: block; text-align: center;\"> ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["d"], "day", array()), "html", null, true);
@@ -490,69 +491,86 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['d'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 415
+        // line 416
         echo "</ul>-->
     </div>
     <!-- Modal -->
     <div id=\"myModal\" class=\"modal fade\" role=\"dialog\">
         <div class=\"modal-dialog\">
-            <div class=\"content1\">
-            <form action=\"/prepayment\" method=\"post\">
-                <input type=\"hidden\" name=\"doctorId\" value=\"";
-        // line 422
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "id", array()), "html", null, true);
-        echo "\" />
-                <input type=\"hidden\" name=\"time\" value=\"\" />
-                
-                <!-- Modal content-->
-                <div class=\"modal-content\">
-                    <div class=\"modal-header\">
-                        <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
-                        <h4 class=\"modal-title\">Book Appointment / With Dr.";
-        // line 429
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "firstName", array()), "html", null, true);
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "lastName", array()), "html", null, true);
-        echo "</h4>
-                    </div>
-                    <div class=\"modal-body\">
-                        <p>Your Appointment : </p>
-                        <label class=\"col-md-4 control-label\">Reason: </label>  
-                        <textarea rows=\"4\" cols=\"50\" name=\"reason\" required>
-                        </textarea>
-                    </div>
-                    <div class=\"modal-footer\">
-                        <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>
-                        <button type=\"submit\" class=\"btn btn-primary\" >Confirm & Payment</button>
-                        
+            ";
+        // line 421
+        if ((isset($context["userSession"]) ? $context["userSession"] : null)) {
+            // line 422
+            echo "                <div class=\"content1\">
+                    <form action=\"/prepayment\" method=\"post\">
+                        <input type=\"hidden\" name=\"doctorId\" value=\"";
+            // line 424
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "id", array()), "html", null, true);
+            echo "\" />
+                        <input type=\"hidden\" name=\"time\" value=\"\" />
+
+                        <!-- Modal content-->
+                        <div class=\"modal-content\">
+                            <div class=\"modal-header\">
+                                <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
+                                <h4 class=\"modal-title\">Book Appointment / With Dr.";
+            // line 431
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "firstName", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "lastName", array()), "html", null, true);
+            echo "</h4>
+                            </div>
+                            <div class=\"modal-body\">
+                                <p class=\"app-info\">Your Appointment : </p>
+                                <label class=\"col-md-4 control-label\">Reason: </label>  
+                                <textarea rows=\"4\" cols=\"50\" name=\"reason\" required>
+                                </textarea>
+                            </div>
+                            <div class=\"modal-footer\">
+                                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>
+                                <button type=\"submit\" class=\"btn btn-primary\" >Confirm & Payment</button>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class=\"content2 hidden\">
+                    <!-- Modal content-->
+                    <div class=\"modal-content\">
+                        <div class=\"modal-header\">
+                            <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
+                            <h4 class=\"modal-title\">Book Appointment / With Dr.";
+            // line 452
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "firstName", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "lastName", array()), "html", null, true);
+            echo "</h4>
+                        </div>
+                        <div class=\"modal-body\">
+                            <h1>Payment</h1>
+                        </div>
+                        <div class=\"modal-footer\">
+                            <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>
+                            <button type=\"submit\" class=\"btn btn-primary\" >Confirm & Payment</button>
+
+                        </div>
                     </div>
                 </div>
-            </form>
-            </div>
-            <div class=\"content2 hidden\">
-                <!-- Modal content-->
-                <div class=\"modal-content\">
-                    <div class=\"modal-header\">
-                        <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
-                        <h4 class=\"modal-title\">Book Appointment / With Dr.";
-        // line 450
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "firstName", array()), "html", null, true);
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "lastName", array()), "html", null, true);
-        echo "</h4>
-                    </div>
+            ";
+        } else {
+            // line 465
+            echo "                <div class=\"modal-content\">
                     <div class=\"modal-body\">
-                        <h1>Payment</h1>
+                        <h4>You must <a href=\"/register\">register</a> or <a href=\"/login\">login </a>first to make an apointment.</h4>
                     </div>
-                    <div class=\"modal-footer\">
-                        <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>
-                        <button type=\"submit\" class=\"btn btn-primary\" >Confirm & Payment</button>
-                        
-                    </div>
+
                 </div>
-            </div>
-        </div>
+            ";
+        }
+        // line 472
+        echo "        </div>
     </div>
+
     <script type=\"text/javascript\">
-           
+
         \$(document).ready(function () {
             var startDate = null;
             var endDate = null;
@@ -567,7 +585,7 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
                 \$timeslots.empty();
                 \$.each(data, function (idx, d) {
                     if (idx == 0) {
-                        startDate = d.date.dateStr;                        
+                        startDate = d.date.dateStr;
                     } else {
                         endDate = d.date.dateStr;
                     }
@@ -586,23 +604,23 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
                         for (var j = s; j < e + 1; j++) {
                             var timeStr = (j.toString() + \":\" + \"00\").padStart(5, '0');
                             var dateTime = dateStr + ' - ' + timeStr;
-                            
+
                             var hasAppointment = appointments.indexOf(timeStr) >= 0;
 
                             var \$li = \$('<li><button ' + (hasAppointment ? 'disabled' : '') + ' data-time=\"' + dateTime + '\" type=\"button\" class=\"btn-time inverted btn btn-info btn-lg\" onclick=\"getappointment(this)\">' + timeStr + '</button></li>');
                             \$ul.append(\$li);
                             timeStr = (j.toString() + \":\" + \"30\").padStart(5, '0');
-                            
+
                             hasAppointment = appointments.indexOf(timeStr) >= 0;
-                            
+
                             dateTime = dateStr + ' ' + timeStr;
-                            \$li = \$('<li><button '  + (hasAppointment ? 'disabled' : '') + ' data-time=\"' + dateTime + '\" type=\"button\" class=\"btn-time inverted btn btn-info btn-lg\" onclick=\"getappointment(this)\">' + timeStr + '</button></li>');
+                            \$li = \$('<li><button ' + (hasAppointment ? 'disabled' : '') + ' data-time=\"' + dateTime + '\" type=\"button\" class=\"btn-time inverted btn btn-info btn-lg\" onclick=\"getappointment(this)\">' + timeStr + '</button></li>');
                             \$ul.append(\$li);
                         }
                     });
                     \$timeslots.append(\$ul);
-                });              
-            }  
+                });
+            }
             //var data = [{\"date\":{\"dow\":\"Wed\",\"day\":\"06\",\"month\":\"2017-12-06\"},\"times\":[{\"start\":{\"hour\":8,\"minute\":0},\"end\":{\"hour\":20,\"minute\":0}},{\"start\":{\"hour\":8,\"minute\":0},\"end\":{\"hour\":20,\"minute\":0}}]},{\"date\":{\"dow\":\"Thu\",\"day\":\"07\",\"month\":\"2017-12-07\"},\"times\":[{\"start\":{\"hour\":8,\"minute\":0},\"end\":{\"hour\":20,\"minute\":0}},{\"start\":{\"hour\":8,\"minute\":0},\"end\":{\"hour\":20,\"minute\":0}}]},{\"date\":{\"dow\":\"Fri\",\"day\":\"08\",\"month\":\"2017-12-08\"},\"times\":[]},{\"date\":{\"dow\":\"Sat\",\"day\":\"09\",\"month\":\"2017-12-09\"},\"times\":[{\"start\":{\"hour\":8,\"minute\":0},\"end\":{\"hour\":20,\"minute\":0}}]},{\"date\":{\"dow\":\"Sun\",\"day\":\"10\",\"month\":\"2017-12-10\"},\"times\":[{\"start\":{\"hour\":8,\"minute\":0},\"end\":{\"hour\":20,\"minute\":0}},{\"start\":{\"hour\":8,\"minute\":0},\"end\":{\"hour\":20,\"minute\":0}}]}];
             var getDate = function (start) {
                 var url = '/avtime/' + doctorId + '/' + start;
@@ -635,23 +653,23 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
                 var d = moment(startDate).add(-6, 'days');
                 getDate(formatDate(d));
             });
-            
+
             window.getappointment = function (e) {
                 var time = \$(e).attr('data-time');
                 \$modal.find('input[name=time]').val(time);
-                
+
                 //\$modal.find('.modal-title').text('New message to ' + recipient);
-                \$modal.find('.modal-body p').text('Your appointment is on : ' + time);
+                \$modal.find('.modal-body p .app-info').text('Your appointment is on : ' + time);
                 \$modal.find('.content1').removeClass('hidden');
                 \$modal.find('.content2').addClass('hidden');
-                        
+
                 \$modal.modal('show');
                 return false;
             };
-            
+
             \$modal.find(\"form\").submit(function (e) {
                 e.preventDefault();
-                
+
                 var \$form = \$(this);
                 var action = \$form.attr('action');
                 \$.ajax({
@@ -667,7 +685,7 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
             //showData(data);
         });
     </script>
-  
+
 
 ";
     }
@@ -684,7 +702,7 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
 
     public function getDebugInfo()
     {
-        return array (  538 => 450,  513 => 429,  503 => 422,  494 => 415,  483 => 413,  479 => 411,  475 => 410,  427 => 365,  417 => 358,  412 => 357,  408 => 356,  400 => 354,  396 => 352,  393 => 351,  50 => 12,  40 => 5,  37 => 4,  31 => 3,  11 => 1,);
+        return array (  569 => 472,  560 => 465,  543 => 452,  518 => 431,  508 => 424,  504 => 422,  502 => 421,  495 => 416,  484 => 414,  480 => 412,  476 => 411,  428 => 366,  418 => 359,  413 => 358,  409 => 357,  401 => 355,  396 => 352,  393 => 351,  50 => 12,  40 => 5,  37 => 4,  31 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -1048,6 +1066,7 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
 {% endblock %}
 
 {% block content %}
+
     <div class=\"col-sm-6\">  
 
         <p><img src=\"{{dr.pathImage}}\" width=\"100\" height=\"100\" alt=\"{{dr.firstName }}{{dr.lastName }}\" class=\"img-circle img-responsive\">
@@ -1116,52 +1135,62 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
     <!-- Modal -->
     <div id=\"myModal\" class=\"modal fade\" role=\"dialog\">
         <div class=\"modal-dialog\">
-            <div class=\"content1\">
-            <form action=\"/prepayment\" method=\"post\">
-                <input type=\"hidden\" name=\"doctorId\" value=\"{{dr.id}}\" />
-                <input type=\"hidden\" name=\"time\" value=\"\" />
-                
-                <!-- Modal content-->
-                <div class=\"modal-content\">
-                    <div class=\"modal-header\">
-                        <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
-                        <h4 class=\"modal-title\">Book Appointment / With Dr.{{dr.firstName }}{{dr.lastName }}</h4>
-                    </div>
-                    <div class=\"modal-body\">
-                        <p>Your Appointment : </p>
-                        <label class=\"col-md-4 control-label\">Reason: </label>  
-                        <textarea rows=\"4\" cols=\"50\" name=\"reason\" required>
-                        </textarea>
-                    </div>
-                    <div class=\"modal-footer\">
-                        <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>
-                        <button type=\"submit\" class=\"btn btn-primary\" >Confirm & Payment</button>
-                        
+            {% if userSession %}
+                <div class=\"content1\">
+                    <form action=\"/prepayment\" method=\"post\">
+                        <input type=\"hidden\" name=\"doctorId\" value=\"{{dr.id}}\" />
+                        <input type=\"hidden\" name=\"time\" value=\"\" />
+
+                        <!-- Modal content-->
+                        <div class=\"modal-content\">
+                            <div class=\"modal-header\">
+                                <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
+                                <h4 class=\"modal-title\">Book Appointment / With Dr.{{dr.firstName }}{{dr.lastName }}</h4>
+                            </div>
+                            <div class=\"modal-body\">
+                                <p class=\"app-info\">Your Appointment : </p>
+                                <label class=\"col-md-4 control-label\">Reason: </label>  
+                                <textarea rows=\"4\" cols=\"50\" name=\"reason\" required>
+                                </textarea>
+                            </div>
+                            <div class=\"modal-footer\">
+                                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>
+                                <button type=\"submit\" class=\"btn btn-primary\" >Confirm & Payment</button>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class=\"content2 hidden\">
+                    <!-- Modal content-->
+                    <div class=\"modal-content\">
+                        <div class=\"modal-header\">
+                            <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
+                            <h4 class=\"modal-title\">Book Appointment / With Dr.{{dr.firstName }}{{dr.lastName }}</h4>
+                        </div>
+                        <div class=\"modal-body\">
+                            <h1>Payment</h1>
+                        </div>
+                        <div class=\"modal-footer\">
+                            <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>
+                            <button type=\"submit\" class=\"btn btn-primary\" >Confirm & Payment</button>
+
+                        </div>
                     </div>
                 </div>
-            </form>
-            </div>
-            <div class=\"content2 hidden\">
-                <!-- Modal content-->
+            {% else %}
                 <div class=\"modal-content\">
-                    <div class=\"modal-header\">
-                        <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
-                        <h4 class=\"modal-title\">Book Appointment / With Dr.{{dr.firstName }}{{dr.lastName }}</h4>
-                    </div>
                     <div class=\"modal-body\">
-                        <h1>Payment</h1>
+                        <h4>You must <a href=\"/register\">register</a> or <a href=\"/login\">login </a>first to make an apointment.</h4>
                     </div>
-                    <div class=\"modal-footer\">
-                        <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>
-                        <button type=\"submit\" class=\"btn btn-primary\" >Confirm & Payment</button>
-                        
-                    </div>
+
                 </div>
-            </div>
+            {% endif %}
         </div>
     </div>
+
     <script type=\"text/javascript\">
-           
+
         \$(document).ready(function () {
             var startDate = null;
             var endDate = null;
@@ -1176,7 +1205,7 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
                 \$timeslots.empty();
                 \$.each(data, function (idx, d) {
                     if (idx == 0) {
-                        startDate = d.date.dateStr;                        
+                        startDate = d.date.dateStr;
                     } else {
                         endDate = d.date.dateStr;
                     }
@@ -1195,23 +1224,23 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
                         for (var j = s; j < e + 1; j++) {
                             var timeStr = (j.toString() + \":\" + \"00\").padStart(5, '0');
                             var dateTime = dateStr + ' - ' + timeStr;
-                            
+
                             var hasAppointment = appointments.indexOf(timeStr) >= 0;
 
                             var \$li = \$('<li><button ' + (hasAppointment ? 'disabled' : '') + ' data-time=\"' + dateTime + '\" type=\"button\" class=\"btn-time inverted btn btn-info btn-lg\" onclick=\"getappointment(this)\">' + timeStr + '</button></li>');
                             \$ul.append(\$li);
                             timeStr = (j.toString() + \":\" + \"30\").padStart(5, '0');
-                            
+
                             hasAppointment = appointments.indexOf(timeStr) >= 0;
-                            
+
                             dateTime = dateStr + ' ' + timeStr;
-                            \$li = \$('<li><button '  + (hasAppointment ? 'disabled' : '') + ' data-time=\"' + dateTime + '\" type=\"button\" class=\"btn-time inverted btn btn-info btn-lg\" onclick=\"getappointment(this)\">' + timeStr + '</button></li>');
+                            \$li = \$('<li><button ' + (hasAppointment ? 'disabled' : '') + ' data-time=\"' + dateTime + '\" type=\"button\" class=\"btn-time inverted btn btn-info btn-lg\" onclick=\"getappointment(this)\">' + timeStr + '</button></li>');
                             \$ul.append(\$li);
                         }
                     });
                     \$timeslots.append(\$ul);
-                });              
-            }  
+                });
+            }
             //var data = [{\"date\":{\"dow\":\"Wed\",\"day\":\"06\",\"month\":\"2017-12-06\"},\"times\":[{\"start\":{\"hour\":8,\"minute\":0},\"end\":{\"hour\":20,\"minute\":0}},{\"start\":{\"hour\":8,\"minute\":0},\"end\":{\"hour\":20,\"minute\":0}}]},{\"date\":{\"dow\":\"Thu\",\"day\":\"07\",\"month\":\"2017-12-07\"},\"times\":[{\"start\":{\"hour\":8,\"minute\":0},\"end\":{\"hour\":20,\"minute\":0}},{\"start\":{\"hour\":8,\"minute\":0},\"end\":{\"hour\":20,\"minute\":0}}]},{\"date\":{\"dow\":\"Fri\",\"day\":\"08\",\"month\":\"2017-12-08\"},\"times\":[]},{\"date\":{\"dow\":\"Sat\",\"day\":\"09\",\"month\":\"2017-12-09\"},\"times\":[{\"start\":{\"hour\":8,\"minute\":0},\"end\":{\"hour\":20,\"minute\":0}}]},{\"date\":{\"dow\":\"Sun\",\"day\":\"10\",\"month\":\"2017-12-10\"},\"times\":[{\"start\":{\"hour\":8,\"minute\":0},\"end\":{\"hour\":20,\"minute\":0}},{\"start\":{\"hour\":8,\"minute\":0},\"end\":{\"hour\":20,\"minute\":0}}]}];
             var getDate = function (start) {
                 var url = '/avtime/' + doctorId + '/' + start;
@@ -1244,23 +1273,23 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
                 var d = moment(startDate).add(-6, 'days');
                 getDate(formatDate(d));
             });
-            
+
             window.getappointment = function (e) {
                 var time = \$(e).attr('data-time');
                 \$modal.find('input[name=time]').val(time);
-                
+
                 //\$modal.find('.modal-title').text('New message to ' + recipient);
-                \$modal.find('.modal-body p').text('Your appointment is on : ' + time);
+                \$modal.find('.modal-body p .app-info').text('Your appointment is on : ' + time);
                 \$modal.find('.content1').removeClass('hidden');
                 \$modal.find('.content2').addClass('hidden');
-                        
+
                 \$modal.modal('show');
                 return false;
             };
-            
+
             \$modal.find(\"form\").submit(function (e) {
                 e.preventDefault();
-                
+
                 var \$form = \$(this);
                 var action = \$form.attr('action');
                 \$.ajax({
@@ -1276,7 +1305,7 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
             //showData(data);
         });
     </script>
-  
+
 
 {% endblock %}", "doctors/drdescription.html.twig", "C:\\xampp\\htdocs\\php-project\\templates\\doctors\\drdescription.html.twig");
     }
