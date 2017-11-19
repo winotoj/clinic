@@ -36,8 +36,16 @@
                 <div class="container">
                     <div class="col-md-12">
                         <p class="">You're logged in as {{ userSession.firstName }} {{userSession.lastName }}
-                            You may <a href="/logout">Logout</a></p>
+
                     </div>              
+
+                        {% elseif staffSession %}
+                        <p class="navbar-text navbar-right actions">You're logged in as {{ staffSession.firstName }} {{staffSession.lastName }}
+                            You may <a href="/logout">Logout</a></p>
+                        {% else %}
+                        <p class="navbar-text navbar-right actions">You're not logged in. You may <a href="/register">Register</a>
+                            or <a href="/login">Login</a></p>
+                        {% endif %}
                 </div>
             </div>
         </section>

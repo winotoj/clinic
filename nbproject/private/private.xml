@@ -3,19 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/xampp/htdocs/php-project/templates/patient/myaccount.html.twig</file>
-            <file>file:/C:/xampp/htdocs/php-project/account.php</file>
-            <file>file:/C:/xampp/htdocs/php-project/templates/patient/mybooking.html.twig</file>
+            <file>file:/C:/xampp/htdocs/php-project/connect.php</file>
+            <file>file:/C:/xampp/htdocs/php-project/templates/login.html.twig</file>
             <file>file:/C:/xampp/htdocs/php-project/patient.php</file>
-            <file>file:/C:/xampp/htdocs/php-project/templates/drList.twig</file>
-            <file>file:/C:/xampp/htdocs/php-project/templates/doctors/drdescription.html.twig</file>
             <file>file:/C:/xampp/htdocs/php-project/project.php</file>
-=======
-            <file>file:/C:/xampp/htdocs/php-project/templates/patient/mybooking.html.twig</file>
-            <file>file:/C:/xampp/htdocs/php-project/patient.php</file>
-            <file>file:/C:/xampp/htdocs/php-project/templates/doctors/drdescription.html.twig</file>
->>>>>>> 3f49471d1a1f4f8ae08df8982f0a648b8c7328cc
+            <file>file:/C:/xampp/htdocs/php-project/templates/register.html.twig</file>
         </group>
     </open-files>
 </project-private>
