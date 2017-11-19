@@ -20,7 +20,23 @@
                     
                     $("#confirmModalDelete").modal({show: true});
                 });
-           
+
+            var showAlert = function (success) {
+                if (success) {
+                    $('#alertSuccess').removeClass('hidden');
+                    $('#alertError').addClass('hidden');
+                } else {
+                    $('#alertSuccess').addClass('hidden');
+                    $('#alertError').removeClass('hidden');
+                }
+                
+                setTimeout(hideAlert, 5000);
+            };
+            
+            var hideAlert = function () {
+                $('#alertSuccess').addClass('hidden');
+                $('#alertError').addClass('hidden');                
+            }
 
             $modal.find("form").submit(function (e) {
                 var $modal = $('#confirmModalDelete');
@@ -33,10 +49,18 @@
                     method: 'POST',
                     data: $form.serializeArray(),
                     success: function (data) {
+                        var d = JSON.parse(data);
+                        if(d.success){
+                            showAlert(true);
+                        }else{
+                            showAlert(false);
+                        }
+                        $modal.modal('hide');
                         
-                        $modal.find('.modal-body p').text(data);
-                        $modal.find('.content1').addClass('hidden');
-                        $modal.find('.content2').removeClass('hidden');
+                        $('#appList table tr[data-appid=' + appId + ']').remove();
+                    },
+                    error: function () {
+                        showAlert(false);
                     }
                 });
             });
@@ -50,6 +74,8 @@
 
 
     {% block content %}
+       
+        
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -74,6 +100,12 @@
 
 
         <div class="col-xs-12">
+             <div id="alertSuccess" class="alert alert-success hidden">
+            <strong>Success!</strong> Your appointment is successfully canceled.
+        </div>
+        <div id="alertError" class="alert alert-danger hidden">
+            <strong>Error!</strong> There was a problem canceling appointment.
+        </div>
             <div class="mha-common-header">
                 <p>Welcome to your MyHealthAccess Account</p>
             </div>
@@ -83,7 +115,7 @@
                 <table cellpadding="0" cellspacing="0" class="table table-bordered table-hover table-responsive">
                     <tr><th>Dr.Name</th><th>Date</th><th>Time</th><th>Action</th></tr>
                             {% for app in myapp %}
-                        <tr>
+                        <tr data-appid="{{app.id}}">
                             <td>{{app.firstName }} {{app.lastName}}</td>
                             <td>{{app.date}}</td>
                             <td>{{app.startTime}}</td>
@@ -114,27 +146,13 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary" >Confirm & Delete</button>
+                                <button type="submit" class="btn btn-primary" >Confirm & Cancel</button>
 
                             </div>
                         </div>
                     </form>
                 </div>
-                <div class="content2 hidden">
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>                            
-                        </div>
-                        <div class="modal-body">
-                            <p></p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>                           
-
-                        </div>
-                    </div>
-                </div>
+               
             </div>
         </div>
 

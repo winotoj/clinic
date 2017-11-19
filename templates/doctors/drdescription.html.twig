@@ -349,6 +349,7 @@
 {% endblock %}
 
 {% block content %}
+
     <div class="col-sm-6">  
 
         <p><img src="{{dr.pathImage}}" width="100" height="100" alt="{{dr.firstName }}{{dr.lastName }}" class="img-circle img-responsive">
@@ -417,52 +418,62 @@
     <!-- Modal -->
     <div id="myModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
-            <div class="content1">
-            <form action="/prepayment" method="post">
-                <input type="hidden" name="doctorId" value="{{dr.id}}" />
-                <input type="hidden" name="time" value="" />
-                
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Book Appointment / With Dr.{{dr.firstName }}{{dr.lastName }}</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>Your Appointment : </p>
-                        <label class="col-md-4 control-label">Reason: </label>  
-                        <textarea rows="4" cols="50" name="reason" required>
-                        </textarea>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" >Confirm & Payment</button>
-                        
+            {% if userSession %}
+                <div class="content1">
+                    <form action="/prepayment" method="post">
+                        <input type="hidden" name="doctorId" value="{{dr.id}}" />
+                        <input type="hidden" name="time" value="" />
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Book Appointment / With Dr.{{dr.firstName }}{{dr.lastName }}</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p class="app-info">Your Appointment : </p>
+                                <label class="col-md-4 control-label">Reason: </label>  
+                                <textarea rows="4" cols="50" name="reason" required>
+                                </textarea>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary" >Confirm & Payment</button>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="content2 hidden">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Book Appointment / With Dr.{{dr.firstName }}{{dr.lastName }}</h4>
+                        </div>
+                        <div class="modal-body">
+                            <h1>Payment</h1>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary" >Payment</button>
+
+                        </div>
                     </div>
                 </div>
-            </form>
-            </div>
-            <div class="content2 hidden">
-                <!-- Modal content-->
+            {% else %}
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Book Appointment / With Dr.{{dr.firstName }}{{dr.lastName }}</h4>
-                    </div>
                     <div class="modal-body">
-                        <h1>Payment</h1>
+                        <h4>You must <a href="/register">register</a> or <a href="/login">login </a>first to make an apointment.</h4>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" >Confirm & Payment</button>
-                        
-                    </div>
+
                 </div>
-            </div>
+            {% endif %}
         </div>
     </div>
+
     <script type="text/javascript">
-           
+
         $(document).ready(function () {
             var startDate = null;
             var endDate = null;
@@ -477,7 +488,7 @@
                 $timeslots.empty();
                 $.each(data, function (idx, d) {
                     if (idx == 0) {
-                        startDate = d.date.dateStr;                        
+                        startDate = d.date.dateStr;
                     } else {
                         endDate = d.date.dateStr;
                     }
@@ -496,23 +507,23 @@
                         for (var j = s; j < e + 1; j++) {
                             var timeStr = (j.toString() + ":" + "00").padStart(5, '0');
                             var dateTime = dateStr + ' - ' + timeStr;
-                            
+
                             var hasAppointment = appointments.indexOf(timeStr) >= 0;
 
                             var $li = $('<li><button ' + (hasAppointment ? 'disabled' : '') + ' data-time="' + dateTime + '" type="button" class="btn-time inverted btn btn-info btn-lg" onclick="getappointment(this)">' + timeStr + '</button></li>');
                             $ul.append($li);
                             timeStr = (j.toString() + ":" + "30").padStart(5, '0');
-                            
+
                             hasAppointment = appointments.indexOf(timeStr) >= 0;
-                            
+
                             dateTime = dateStr + ' ' + timeStr;
-                            $li = $('<li><button '  + (hasAppointment ? 'disabled' : '') + ' data-time="' + dateTime + '" type="button" class="btn-time inverted btn btn-info btn-lg" onclick="getappointment(this)">' + timeStr + '</button></li>');
+                            $li = $('<li><button ' + (hasAppointment ? 'disabled' : '') + ' data-time="' + dateTime + '" type="button" class="btn-time inverted btn btn-info btn-lg" onclick="getappointment(this)">' + timeStr + '</button></li>');
                             $ul.append($li);
                         }
                     });
                     $timeslots.append($ul);
-                });              
-            }  
+                });
+            }
             //var data = [{"date":{"dow":"Wed","day":"06","month":"2017-12-06"},"times":[{"start":{"hour":8,"minute":0},"end":{"hour":20,"minute":0}},{"start":{"hour":8,"minute":0},"end":{"hour":20,"minute":0}}]},{"date":{"dow":"Thu","day":"07","month":"2017-12-07"},"times":[{"start":{"hour":8,"minute":0},"end":{"hour":20,"minute":0}},{"start":{"hour":8,"minute":0},"end":{"hour":20,"minute":0}}]},{"date":{"dow":"Fri","day":"08","month":"2017-12-08"},"times":[]},{"date":{"dow":"Sat","day":"09","month":"2017-12-09"},"times":[{"start":{"hour":8,"minute":0},"end":{"hour":20,"minute":0}}]},{"date":{"dow":"Sun","day":"10","month":"2017-12-10"},"times":[{"start":{"hour":8,"minute":0},"end":{"hour":20,"minute":0}},{"start":{"hour":8,"minute":0},"end":{"hour":20,"minute":0}}]}];
             var getDate = function (start) {
                 var url = '/avtime/' + doctorId + '/' + start;
@@ -545,23 +556,23 @@
                 var d = moment(startDate).add(-6, 'days');
                 getDate(formatDate(d));
             });
-            
+
             window.getappointment = function (e) {
                 var time = $(e).attr('data-time');
                 $modal.find('input[name=time]').val(time);
-                
+
                 //$modal.find('.modal-title').text('New message to ' + recipient);
-                $modal.find('.modal-body p').text('Your appointment is on : ' + time);
+                $modal.find('.modal-body p .app-info').text('Your appointment is on : ' + time);
                 $modal.find('.content1').removeClass('hidden');
                 $modal.find('.content2').addClass('hidden');
-                        
+
                 $modal.modal('show');
                 return false;
             };
-            
+
             $modal.find("form").submit(function (e) {
                 e.preventDefault();
-                
+
                 var $form = $(this);
                 var action = $form.attr('action');
                 $.ajax({
@@ -577,6 +588,6 @@
             //showData(data);
         });
     </script>
-  
+
 
 {% endblock %}

@@ -175,4 +175,13 @@
 3. where do i need help from?
   	-internet
 
+2017-11-18 -- Vaji
+ 1 what have i done / not done sincce last scrum?
+ 	-Compelete process make appointment and cancel appointment 
+        -add session user in all parts and queries related to patients
+ 2. What will i do from now until next scrum?
+ 	-test register page and fix bug
+ 	-change UI
+3. where do i need help from?
+  	-internet
 
