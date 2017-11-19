@@ -51,7 +51,7 @@ class __TwigTemplate_87a86df006dd2202e643b264156f3e573238b8b43873d89825885252259
         <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>  
         <script src=\"/assets/js/jquery.easing.min.js\"></script>
         <script src=\"/assets/js/custom.js\"></script>
-        <script src=\"contactform/contactform.js\"></script>
+        <!--<script src=\"contactform/contactform.js\"></script>-->
         <script src=\"/assets/js/script.js\"></script>
     ";
         // line 30
@@ -294,7 +294,7 @@ class __TwigTemplate_87a86df006dd2202e643b264156f3e573238b8b43873d89825885252259
         <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>  
         <script src=\"/assets/js/jquery.easing.min.js\"></script>
         <script src=\"/assets/js/custom.js\"></script>
-        <script src=\"contactform/contactform.js\"></script>
+        <!--<script src=\"contactform/contactform.js\"></script>-->
         <script src=\"/assets/js/script.js\"></script>
     {% block matchpwd %}{% endblock %}
 

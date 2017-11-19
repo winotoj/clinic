@@ -393,30 +393,31 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
     public function block_content($context, array $blocks = array())
     {
         // line 352
-        echo "    <section id=\"cta-1\" class=\"section-padding\">
+        echo "   <section id=\"padding\" class=\"section-sm-padding\">
+    </section>
         <div class=\"container\">
             <div class=\"row\">
                 <div class=\"col-sm-6\">  
 
-                    <p><img src=\"";
-        // line 357
+                    <p class=\"text-center\"><img src=\"";
+        // line 358
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "pathImage", array()), "html", null, true);
         echo "\" width=\"100\" height=\"100\" alt=\"";
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "firstName", array()), "html", null, true);
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "lastName", array()), "html", null, true);
-        echo "\" class=\"img-circle img-responsive\">
+        echo "\" class=\"img-circle img-responsive text-center\">
                     </p>
                     <p>";
-        // line 359
+        // line 360
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), (isset($context["id"]) ? $context["id"] : null), array(), "array"), "html", null, true);
         echo "</p>
-                    <p>NAMe ";
-        // line 360
+                    <p> <h4>";
+        // line 361
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "firstName", array()), "html", null, true);
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "lastName", array()), "html", null, true);
-        echo "</p>
-                    <p>Description: ";
-        // line 361
+        echo "</h4></p>
+                    <p class=\"text-justify\">Description: ";
+        // line 362
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "description", array()), "html", null, true);
         echo "</p>       
 
@@ -427,7 +428,7 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
 
                     <div id=\"doctor-page\" class=\"ember-view\">
                         <section id=\"doctor\" data-id=\"";
-        // line 369
+        // line 370
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "id", array()), "html", null, true);
         echo "\">
                             <div>
@@ -476,15 +477,15 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
         </div>
         <!-- <ul class=\"ulavtime\">
         ";
-        // line 415
+        // line 416
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["weekDate"]) ? $context["weekDate"] : null));
         foreach ($context['_seq'] as $context["_key"] => $context["d"]) {
-            // line 416
+            // line 417
             echo "
             <li class=\"avTime\">               
                     <span style=\"display: block; text-align: center;\">";
-            // line 418
+            // line 419
             echo twig_escape_filter($this->env, $this->getAttribute($context["d"], "dayOfWeek", array()), "html", null, true);
             echo "</span><span style=\"display: block; text-align: center;\"> ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["d"], "day", array()), "html", null, true);
@@ -495,20 +496,20 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['d'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 420
+        // line 421
         echo "</ul>-->
     </div>
     <!-- Modal -->
     <div id=\"myModal\" class=\"modal fade\" role=\"dialog\">
         <div class=\"modal-dialog\">
             ";
-        // line 425
+        // line 426
         if ((isset($context["userSession"]) ? $context["userSession"] : null)) {
-            // line 426
+            // line 427
             echo "                <div class=\"content1\">
                     <form action=\"/prepayment\" method=\"post\">
                         <input type=\"hidden\" name=\"doctorId\" value=\"";
-            // line 428
+            // line 429
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "id", array()), "html", null, true);
             echo "\" />
                         <input type=\"hidden\" name=\"time\" value=\"\" />
@@ -518,7 +519,7 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
                             <div class=\"modal-header\">
                                 <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
                                 <h4 class=\"modal-title\">Book Appointment / With Dr.";
-            // line 435
+            // line 436
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "firstName", array()), "html", null, true);
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "lastName", array()), "html", null, true);
             echo "</h4>
@@ -543,7 +544,7 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
                         <div class=\"modal-header\">
                             <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
                             <h4 class=\"modal-title\">Book Appointment / With Dr.";
-            // line 456
+            // line 457
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "firstName", array()), "html", null, true);
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dr"]) ? $context["dr"] : null), "lastName", array()), "html", null, true);
             echo "</h4>
@@ -560,7 +561,7 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
                 </div>
             ";
         } else {
-            // line 469
+            // line 470
             echo "                <div class=\"modal-content\">
                     <div class=\"modal-body\">
                         <h4>You must <a href=\"/register\">register</a> or <a href=\"/login\">login </a>first to make an apointment.</h4>
@@ -569,7 +570,7 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
                 </div>
             ";
         }
-        // line 476
+        // line 477
         echo "        </div>
     </div>
 
@@ -611,14 +612,14 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
 
                             var hasAppointment = appointments.indexOf(timeStr) >= 0;
 
-                            var \$li = \$('<li><button ' + (hasAppointment ? 'disabled' : '') + ' data-time=\"' + dateTime + '\" type=\"button\" class=\"btn-time inverted btn btn-info btn-lg\" onclick=\"getappointment(this)\">' + timeStr + '</button></li>');
+                            var \$li = \$('<li><button ' + (hasAppointment ? 'disabled style=\"background-color:#E8E8E8;\"' : '') + ' data-time=\"' + dateTime + '\" type=\"button\" class=\"btn-time inverted btn btn-info btn-lg\" onclick=\"getappointment(this)\">' + timeStr + '</button></li>');
                             \$ul.append(\$li);
                             timeStr = (j.toString() + \":\" + \"30\").padStart(5, '0');
 
                             hasAppointment = appointments.indexOf(timeStr) >= 0;
 
                             dateTime = dateStr + ' ' + timeStr;
-                            \$li = \$('<li><button ' + (hasAppointment ? 'disabled' : '') + ' data-time=\"' + dateTime + '\" type=\"button\" class=\"btn-time inverted btn btn-info btn-lg\" onclick=\"getappointment(this)\">' + timeStr + '</button></li>');
+                            \$li = \$('<li><button ' + (hasAppointment ? 'disabled style=\"background-color:#E8E8E8;\"' : '') + ' data-time=\"' + dateTime + '\" type=\"button\" class=\"btn-time inverted btn btn-info btn-lg\" onclick=\"getappointment(this)\">' + timeStr + '</button></li>');
                             \$ul.append(\$li);
                         }
                     });
@@ -706,7 +707,7 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
 
     public function getDebugInfo()
     {
-        return array (  573 => 476,  564 => 469,  547 => 456,  522 => 435,  512 => 428,  508 => 426,  506 => 425,  499 => 420,  488 => 418,  484 => 416,  480 => 415,  431 => 369,  420 => 361,  415 => 360,  411 => 359,  403 => 357,  396 => 352,  393 => 351,  50 => 12,  40 => 5,  37 => 4,  31 => 3,  11 => 1,);
+        return array (  574 => 477,  565 => 470,  548 => 457,  523 => 436,  513 => 429,  509 => 427,  507 => 426,  500 => 421,  489 => 419,  485 => 417,  481 => 416,  432 => 370,  421 => 362,  416 => 361,  412 => 360,  404 => 358,  396 => 352,  393 => 351,  50 => 12,  40 => 5,  37 => 4,  31 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -1070,16 +1071,17 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
 {% endblock %}
 
 {% block content %}
-    <section id=\"cta-1\" class=\"section-padding\">
+   <section id=\"padding\" class=\"section-sm-padding\">
+    </section>
         <div class=\"container\">
             <div class=\"row\">
                 <div class=\"col-sm-6\">  
 
-                    <p><img src=\"{{dr.pathImage}}\" width=\"100\" height=\"100\" alt=\"{{dr.firstName }}{{dr.lastName }}\" class=\"img-circle img-responsive\">
+                    <p class=\"text-center\"><img src=\"{{dr.pathImage}}\" width=\"100\" height=\"100\" alt=\"{{dr.firstName }}{{dr.lastName }}\" class=\"img-circle img-responsive text-center\">
                     </p>
                     <p>{{dr[id]}}</p>
-                    <p>NAMe {{dr.firstName}}{{dr.lastName}}</p>
-                    <p>Description: {{dr.description}}</p>       
+                    <p> <h4>{{dr.firstName}}{{dr.lastName}}</h4></p>
+                    <p class=\"text-justify\">Description: {{dr.description}}</p>       
 
                 </div>
 
@@ -1235,14 +1237,14 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
 
                             var hasAppointment = appointments.indexOf(timeStr) >= 0;
 
-                            var \$li = \$('<li><button ' + (hasAppointment ? 'disabled' : '') + ' data-time=\"' + dateTime + '\" type=\"button\" class=\"btn-time inverted btn btn-info btn-lg\" onclick=\"getappointment(this)\">' + timeStr + '</button></li>');
+                            var \$li = \$('<li><button ' + (hasAppointment ? 'disabled style=\"background-color:#E8E8E8;\"' : '') + ' data-time=\"' + dateTime + '\" type=\"button\" class=\"btn-time inverted btn btn-info btn-lg\" onclick=\"getappointment(this)\">' + timeStr + '</button></li>');
                             \$ul.append(\$li);
                             timeStr = (j.toString() + \":\" + \"30\").padStart(5, '0');
 
                             hasAppointment = appointments.indexOf(timeStr) >= 0;
 
                             dateTime = dateStr + ' ' + timeStr;
-                            \$li = \$('<li><button ' + (hasAppointment ? 'disabled' : '') + ' data-time=\"' + dateTime + '\" type=\"button\" class=\"btn-time inverted btn btn-info btn-lg\" onclick=\"getappointment(this)\">' + timeStr + '</button></li>');
+                            \$li = \$('<li><button ' + (hasAppointment ? 'disabled style=\"background-color:#E8E8E8;\"' : '') + ' data-time=\"' + dateTime + '\" type=\"button\" class=\"btn-time inverted btn btn-info btn-lg\" onclick=\"getappointment(this)\">' + timeStr + '</button></li>');
                             \$ul.append(\$li);
                         }
                     });
