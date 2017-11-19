@@ -1,4 +1,5 @@
 
+
 <?php
 
 use Monolog\Logger;
@@ -74,15 +75,9 @@ if (!isset($_SESSION['user'])) {
 
     $_SESSION['user'] = array();
 }
-
-if (!isset($_SESSION['staffSession'])) {
-
-    $_SESSION['staffSession'] = array();
-}
-
 $twig = $app->view()->getEnvironment();
 $twig->addGlobal('userSession', $_SESSION['user']);
-$twig->addGlobal('staffSession', $_SESSION['staffSession']);
+
 require_once 'connect.php';
 
 require_once 'staff.php';
@@ -96,14 +91,15 @@ require_once 'account.php';
 require_once 'doctor_schedule.php';
 
 require_once 'doctor_calendar.php';
-require_once 'paypalConfirm.php';
 
 //require_once 'events.php';
 
 
 $app->get('/', function() use ($app) {
+    
+    $dr_List = DB::query("SELECT *  FROM doctors LIMIT 4"); 
 
-    $app->render('index.html.twig');
+    $app->render('index.html.twig', array('dr_List' => $dr_List));
 
 });
 
@@ -116,4 +112,5 @@ $app->get('/master', function() use ($app){
 
 
 $app->run();
+
 

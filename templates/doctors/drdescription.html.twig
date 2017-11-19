@@ -349,64 +349,69 @@
 {% endblock %}
 
 {% block content %}
+   <section id="padding" class="section-sm-padding">
+    </section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">  
 
-    <div class="col-sm-6">  
+                    <p><img src="{{dr.pathImage}}" width="100" height="100" alt="{{dr.firstName }}{{dr.lastName }}" class="img-circle img-responsive">
+                    </p>
+                    <p>{{dr[id]}}</p>
+                    <p>NAMe {{dr.firstName}}{{dr.lastName}}</p>
+                    <p>Description: {{dr.description}}</p>       
 
-        <p><img src="{{dr.pathImage}}" width="100" height="100" alt="{{dr.firstName }}{{dr.lastName }}" class="img-circle img-responsive">
-        </p>
-        <p>{{dr[id]}}</p>
-        <p>NAMe {{dr.firstName}}{{dr.lastName}}</p>
-        <p>Description: {{dr.description}}</p>       
+                </div>
 
-    </div>
-    <div class="col-sm-6">  
-        <p>available Time</p>
+                <div class="col-sm-6">  
+                    <p>available Time</p>
 
-        <div id="doctor-page" class="ember-view">
-            <section id="doctor" data-id="{{dr.id}}">
-                <div>
-                    <ul>
-                        <li style="order: undefined; width: 100%;" itemprop="employee" itemtype="https://schema.org/Physician" itemscope="" id="ember2154"
-                            class="doctor-row doctor ember-view">
-                            <!---->
-                            <div class="times">
+                    <div id="doctor-page" class="ember-view">
+                        <section id="doctor" data-id="{{dr.id}}">
+                            <div>
+                                <ul>
+                                    <li style="order: undefined; width: 100%;" itemprop="employee" itemtype="https://schema.org/Physician" itemscope="" id="ember2154"
+                                        class="doctor-row doctor ember-view">
+                                        <!---->
+                                        <div class="times">
 
-                                <div class="dates mobile-only">
-                                    <ul>
-                                    </ul>
-                                    <nav>
-                                        <button class="next five"><i class="fa fa-caret-right">&#8250;</i></button>
-                                        <button class="prev five"><i class="fa fa-caret-left">&#8249;</i></button>
-                                    </nav>
-                                </div>
+                                            <div class="dates mobile-only">
+                                                <ul>
+                                                </ul>
+                                                <nav>
+                                                    <button class="next five"><i class="fa fa-caret-right">&#8250;</i></button>
+                                                    <button class="prev five"><i class="fa fa-caret-left">&#8249;</i></button>
+                                                </nav>
+                                            </div>
 
-                                <div class="container">
-                                    <div id="ember2164" class="doctor-row-times ember-view">
-                                        <div class="time-slots">
+                                            <div class="container">
+                                                <div id="ember2164" class="doctor-row-times ember-view">
+                                                    <div class="time-slots">
+                                                    </div>
+                                                    <!-- <button class="small toggle-button" data-ember-action="" data-ember-action-5088="5088">See all times<i class="fa fa-caret-down"></i></button>
+                                                    --> </div>
+                                            </div>
+
+                                            <div class="bg-times columns mobile-only">
+                                                <div class="column one"></div>
+                                                <div class="column two"></div>
+                                            </div>
+
                                         </div>
-                                        <!-- <button class="small toggle-button" data-ember-action="" data-ember-action-5088="5088">See all times<i class="fa fa-caret-down"></i></button>
-                                        --> </div>
-                                </div>
 
-                                <div class="bg-times columns mobile-only">
+
+                                    </li>
+                                </ul>
+                                <div class="bg columns">
                                     <div class="column one"></div>
                                     <div class="column two"></div>
                                 </div>
-
                             </div>
-
-
-                        </li>
-                    </ul>
-                    <div class="bg columns">
-                        <div class="column one"></div>
-                        <div class="column two"></div>
+                        </section>
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
-
-
         <!-- <ul class="ulavtime">
         {% for d in weekDate %}
 
