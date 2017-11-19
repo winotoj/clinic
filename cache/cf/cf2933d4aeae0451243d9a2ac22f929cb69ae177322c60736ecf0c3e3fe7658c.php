@@ -57,31 +57,36 @@ class __TwigTemplate_e188bbf9f41f04744c00bb6d60af5b07136672f0341666c5e6ea08782a5
     public function block_content($context, array $blocks = array())
     {
         // line 16
-        echo "    <div id=\"doctor\">
-        <ul class=\"list-group\">
+        echo "    <section id=\"padding\" class=\"section-sm-padding\">
+    </section>
+    <div class=\"container\">
+        <div class=\"row\">
+            <div class=\"col-sm-12\">  
+                <div id=\"doctor\">
+                    <ul class=\"list-group\">
 
-            ";
-        // line 19
+                        ";
+        // line 24
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["drList"]) ? $context["drList"] : null));
         foreach ($context['_seq'] as $context["_key"] => $context["dr"]) {
-            // line 20
-            echo "                <div class=\"row\">
-                <li style=\"order: undefined;\" class=\"list-group-item\" > 
-                    <div class=\"row\"> 
-                        <div class=\"col-sm-2\">
-                            <img src=\"";
-            // line 24
+            // line 25
+            echo "                            <div class=\"row\">
+                                <li style=\"order: undefined;\" class=\"list-group-item\" > 
+                                    <div class=\"row\"> 
+                                        <div class=\"col-sm-2\">
+                                            <img src=\"";
+            // line 29
             echo twig_escape_filter($this->env, $this->getAttribute($context["dr"], "pathImage", array()), "html", null, true);
             echo "\" width=\"100\" height=\"100\" alt=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($context["dr"], "firstName", array()), "html", null, true);
             echo twig_escape_filter($this->env, $this->getAttribute($context["dr"], "lastName", array()), "html", null, true);
             echo "\" class=\"img-thumbnail img-responsive\">
-                        </div>  
-                        <div class=\"col-sm-6\">
-                            <h3>
-                                <a class=\"text-primary\" title=\"Book appointment with ";
-            // line 28
+                                        </div>  
+                                        <div class=\"col-sm-6\">
+                                            <h3>
+                                                <a class=\"text-primary\" title=\"Book appointment with ";
+            // line 33
             echo twig_escape_filter($this->env, $this->getAttribute($context["dr"], "firstName", array()), "html", null, true);
             echo "-";
             echo twig_escape_filter($this->env, $this->getAttribute($context["dr"], "lastName", array()), "html", null, true);
@@ -95,14 +100,14 @@ class __TwigTemplate_e188bbf9f41f04744c00bb6d60af5b07136672f0341666c5e6ea08782a5
             echo twig_escape_filter($this->env, $this->getAttribute($context["dr"], "firstName", array()), "html", null, true);
             echo twig_escape_filter($this->env, $this->getAttribute($context["dr"], "lastName", array()), "html", null, true);
             echo " </span></a>
-                            </h3>                        
+                                            </h3>                        
 
-                        </div>
+                                        </div>
 
-                        <div class=\"col-sm-4\">                          
-                            <p class=\"text-info\">
-                                <a href=\"/doctors/";
-            // line 35
+                                        <div class=\"col-sm-4\">                          
+                                            <p class=\"text-info\">
+                                                <a href=\"/doctors/";
+            // line 40
             echo twig_escape_filter($this->env, $this->getAttribute($context["dr"], "id", array()), "html", null, true);
             echo "/";
             echo twig_escape_filter($this->env, $this->getAttribute($context["dr"], "firstName", array()), "html", null, true);
@@ -110,33 +115,36 @@ class __TwigTemplate_e188bbf9f41f04744c00bb6d60af5b07136672f0341666c5e6ea08782a5
             echo twig_escape_filter($this->env, $this->getAttribute($context["dr"], "lastName", array()), "html", null, true);
             echo "\" class=\"a\" name=\"av_times\">See available times</a>
 
-                            </p>                      
-                        </div>             
-                    </div>
-                    <div class=\"row\">
+                                            </p>                      
+                                        </div>             
+                                    </div>
+                                    <div class=\"row\">
 
-                        <div class=\"col-sm-8\">
-                            <div>
-                                <span itemprop=\"description\">
-                                    <p class=\"text-info\"> ";
-            // line 45
+                                        <div class=\"col-sm-8\">
+                                            <div>
+                                                <span itemprop=\"description\">
+                                                    <p class=\"text-info\"> ";
+            // line 50
             echo twig_escape_filter($this->env, $this->getAttribute($context["dr"], "description", array()), "html", null, true);
             echo "</p>
 
-                                </span> 
+                                                </span> 
 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
                             </div>
-                        </div>
-                    </div>
-                </li>
-                </div>
-            ";
+                        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['dr'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 55
-        echo "        </ul>
+        // line 60
+        echo "                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 ";
     }
@@ -153,7 +161,7 @@ class __TwigTemplate_e188bbf9f41f04744c00bb6d60af5b07136672f0341666c5e6ea08782a5
 
     public function getDebugInfo()
     {
-        return array (  139 => 55,  123 => 45,  106 => 35,  85 => 28,  75 => 24,  69 => 20,  65 => 19,  60 => 16,  57 => 15,  48 => 10,  40 => 5,  37 => 4,  31 => 3,  11 => 1,);
+        return array (  144 => 60,  128 => 50,  111 => 40,  90 => 33,  80 => 29,  74 => 25,  70 => 24,  60 => 16,  57 => 15,  48 => 10,  40 => 5,  37 => 4,  31 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -181,46 +189,54 @@ class __TwigTemplate_e188bbf9f41f04744c00bb6d60af5b07136672f0341666c5e6ea08782a5
 {% endblock %}
 
 {% block content %}
-    <div id=\"doctor\">
-        <ul class=\"list-group\">
+    <section id=\"padding\" class=\"section-sm-padding\">
+    </section>
+    <div class=\"container\">
+        <div class=\"row\">
+            <div class=\"col-sm-12\">  
+                <div id=\"doctor\">
+                    <ul class=\"list-group\">
 
-            {% for dr in drList %}
-                <div class=\"row\">
-                <li style=\"order: undefined;\" class=\"list-group-item\" > 
-                    <div class=\"row\"> 
-                        <div class=\"col-sm-2\">
-                            <img src=\"{{dr.pathImage}}\" width=\"100\" height=\"100\" alt=\"{{dr.firstName }}{{dr.lastName }}\" class=\"img-thumbnail img-responsive\">
-                        </div>  
-                        <div class=\"col-sm-6\">
-                            <h3>
-                                <a class=\"text-primary\" title=\"Book appointment with {{dr.firstName}}-{{dr.lastName }}\" href=\"/doctors/{{dr.id}}/{{dr.firstName}}-{{dr.lastName }}\" ><span itemprop=\"name\">{{dr.firstName }}{{dr.lastName }} </span></a>
-                            </h3>                        
+                        {% for dr in drList %}
+                            <div class=\"row\">
+                                <li style=\"order: undefined;\" class=\"list-group-item\" > 
+                                    <div class=\"row\"> 
+                                        <div class=\"col-sm-2\">
+                                            <img src=\"{{dr.pathImage}}\" width=\"100\" height=\"100\" alt=\"{{dr.firstName }}{{dr.lastName }}\" class=\"img-thumbnail img-responsive\">
+                                        </div>  
+                                        <div class=\"col-sm-6\">
+                                            <h3>
+                                                <a class=\"text-primary\" title=\"Book appointment with {{dr.firstName}}-{{dr.lastName }}\" href=\"/doctors/{{dr.id}}/{{dr.firstName}}-{{dr.lastName }}\" ><span itemprop=\"name\">{{dr.firstName }}{{dr.lastName }} </span></a>
+                                            </h3>                        
 
-                        </div>
+                                        </div>
 
-                        <div class=\"col-sm-4\">                          
-                            <p class=\"text-info\">
-                                <a href=\"/doctors/{{dr.id}}/{{dr.firstName}}-{{dr.lastName }}\" class=\"a\" name=\"av_times\">See available times</a>
+                                        <div class=\"col-sm-4\">                          
+                                            <p class=\"text-info\">
+                                                <a href=\"/doctors/{{dr.id}}/{{dr.firstName}}-{{dr.lastName }}\" class=\"a\" name=\"av_times\">See available times</a>
 
-                            </p>                      
-                        </div>             
-                    </div>
-                    <div class=\"row\">
+                                            </p>                      
+                                        </div>             
+                                    </div>
+                                    <div class=\"row\">
 
-                        <div class=\"col-sm-8\">
-                            <div>
-                                <span itemprop=\"description\">
-                                    <p class=\"text-info\"> {{dr.description}}</p>
+                                        <div class=\"col-sm-8\">
+                                            <div>
+                                                <span itemprop=\"description\">
+                                                    <p class=\"text-info\"> {{dr.description}}</p>
 
-                                </span> 
+                                                </span> 
 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
                             </div>
-                        </div>
-                    </div>
-                </li>
+                        {% endfor %}
+                    </ul>
                 </div>
-            {% endfor %}
-        </ul>
+            </div>
+        </div>
     </div>
 {% endblock %}", "drList.html.twig", "C:\\xampp\\htdocs\\php-project\\templates\\drList.html.twig");
     }

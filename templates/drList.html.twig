@@ -13,45 +13,53 @@
 {% endblock %}
 
 {% block content %}
-    <div id="doctor">
-        <ul class="list-group">
+    <section id="padding" class="section-sm-padding">
+    </section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">  
+                <div id="doctor">
+                    <ul class="list-group">
 
-            {% for dr in drList %}
-                <div class="row">
-                <li style="order: undefined;" class="list-group-item" > 
-                    <div class="row"> 
-                        <div class="col-sm-2">
-                            <img src="{{dr.pathImage}}" width="100" height="100" alt="{{dr.firstName }}{{dr.lastName }}" class="img-thumbnail img-responsive">
-                        </div>  
-                        <div class="col-sm-6">
-                            <h3>
-                                <a class="text-primary" title="Book appointment with {{dr.firstName}}-{{dr.lastName }}" href="/doctors/{{dr.id}}/{{dr.firstName}}-{{dr.lastName }}" ><span itemprop="name">{{dr.firstName }}{{dr.lastName }} </span></a>
-                            </h3>                        
+                        {% for dr in drList %}
+                            <div class="row">
+                                <li style="order: undefined;" class="list-group-item" > 
+                                    <div class="row"> 
+                                        <div class="col-sm-2">
+                                            <img src="{{dr.pathImage}}" width="100" height="100" alt="{{dr.firstName }}{{dr.lastName }}" class="img-thumbnail img-responsive">
+                                        </div>  
+                                        <div class="col-sm-6">
+                                            <h3>
+                                                <a class="text-primary" title="Book appointment with {{dr.firstName}}-{{dr.lastName }}" href="/doctors/{{dr.id}}/{{dr.firstName}}-{{dr.lastName }}" ><span itemprop="name">{{dr.firstName }}{{dr.lastName }} </span></a>
+                                            </h3>                        
 
-                        </div>
+                                        </div>
 
-                        <div class="col-sm-4">                          
-                            <p class="text-info">
-                                <a href="/doctors/{{dr.id}}/{{dr.firstName}}-{{dr.lastName }}" class="a" name="av_times">See available times</a>
+                                        <div class="col-sm-4">                          
+                                            <p class="text-info">
+                                                <a href="/doctors/{{dr.id}}/{{dr.firstName}}-{{dr.lastName }}" class="a" name="av_times">See available times</a>
 
-                            </p>                      
-                        </div>             
-                    </div>
-                    <div class="row">
+                                            </p>                      
+                                        </div>             
+                                    </div>
+                                    <div class="row">
 
-                        <div class="col-sm-8">
-                            <div>
-                                <span itemprop="description">
-                                    <p class="text-info"> {{dr.description}}</p>
+                                        <div class="col-sm-8">
+                                            <div>
+                                                <span itemprop="description">
+                                                    <p class="text-info"> {{dr.description}}</p>
 
-                                </span> 
+                                                </span> 
 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
                             </div>
-                        </div>
-                    </div>
-                </li>
+                        {% endfor %}
+                    </ul>
                 </div>
-            {% endfor %}
-        </ul>
+            </div>
+        </div>
     </div>
 {% endblock %}
