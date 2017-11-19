@@ -549,7 +549,7 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
                         </div>
                         <div class=\"modal-footer\">
                             <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>
-                            <button type=\"submit\" class=\"btn btn-primary\" >Confirm & Payment</button>
+                            <button type=\"submit\" class=\"btn btn-primary\" >Payment</button>
 
                         </div>
                     </div>
@@ -1173,7 +1173,7 @@ class __TwigTemplate_bba9d9f52b334d25caf35ecc786d73b06847c35b48ed7e4c152047c29e6
                         </div>
                         <div class=\"modal-footer\">
                             <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>
-                            <button type=\"submit\" class=\"btn btn-primary\" >Confirm & Payment</button>
+                            <button type=\"submit\" class=\"btn btn-primary\" >Payment</button>
 
                         </div>
                     </div>
