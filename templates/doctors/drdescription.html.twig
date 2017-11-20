@@ -355,11 +355,11 @@
             <div class="row">
                 <div class="col-sm-6">  
 
-                    <p><img src="{{dr.pathImage}}" width="100" height="100" alt="{{dr.firstName }}{{dr.lastName }}" class="img-circle img-responsive">
+                    <p class="text-center"><img src="{{dr.pathImage}}" width="100" height="100" alt="{{dr.firstName }}{{dr.lastName }}" class="img-circle img-responsive text-center">
                     </p>
                     <p>{{dr[id]}}</p>
-                    <p>NAMe {{dr.firstName}}{{dr.lastName}}</p>
-                    <p>Description: {{dr.description}}</p>       
+                    <p> <h4>{{dr.firstName}}{{dr.lastName}}</h4></p>
+                    <p class="text-justify">Description: {{dr.description}}</p>       
 
                 </div>
 
@@ -515,14 +515,14 @@
 
                             var hasAppointment = appointments.indexOf(timeStr) >= 0;
 
-                            var $li = $('<li><button ' + (hasAppointment ? 'disabled' : '') + ' data-time="' + dateTime + '" type="button" class="btn-time inverted btn btn-info btn-lg" onclick="getappointment(this)">' + timeStr + '</button></li>');
+                            var $li = $('<li><button ' + (hasAppointment ? 'disabled style="background-color:#E8E8E8;"' : '') + ' data-time="' + dateTime + '" type="button" class="btn-time inverted btn btn-info btn-lg" onclick="getappointment(this)">' + timeStr + '</button></li>');
                             $ul.append($li);
                             timeStr = (j.toString() + ":" + "30").padStart(5, '0');
 
                             hasAppointment = appointments.indexOf(timeStr) >= 0;
 
                             dateTime = dateStr + ' ' + timeStr;
-                            $li = $('<li><button ' + (hasAppointment ? 'disabled' : '') + ' data-time="' + dateTime + '" type="button" class="btn-time inverted btn btn-info btn-lg" onclick="getappointment(this)">' + timeStr + '</button></li>');
+                            $li = $('<li><button ' + (hasAppointment ? 'disabled style="background-color:#E8E8E8;"' : '') + ' data-time="' + dateTime + '" type="button" class="btn-time inverted btn btn-info btn-lg" onclick="getappointment(this)">' + timeStr + '</button></li>');
                             $ul.append($li);
                         }
                     });
