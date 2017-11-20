@@ -23,9 +23,9 @@
 
                         {% for dr in drList %}
                             <div class="row">
-                                <li style="order: undefined;" class="list-group-item" > 
+                                <li style="order: undefined; margin-bottom: 2px;" class="list-group-item"> 
                                     <div class="row"> 
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-2" style="width:150px !important;" width="100" height="100">
                                             <img src="{{dr.pathImage}}" width="100" height="100" alt="{{dr.firstName }}{{dr.lastName }}" class="img-thumbnail img-responsive">
                                         </div>  
                                         <div class="col-sm-6">
@@ -35,9 +35,9 @@
 
                                         </div>
 
-                                        <div class="col-sm-4">                          
+                                        <div class="col-sm-4 text-center">                          
                                             <p class="text-info">
-                                                <a href="/doctors/{{dr.id}}/{{dr.firstName}}-{{dr.lastName }}" class="a" name="av_times">See available times</a>
+                                                <a href="/doctors/{{dr.id}}/{{dr.firstName}}-{{dr.lastName }}" class="a btn btn-primary" name="av_times">See available times</a>
 
                                             </p>                      
                                         </div>             
@@ -47,7 +47,7 @@
                                         <div class="col-sm-8">
                                             <div>
                                                 <span itemprop="description">
-                                                    <p class="text-info"> {{dr.description}}</p>
+                                                    <p class="text-info text-justify"> {{dr.description}}</p>
 
                                                 </span> 
 
