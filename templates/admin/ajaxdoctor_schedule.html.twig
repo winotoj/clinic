@@ -1,7 +1,5 @@
 
 <div id="viewSchedule">
-    <p>{{ datelist }}</p>
-    <p>{{ firstday[0] }}</p>
     <form action="/myschedule/{{ date }}/{{ doctorId }}" class="form-horizontal" method="Post">
         <input type="hidden" name="date" value="{{ date }}">
         <input type="hidden" name="id" value="{{ doctorId }}">
