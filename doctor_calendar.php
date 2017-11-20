@@ -1,4 +1,3 @@
-
 <?php
 if (false) {
     $app = new \Slim\Slim();
