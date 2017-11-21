@@ -349,107 +349,86 @@
 {% endblock %}
 
 {% block content %}
-   <section id="padding" class="section-sm-padding">
+    <section id="padding" class="section-sm-padding">
     </section>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">  
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">  
 
-                    <p class="text-center"><img src="{{dr.pathImage}}" width="100" height="100" alt="{{dr.firstName }}{{dr.lastName }}" class="img-circle img-responsive text-center">
-                    </p>
-                    <p>{{dr[id]}}</p>
-                    <p> <h4>{{dr.firstName}}{{dr.lastName}}</h4></p>
-                    <p class="text-justify">Description: {{dr.description}}</p>       
+                <p class="text-center"><img src="{{dr.pathImage}}" width="100" height="100" alt="{{dr.firstName }}{{dr.lastName }}" class="img-circle img-responsive text-center">
+                </p>
+                <p>{{dr[id]}}</p>
+                <p> <h4>{{dr.firstName}}{{dr.lastName}}</h4></p>
+                <p class="text-justify">Description: {{dr.description}}</p>       
 
-                </div>
+            </div>
 
-                <div class="col-sm-6">  
-                    <p>available Time</p>
+            <div class="col-sm-6">  
+                <p>available Time</p>
 
-                    <div id="doctor-page" class="ember-view">
-                        <section id="doctor" data-id="{{dr.id}}">
-                            <div>
-                                <ul>
-                                    <li style="order: undefined; width: 100%;" itemprop="employee" itemtype="https://schema.org/Physician" itemscope="" id="ember2154"
-                                        class="doctor-row doctor ember-view">
-                                        <!---->
-                                        <div class="times">
+                <div id="doctor-page" class="ember-view">
+                    <section id="doctor" data-id="{{dr.id}}">
+                        <div>
+                            <ul>
+                                <li style="order: undefined; width: 100%;" itemprop="employee" itemtype="https://schema.org/Physician" itemscope="" id="ember2154"
+                                    class="doctor-row doctor ember-view">
+                                    <!---->
+                                    <div class="times">
 
-                                            <div class="dates mobile-only">
-                                                <ul>
-                                                </ul>
-                                                <nav>
-                                                    <button class="next five"><i class="fa fa-caret-right">&#8250;</i></button>
-                                                    <button class="prev five"><i class="fa fa-caret-left">&#8249;</i></button>
-                                                </nav>
-                                            </div>
-
-                                            <div class="container">
-                                                <div id="ember2164" class="doctor-row-times ember-view">
-                                                    <div class="time-slots">
-                                                    </div>
-                                                    <!-- <button class="small toggle-button" data-ember-action="" data-ember-action-5088="5088">See all times<i class="fa fa-caret-down"></i></button>
-                                                    --> </div>
-                                            </div>
-
-                                            <div class="bg-times columns mobile-only">
-                                                <div class="column one"></div>
-                                                <div class="column two"></div>
-                                            </div>
-
+                                        <div class="dates mobile-only">
+                                            <ul>
+                                            </ul>
+                                            <nav>
+                                                <button class="next five"><i class="fa fa-caret-right">&#8250;</i></button>
+                                                <button class="prev five"><i class="fa fa-caret-left">&#8249;</i></button>
+                                            </nav>
                                         </div>
 
+                                        <div class="container">
+                                            <div id="ember2164" class="doctor-row-times ember-view">
+                                                <div class="time-slots">
+                                                </div>
+                                                <!-- <button class="small toggle-button" data-ember-action="" data-ember-action-5088="5088">See all times<i class="fa fa-caret-down"></i></button>
+                                                --> </div>
+                                        </div>
 
-                                    </li>
-                                </ul>
-                                <div class="bg columns">
-                                    <div class="column one"></div>
-                                    <div class="column two"></div>
-                                </div>
+                                        <div class="bg-times columns mobile-only">
+                                            <div class="column one"></div>
+                                            <div class="column two"></div>
+                                        </div>
+
+                                    </div>
+
+
+                                </li>
+                            </ul>
+                            <div class="bg columns">
+                                <div class="column one"></div>
+                                <div class="column two"></div>
                             </div>
-                        </section>
-                    </div>
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>
-        <!-- <ul class="ulavtime">
-        {% for d in weekDate %}
-
-            <li class="avTime">               
-                    <span style="display: block; text-align: center;">{{d.dayOfWeek}}</span><span style="display: block; text-align: center;"> {{d.day}}{{d.month}} </span></li>
-        {% endfor %}
-</ul>-->
     </div>
-    <!-- Modal -->
-    <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            {% if userSession %}
-                <div class="content1">
-                    <form action="/prepayment" method="post">
-                        <input type="hidden" name="doctorId" value="{{dr.id}}" />
-                        <input type="hidden" name="time" value="" />
+    <!-- <ul class="ulavtime">
+    {% for d in weekDate %}
 
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Book Appointment / With Dr.{{dr.firstName }}{{dr.lastName }}</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p class="app-info">Your Appointment : </p>
-                                <label class="col-md-4 control-label">Reason: </label>  
-                                <textarea rows="4" cols="50" name="reason" required>
-                                </textarea>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary" >Confirm & Payment</button>
+        <li class="avTime">               
+                <span style="display: block; text-align: center;">{{d.dayOfWeek}}</span><span style="display: block; text-align: center;"> {{d.day}}{{d.month}} </span></li>
+    {% endfor %}
+</ul>-->
+</div>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        {% if userSession %}
+            <div class="content1">
+                <form action="/prepayment" method="post" id="paypal_form" class="paypal">
+                  {#  <input type="hidden" name="doctorId" value="{{dr.id}}" />
+                    <input type="hidden" name="time" value="" /> #}
 
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="content2 hidden">
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header">
@@ -457,142 +436,186 @@
                             <h4 class="modal-title">Book Appointment / With Dr.{{dr.firstName }}{{dr.lastName }}</h4>
                         </div>
                         <div class="modal-body">
-                            <h1>Payment</h1>
+                            <p class="app-info">Your Appointment : </p>
+                            <label class="col-md-4 control-label">Reason: </label>  
+                          {#  <textarea rows="4" cols="50" name="reason" required> #}
+                            </textarea>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary" >Payment</button>
-
+                            <input type="hidden" name="cmd" value="_s-xclick">
+                            <input type="hidden" name="hosted_button_id" value="2EAFXXZ2WCUMC">
+                            <input type="hidden" name="no_note" value="1" />
+                            <input type="hidden" name="lc" value="CA" />
+                            <input type="hidden" name="currency_code" value="CAD" />
+                            <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_LG.gif:NonHostedGuest" />
+                            <input type="hidden" name="first_name" value="{{ userSession.firstName }}"  />
+                            <input type="hidden" name="last_name" value="{{ userSession.lastName}}"  />
+                            <input type="hidden" name="email" value="{{ userSession.email}}"  />
+                            <input type="hidden" name="item_number" value="{{dr.id}}" />
+                            <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                            <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+<form class="paypal" action="/prepayment" method="post" id="paypal_form" target="_blank">    
+	<input type="hidden" name="cmd" value="_xclick" /> 
+    <input type="hidden" name="no_note" value="1" />
+    <input type="hidden" name="lc" value="UK" />
+    <input type="hidden" name="currency_code" value="GBP" />
+    <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_LG.gif:NonHostedGuest" />
+    <input type="hidden" name="first_name" value="Customer's First Name"  />
+    <input type="hidden" name="last_name" value="Customer's Last Name"  />
+    <input type="hidden" name="email" value="customer@example.com"  />
+    <input type="hidden" name="item_number" value="123456" />
+    <input type="submit"  value="Submit Payment"/>
+</form>
                         </div>
                     </div>
-                </div>
-            {% else %}
+                </form>
+            </div>
+        {#    <div class="content2 hidden"> 
+                <!-- Modal content-->
                 <div class="modal-content">
-                    <div class="modal-body">
-                        <h4>You must <a href="/register">register</a> or <a href="/login">login </a>first to make an apointment.</h4>
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Book Appointment / With Dr.{{dr.firstName }}{{dr.lastName }}</h4>
                     </div>
+                    <div class="modal-body">
+                        <h1>Payment</h1>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" >Payment</button>
 
+                    </div>
                 </div>
-            {% endif %}
-        </div>
+            </div> 
+                 #}   
+        {% else %}
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h4>You must <a href="/register">register</a> or <a href="/login">login </a>first to make an apointment.</h4>
+                </div>
+
+            </div>
+        {% endif %}
     </div>
+</div>
 
-    <script type="text/javascript">
+<script type="text/javascript">
 
-        $(document).ready(function () {
-            var startDate = null;
-            var endDate = null;
-            var doctorId = $('#doctor').attr('data-id');
-            var $modal = $('#myModal');
+    $(document).ready(function () {
+        var startDate = null;
+        var endDate = null;
+        var doctorId = $('#doctor').attr('data-id');
+        var $modal = $('#myModal');
 
-            var showData = function (data) {
-                // create header
-                var $headerUrl = $('#doctor div.dates > ul');
-                var $timeslots = $('div.time-slots');
-                $headerUrl.empty();
-                $timeslots.empty();
-                $.each(data, function (idx, d) {
-                    if (idx == 0) {
-                        startDate = d.date.dateStr;
-                    } else {
-                        endDate = d.date.dateStr;
+        var showData = function (data) {
+            // create header
+            var $headerUrl = $('#doctor div.dates > ul');
+            var $timeslots = $('div.time-slots');
+            $headerUrl.empty();
+            $timeslots.empty();
+            $.each(data, function (idx, d) {
+                if (idx == 0) {
+                    startDate = d.date.dateStr;
+                } else {
+                    endDate = d.date.dateStr;
+                }
+                var date = d.date;
+                var appointments = d.appointments;
+                var dateStr = d.date.dateStr; // 2017-08-02
+                var $e = $('<li><span>' + d.date.dow + '</span><span>' + d.date.day + " " + d.date.month + '</span></li>');
+                $headerUrl.append($e);
+
+                var $ul = $('<ul/>');
+                $.each(d.times, function (i, time) {
+                    var s = time.start.hour;
+                    var e = time.end.hour;
+
+                    var total_hours = e - s;
+                    for (var j = s; j < e + 1; j++) {
+                        var timeStr = (j.toString() + ":" + "00").padStart(5, '0');
+                        var dateTime = dateStr + ' - ' + timeStr;
+
+                        var hasAppointment = appointments.indexOf(timeStr) >= 0;
+
+                        var $li = $('<li><button ' + (hasAppointment ? 'disabled style="background-color:#E8E8E8;"' : '') + ' data-time="' + dateTime + '" type="button" class="btn-time inverted btn btn-info btn-lg" onclick="getappointment(this)">' + timeStr + '</button></li>');
+                        $ul.append($li);
+                        timeStr = (j.toString() + ":" + "30").padStart(5, '0');
+
+                        hasAppointment = appointments.indexOf(timeStr) >= 0;
+
+                        dateTime = dateStr + ' ' + timeStr;
+                        $li = $('<li><button ' + (hasAppointment ? 'disabled style="background-color:#E8E8E8;"' : '') + ' data-time="' + dateTime + '" type="button" class="btn-time inverted btn btn-info btn-lg" onclick="getappointment(this)">' + timeStr + '</button></li>');
+                        $ul.append($li);
                     }
-                    var date = d.date;
-                    var appointments = d.appointments;
-                    var dateStr = d.date.dateStr; // 2017-08-02
-                    var $e = $('<li><span>' + d.date.dow + '</span><span>' + d.date.day + " " + d.date.month + '</span></li>');
-                    $headerUrl.append($e);
-
-                    var $ul = $('<ul/>');
-                    $.each(d.times, function (i, time) {
-                        var s = time.start.hour;
-                        var e = time.end.hour;
-
-                        var total_hours = e - s;
-                        for (var j = s; j < e + 1; j++) {
-                            var timeStr = (j.toString() + ":" + "00").padStart(5, '0');
-                            var dateTime = dateStr + ' - ' + timeStr;
-
-                            var hasAppointment = appointments.indexOf(timeStr) >= 0;
-
-                            var $li = $('<li><button ' + (hasAppointment ? 'disabled style="background-color:#E8E8E8;"' : '') + ' data-time="' + dateTime + '" type="button" class="btn-time inverted btn btn-info btn-lg" onclick="getappointment(this)">' + timeStr + '</button></li>');
-                            $ul.append($li);
-                            timeStr = (j.toString() + ":" + "30").padStart(5, '0');
-
-                            hasAppointment = appointments.indexOf(timeStr) >= 0;
-
-                            dateTime = dateStr + ' ' + timeStr;
-                            $li = $('<li><button ' + (hasAppointment ? 'disabled style="background-color:#E8E8E8;"' : '') + ' data-time="' + dateTime + '" type="button" class="btn-time inverted btn btn-info btn-lg" onclick="getappointment(this)">' + timeStr + '</button></li>');
-                            $ul.append($li);
-                        }
-                    });
-                    $timeslots.append($ul);
                 });
-            }
-            //var data = [{"date":{"dow":"Wed","day":"06","month":"2017-12-06"},"times":[{"start":{"hour":8,"minute":0},"end":{"hour":20,"minute":0}},{"start":{"hour":8,"minute":0},"end":{"hour":20,"minute":0}}]},{"date":{"dow":"Thu","day":"07","month":"2017-12-07"},"times":[{"start":{"hour":8,"minute":0},"end":{"hour":20,"minute":0}},{"start":{"hour":8,"minute":0},"end":{"hour":20,"minute":0}}]},{"date":{"dow":"Fri","day":"08","month":"2017-12-08"},"times":[]},{"date":{"dow":"Sat","day":"09","month":"2017-12-09"},"times":[{"start":{"hour":8,"minute":0},"end":{"hour":20,"minute":0}}]},{"date":{"dow":"Sun","day":"10","month":"2017-12-10"},"times":[{"start":{"hour":8,"minute":0},"end":{"hour":20,"minute":0}},{"start":{"hour":8,"minute":0},"end":{"hour":20,"minute":0}}]}];
-            var getDate = function (start) {
-                var url = '/avtime/' + doctorId + '/' + start;
-                $.ajax({
-                    url: url,
-                    success: function (data) {
-                        showData(JSON.parse(data));
-                    }
-                })
-            };
-
-            var formatDate = function (d) {
-                var dateFormat = 'YYYY-M-D';
-                return d.format(dateFormat);
-            }
-
-            var today = moment();
-            startDate = formatDate(today);
-            endDate = formatDate(today.add(6, 'days'));
-            getDate(startDate);
-
-            $('#doctor button.next').click(function (e) {
-                e.preventDefault();
-                var d = moment(startDate).add(6, 'days');
-                getDate(formatDate(d));
+                $timeslots.append($ul);
             });
+        }
+        //var data = [{"date":{"dow":"Wed","day":"06","month":"2017-12-06"},"times":[{"start":{"hour":8,"minute":0},"end":{"hour":20,"minute":0}},{"start":{"hour":8,"minute":0},"end":{"hour":20,"minute":0}}]},{"date":{"dow":"Thu","day":"07","month":"2017-12-07"},"times":[{"start":{"hour":8,"minute":0},"end":{"hour":20,"minute":0}},{"start":{"hour":8,"minute":0},"end":{"hour":20,"minute":0}}]},{"date":{"dow":"Fri","day":"08","month":"2017-12-08"},"times":[]},{"date":{"dow":"Sat","day":"09","month":"2017-12-09"},"times":[{"start":{"hour":8,"minute":0},"end":{"hour":20,"minute":0}}]},{"date":{"dow":"Sun","day":"10","month":"2017-12-10"},"times":[{"start":{"hour":8,"minute":0},"end":{"hour":20,"minute":0}},{"start":{"hour":8,"minute":0},"end":{"hour":20,"minute":0}}]}];
+        var getDate = function (start) {
+            var url = '/avtime/' + doctorId + '/' + start;
+            $.ajax({
+                url: url,
+                success: function (data) {
+                    showData(JSON.parse(data));
+                }
+            })
+        };
 
-            $('#doctor button.prev').click(function (e) {
-                e.preventDefault();
-                var d = moment(startDate).add(-6, 'days');
-                getDate(formatDate(d));
-            });
+        var formatDate = function (d) {
+            var dateFormat = 'YYYY-M-D';
+            return d.format(dateFormat);
+        }
 
-            window.getappointment = function (e) {
-                var time = $(e).attr('data-time');
-                $modal.find('input[name=time]').val(time);
+        var today = moment();
+        startDate = formatDate(today);
+        endDate = formatDate(today.add(6, 'days'));
+        getDate(startDate);
 
-                //$modal.find('.modal-title').text('New message to ' + recipient);
-                $modal.find('.modal-body p .app-info').text('Your appointment is on : ' + time);
-                $modal.find('.content1').removeClass('hidden');
-                $modal.find('.content2').addClass('hidden');
-
-                $modal.modal('show');
-                return false;
-            };
-
-            $modal.find("form").submit(function (e) {
-                e.preventDefault();
-
-                var $form = $(this);
-                var action = $form.attr('action');
-                $.ajax({
-                    url: action,
-                    method: 'POST',
-                    data: $form.serializeArray(),
-                    success: function () {
-                        $modal.find('.content1').addClass('hidden');
-                        $modal.find('.content2').removeClass('hidden');
-                    }
-                })
-            });
-            //showData(data);
+        $('#doctor button.next').click(function (e) {
+            e.preventDefault();
+            var d = moment(startDate).add(6, 'days');
+            getDate(formatDate(d));
         });
-    </script>
+
+        $('#doctor button.prev').click(function (e) {
+            e.preventDefault();
+            var d = moment(startDate).add(-6, 'days');
+            getDate(formatDate(d));
+        });
+
+        window.getappointment = function (e) {
+            var time = $(e).attr('data-time');
+            $modal.find('input[name=time]').val(time);
+
+            //$modal.find('.modal-title').text('New message to ' + recipient);
+            $modal.find('.modal-body p .app-info').text('Your appointment is on : ' + time);
+            $modal.find('.content1').removeClass('hidden');
+            $modal.find('.content2').addClass('hidden');
+
+            $modal.modal('show');
+            return false;
+        };
+
+        $modal.find("form").submit(function (e) {
+            e.preventDefault();
+
+            var $form = $(this);
+            var action = $form.attr('action');
+            $.ajax({
+                url: action,
+                method: 'POST',
+                data: $form.serializeArray(),
+                success: function () {
+                    $modal.find('.content1').addClass('hidden');
+                    $modal.find('.content2').removeClass('hidden');
+                }
+            })
+        });
+        //showData(data);
+    });
+</script>
 
 
 {% endblock %}
