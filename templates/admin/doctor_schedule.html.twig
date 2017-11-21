@@ -47,14 +47,17 @@
                     .on("changeDate", dateChangedHandler);
 
             function dateChangedHandler(ev) {
-                var date = (ev.date === undefined) ? $("#datepicker").val() : ev.date.getMonth() + "-" + ev.date.getFullYear();
+                var date = (ev.date === undefined) ? $("#datepicker").val() : ev.date.getMonth() + "-" + ev.date.getFullYear();                
                 var doctorId = $("#selectDoctor").val();
+                var regex = /(0[1-9]|10|11|12)\-20[0-9]{2}/;
+                if(regex.test(date)){
                 $("#viewSchedule").load("/ajax/myschedule/" + date + "/" + doctorId, function (response, status, xhr) {
                     console.log("handler called, status is: " + status);
                     if (status == "error") {
                         $("#viewSchedule").html("<span>Please select a valid year and month to view calendar</span>");
                     }
                 });
+            }
             }
 
             $('#selectDoctor').bind('propertychange change click keyup input paste', function () {
