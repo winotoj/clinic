@@ -2,10 +2,6 @@
 
 {% block title %}Register{% endblock %}
 {% block matchpwd %}
-    <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-  
-    <!--<script src="../assets/bootstrap/js/bootstrap.js"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js"></script>
 
     <script>
@@ -20,10 +16,13 @@
     </script>
 {% endblock %}
 {% block css %} 
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">-->
-    <!--<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">-->
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css">
+       <style>
+           .msg-error{
+    color:#a94442; 
+    font-size:small;
+}
+           </style>
 {% endblock %}
 
 
@@ -33,8 +32,12 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12"> 
-
-
+                {% if success %}
+                    <!-- Success message -->
+                    <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> You've been registered successfully!.</div>
+                {%else%}
+                    <div class="alert alert-danger" role="alert" id="errormessage">Error <i class="glyphicon glyphicon-thumbs-up"></i> Error!.</div>
+                {% endif %}
                 <form class="well form-horizontal" method="post"  id="contact_form">
                     <fieldset>
 
@@ -52,7 +55,7 @@
 
 
                                 </div>
-                                <span class="label-danger">{{ e.fNameError }}</</span>
+                                <span class="msg-error">{{ e.fNameError }}</</span>
                             </div>
                         </div>
 
@@ -66,7 +69,7 @@
                                     <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
 
                                 </div>
-                                <span class="label-danger">{{ e.lNameError }}</span>
+                                <span class="msg-error">{{ e.lNameError }}</span>
                             </div>
                         </div>
                         <!-- Text input-->
@@ -78,7 +81,7 @@
                                     <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
 
                                 </div>
-                                <span class="label-danger">{{ e.emailError }}</span>
+                                <span class="msg-error">{{ e.emailError }}</span>
                             </div>
                         </div>
 
@@ -91,7 +94,7 @@
                                     <input name="street" placeholder="Civic No street Apt No" class="form-control"  type="text">
 
                                 </div>
-                                <span class="label-danger">{{ e.addressError }}</span>
+                                <span class="msg-error">{{ e.addressError }}</span>
                             </div>
                         </div>
                         <div class="form-group">
@@ -102,7 +105,7 @@
                                     <input name="city" placeholder="City" class="form-control"  type="text">
 
                                 </div>
-                                <span class="label-danger">{{ e.cityError }}</span>
+                                <span class="msg-error">{{ e.cityError }}</span>
                             </div>
                         </div>
 
@@ -129,33 +132,20 @@
                                     </select>
 
                                 </div>
+                                <span class="msg-error">{{ e.provinceError }}</span>
                             </div>
-         <!-- Text input-->
+                        </div>
+
+                        <!-- Text input-->
                         <div class="form-group">
                             <label class="col-md-4 control-label">Postal</label>  
                             <div class="col-md-4 inputGroupContainer">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
                                     <input name="postal" placeholder="Postal" class="form-control"  type="text">
-
-
                                 </div>
-                                <span class="label-danger">{{ e.postalError }}</span>
+                                <span class="msg-error">{{ e.postalError }}</span>
                             </div>
-
-                        <span class="label-danger">{{ e.provinceError }}</span>
-                    </div>
-                </div>
-                <!-- Text input-->
-                <div class="form-group">
-                    <label class="col-md-4 control-label">Postal</label>  
-                    <div class="col-md-4 inputGroupContainer">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                            <input name="postal" placeholder="Postal" class="form-control"  type="text">
-
-
-
                         </div>
                         <!-- Text input-->
                         <div class="form-group">
@@ -164,10 +154,8 @@
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
                                     <input name="country" placeholder="Country" class="form-control"  type="text">
-
-
                                 </div>
-                                <span class="label-danger">{{ e.countryError }}</span>
+                                <span class="msg-error">{{ e.countryError }}</span>
                             </div>
                         </div>
                         <!-- Text input-->
@@ -180,7 +168,7 @@
 
 
                                 </div>
-                                <span class="label-danger">{{ e.sinError }}</span>
+                                <span class="msg-error">{{ e.sinError }}</span>
                             </div>
                         </div>
 
@@ -192,7 +180,7 @@
                                     <input name="user_password" placeholder="Password" class="form-control"  type="password">
 
                                 </div>
-                                <span class="label-danger">{{ e.pass1Error }}</span>
+                                <span class="msg-error">{{ e.pass1Error }}</span>
                             </div>
                         </div>
 
@@ -206,7 +194,7 @@
                                     <input name="confirm_password" placeholder="Confirm Password" class="form-control"  type="password">
 
                                 </div>
-                                <span class="label-danger">{{ e.pass2Error }}</span>
+                                <span class="msg-error">{{ e.pass2Error }}</span>
                             </div>
                         </div>
 
@@ -220,14 +208,12 @@
                                     <input name="contact_no" placeholder="(123) 123-1234" class="form-control" type="text">
 
                                 </div>
-                                <span class="label-danger">{{ e.phoneError }}</span>
+                                <span class="msg-error">{{ e.phoneError }}</span>
                             </div>
                         </div>
 
                         <!-- Select Basic -->
 
-                        <!-- Success message -->
-                        <!--<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>-->
 
                         <!-- Button -->
                         <div class="form-group">

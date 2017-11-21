@@ -12,7 +12,8 @@
     </section>
     <div class="container">
         <div class="row">
-            <div class="col-sm-12"> 
+             <div class="col-sm-2"></div>
+            <div class="col-sm-8">
                
                             <form id="login_form" class="form-group" action="" method="POST">
                                 <fieldset>
@@ -26,10 +27,10 @@
                                         <input type="password" id="user_password" class="input-group-sm form-control" name="password"/>
                                     </div>
                                     <div class="text-center pad-top-20">
-                                        <p>Have you forgotten your<br><a href="#" class="link"><strong>username</strong></a> or <a href="#" class="link"><strong>password</strong></a>?</p>
+                                        <p>Have you forgotten your <a href="/passreset/request" class="link"><strong>password</strong></a>?</p>
                                     </div>
                                     <div class="pad-top-20 pad-btm-20">
-                                        <input type="submit" class="btn btn-form" value="Continue">
+                                        <input type="submit" class="btn btn-form btn-block btn-lg" value="Continue">
                                     </div>
                                     <div class="text-center">
                                         <p>Do you wish to register<br> for <a href="/register" class="link user-actions"><strong>a new account</strong></a>?</p>
@@ -38,7 +39,12 @@
                             </form>
                         
             </div>
-        </div>
-    </div>
+            
+            <div class="col-sm-2"></div>
+  </div>
+ 
+</div>
+<section id="padding" class="section-sm-padding">
+    </section>
 
 {% endblock %}
